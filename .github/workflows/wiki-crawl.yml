@@ -2,7 +2,8 @@
 #
 # 结构：plan（算差集 + 切片）→ crawl（matrix 分片抓取）→ merge（合并 + 门禁 + 推送）
 #   * 抓取节奏：串行、每页随机 sleep 4~6s；单分片 400 页 ≈ 37 分钟，远低于单 job 6 小时上限
-#   * max-parallel 控制同时打站点的分片数，站点视角每个出口 IP 仍是每 ~5s 一次请求
+#   * max-parallel 控制同时打站点的分片数：每个分片是独立 runner 的独立出口 IP，各自 5~8s/页；
+#     并发压到 8 是为了不让同一批 Azure 出口 IP 被 mcmod 的 WAF 判定为异常（2026-11 本地 6 并发曾被封）
 #   * 只写 wiki-data 分支，绝不推 main
 name: Wiki Crawl
 
@@ -101,7 +102,7 @@ jobs:
     timeout-minutes: 90
     strategy:
       fail-fast: false
-      max-parallel: 12
+      max-parallel: 8
       matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
     steps:
       - name: Checkout
@@ -118,7 +119,7 @@ jobs:
           printf '%s\n' $SHARD_IDS > work/ids.txt
           echo "本片 id 数: $(wc -l < work/ids.txt | tr -d ' ')"
           # wiki_crawl.sh 自己负责节流、单页重试、WAF 退避与中止（退出码 2）
-          bash tools/wiki_crawl.sh --ids work/ids.txt --out work/shard.tsv --delay 4 6
+          bash tools/wiki_crawl.sh --ids work/ids.txt --out work/shard.tsv --delay 5 8
 
       - name: 上传分片
         if: always()

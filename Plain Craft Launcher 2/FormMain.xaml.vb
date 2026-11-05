@@ -11,6 +11,13 @@ Public Class FormMain
         Dim FeatureList As New List(Of KeyValuePair(Of Integer, String))
         '统计更新日志条目
         If BuildType = BuildTypes.Release Then
+            If LastVersion < 415 Then 'Release 2.99.2.0
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "新增：启动后自动同步最新的模组中文名与百科信息，在下载页与搜索中生效（下次启动生效）"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：检查更新与下载更新包增加 CDN 通道，访问更稳定"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "优化：大幅补充模组的百科中文名与平台链接，并每日自动同步"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复：部分网络环境下无法获取最新版本号"))
+                FeatureCount += 7
+            End If
             If LastVersion < 414 Then 'Release 2.99.1.0
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "新增：标题栏改用 PCL Reborn 徽标"))
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：移除赞助门槛，所有主题样式均可直接使用"))
