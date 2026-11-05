@@ -21,7 +21,7 @@ Public Class PageOtherLeft
         ElseIf Not Settings.Get(Of Boolean)("UiHiddenOtherAbout") Then
             ItemAbout.SetChecked(True, False, False)
         Else
-            ItemTest.SetChecked(True, False, False)
+            ItemAbout.SetChecked(True, False, False) '本地修改：百宝箱已禁用，不再作为兜底页面
         End If
     End Sub
     Private Sub PageOtherLeft_Unloaded(sender As Object, e As RoutedEventArgs) Handles Me.Unloaded
@@ -42,7 +42,7 @@ Public Class PageOtherLeft
         ElseIf Not Settings.Get(Of Boolean)("UiHiddenOtherAbout") Then
             PageID = FormMain.PageSubType.OtherAbout
         Else
-            PageID = FormMain.PageSubType.OtherTest
+            PageID = FormMain.PageSubType.OtherAbout '本地修改：百宝箱已禁用，不再作为兜底页面
         End If
     End Sub
 
@@ -65,8 +65,8 @@ Public Class PageOtherLeft
                 If FrmOtherAbout Is Nothing Then FrmOtherAbout = New PageOtherAbout
                 Return FrmOtherAbout
             Case FormMain.PageSubType.OtherTest
-                If FrmOtherTest Is Nothing Then FrmOtherTest = New PageOtherTest
-                Return FrmOtherTest
+                '本地修改：百宝箱已禁用，任何入口一律重定向到「关于与鸣谢」
+                Return PageGet(FormMain.PageSubType.OtherAbout)
             Case Else
                 Throw New Exception("未知的更多子页面种类：" & ID)
         End Select
@@ -142,7 +142,7 @@ Public Class PageOtherLeft
             Case 1
                 Feedback(True, False)
             Case 2
-                OpenWebsite("https://github.com/Meloong-Git/PCL/issues/")
+                OpenWebsite("https://github.com/merlin-kitsune/pcl-reborn/issues")
         End Select
     End Sub
     Private Sub TryVote(sender As Object, e As RouteEventArgs) Handles ItemVote.Changed
@@ -153,7 +153,7 @@ Public Class PageOtherLeft
     Public Shared Sub TryVote()
         If MyMsgBox("是否要打开新功能投票网页？" & vbCrLf & "如果无法打开该网页，请使用 VPN 改善网络环境。",
                     "新功能投票", "打开", "取消") = 2 Then Return
-        OpenWebsite("https://github.com/Meloong-Git/PCL/discussions/categories/%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8?discussions_q=category%3A%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8+sort%3Adate_created")
+        OpenWebsite("https://github.com/merlin-kitsune/pcl-reborn/issues")
     End Sub
 
 End Class

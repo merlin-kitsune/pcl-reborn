@@ -373,9 +373,6 @@ EndHint:
     Public FrmSpeedLeft As PageSpeedLeft
     Public FrmSpeedRight As PageSpeedRight
 
-    '联机页面声明
-    Public FrmLinkMain As PageLinkMain
-
     '下载页面声明
     Public FrmDownloadLeft As PageDownloadLeft
     Public FrmDownloadInstall As PageDownloadInstall
@@ -390,7 +387,6 @@ EndHint:
     Public FrmSetupLaunch As PageSetupLaunch
     Public FrmSetupUI As PageSetupUI
     Public FrmSetupSystem As PageSetupSystem
-    Public FrmSetupLink As PageSetupLink
 
     '其他页面声明
     Public FrmOtherLeft As PageOtherLeft
@@ -967,7 +963,7 @@ NextFile:
         If ForceOpenLog OrElse (ShowMsgbox AndAlso MyMsgBox("若你在汇报一个 Bug，请点击 打开文件夹 按钮，并上传 Log(1~5).txt 中包含错误信息的文件。" & vbCrLf & "游戏崩溃一般与启动器无关，请不要因为游戏崩溃而提交反馈。", "反馈提交提醒", "打开文件夹", "不需要") = 1) Then
             OpenExplorer(Paths.Base & "PCL\Log1.txt")
         End If
-        OpenWebsite("https://github.com/Meloong-Git/PCL/issues/")
+        OpenWebsite("https://github.com/merlin-kitsune/pcl-reborn/issues")
     End Sub
     ''' <summary>
     ''' 在日志中输出系统诊断信息。

@@ -176,7 +176,7 @@ Public Class MyPageRight
         Select Case PageState
             Case PageStates.Empty
                 If PageLoader Is Nothing OrElse PageLoader.State = LoadState.Finished OrElse PageLoader.State = LoadState.Waiting OrElse PageLoader.State = LoadState.Canceled Then
-                    '如果加载器在进入页面时不启动（例如联机），那么在此时就会有 State = Waiting
+                    '如果加载器在进入页面时不启动，那么在此时就会有 State = Waiting
                     PageState = PageStates.ContentEnter
                     TriggerEnterAnimation(PanAlways, If(PanContent, Child))
                 ElseIf PageLoader.State = LoadState.Loading Then
@@ -270,7 +270,7 @@ Public Class MyPageRight
                 PageOnEnter()
             Case PageStates.Empty
                 '可能是在离开页面后，其他后台线程调用了本函数，此时不应触发 PageOnEnter()
-                '例如：在加入联机房间后，切换到其他页面，然后联机房间被解散
+                '例如：用户切换到其他页面后，某个后台任务才结束并回调到这里
                 If IsLoaded Then PageOnEnter()
         End Select
     End Sub
