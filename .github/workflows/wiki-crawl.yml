@@ -162,8 +162,8 @@ jobs:
       - name: 合并
         run: |
           set -euo pipefail
-          shopt -s nullglob
-          shards=(shards/*/shard.tsv)
+          # download-artifact 会把每个分片放进 shards/<artifact 名>/ 子目录，用 find 兜住两种布局
+          mapfile -t shards < <(find shards -type f -name 'shard.tsv' 2>/dev/null | sort)
           if [ ${#shards[@]} -eq 0 ]; then
             echo '没有可用分片，沿用旧数据'
             cp base.tsv merged.tsv
