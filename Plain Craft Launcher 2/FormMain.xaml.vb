@@ -11,6 +11,13 @@ Public Class FormMain
         Dim FeatureList As New List(Of KeyValuePair(Of Integer, String))
         '统计更新日志条目
         If BuildType = BuildTypes.Release Then
+            If LastVersion < 414 Then 'Release 2.99.1.0
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "新增：标题栏改用 PCL Reborn 徽标"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：移除赞助门槛，所有主题样式均可直接使用"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "删除：移除联机功能与全部相关入口"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "删除：移除启动时的「你知道吗」提示"))
+                FeatureCount += 6
+            End If
             If LastVersion < 411 Then 'Release 2.14.0.0
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "新增：允许修改、添加、移除、更新已安装版本的各个组件，可从版本设置中进入"))
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：启动游戏时允许按 Esc 取消"))
