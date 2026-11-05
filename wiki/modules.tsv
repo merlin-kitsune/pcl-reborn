@@ -1,9 +1,11 @@
-# id	curseforge	modrinth	chinese_name
-# PCL Reborn wiki-data seed
+# id	cf	mr	name
+1			我的世界原版 (Minecraft)
+10			被遗忘的大自然 (Forgotten Nature)
 59	tfcraft	terrafirmacraft	群峦传说 (TerraFirmaCraft)
 62	binnies-mods		更多蜜蜂 (Extra Bees)
 67	thermal-expansion		热力膨胀3 (Thermal Expansion 3)
 81	extra-utilities		更多实用设备 (Extra Utilities)
+100	minecraft-comes-alive-mca		虚拟人生/凡家物语 (Minecraft Comes Alive)
 101	tinkers-construct	tinkers-construct	匠魂 (Tinkers' Construct)
 120	grimoire-of-gaia	grimoire-of-gaia	盖亚魔典2 (GRIMOIRE OF GAIA 2)
 146	binnies-mods		更多树 (Extra Trees)
@@ -20,6 +22,15 @@
 528	blood-magic	blood-magic	血魔法2 (Blood Magic 2)
 648	thaumic-additions	thaumic-additions	神秘领域 (Thaumic Additions: Reconstructed)
 683	tinkers-construct	tinkers-construct	匠魂2 (Tinkers' Construct 2)
+1000	digimobs		数码宝贝 (Digimobs)
+1001	storage-boats-mod		存储船 (Storage Boat Mod)
+1002	mo-withers		更多凋灵 (Mo' Withers)
+1003	jingames-naruto-c		火影忍者C (Naruto C)
+1004	the-autologin-mod-for-authme-server		自动登录 (AutoLogin)
+1005	roost		鸡窝 (Roost)
+1006	croparia	croparia	矿石作物/魔种之咏 (Croparia)
+1007	simple-corn		简单玉米 (Simple Corn)
+1008	thaumic-jei	thaumic-jei	Thaumic JEI
 1106	binnies-mods		基因工程 (Genetics)
 1109	binnies-mods		植物学 (Botany)
 1406	sound-physics-legacy		物理声效 (Sound Physics)
@@ -34,3 +45,91 @@
 3396	prehistoric-flora		Prehistoric Flora
 3440	assassins-creed-blocklegend		刺客信条：方块传奇 (Assassin's Creed Blocklegend)
 3547	forgery	fabrication	Forgery
+10000			药水状态效果导出 (Effect Export)
+10001	sky-structures		Sky Structures
+10002	mannequins		Mannequins
+10003	simple-mango	simple-mango	Simple Mango
+10004	betterdrawhoveringtext		更好的工具信息显示 (betterDrawHoveringText)
+10005			Turn Into Eggs
+10006	badges-by-harmex	cobblebadges2	CobbleBadges
+10007	terrarian-arsenal		Terrarian Arsenal
+10008	zombie-veterinarian		僵尸科兽医 (Zombie Veterinarian)
+10009	just-enough-sculk-sensor		Just Enough Sculk Sensor
+10010	hearth-and-home	hearth-and-home	Hearth & Home
+10011	better-leveling		更好的升级 (Better Leveling)
+10012	applied-mana		应用魔法 (Applied Mana)
+10013	boundless-flux		Boundless Flux
+10014			起床战争工具包 (JK's BedWars ToolPack)
+10015		axolotlclient	Axolotl Client
+10016	energy-nodes		Energy Nodes
+10017	fog	fog	Fog
+10018	thirst-was-taken	thirst-was-taken	口渴 (Thirst Was Taken)
+10019			BlazeandCave's Advancements Pack Terralith version
+10020	unlimited-fluidity		Unlimited Fluidity
+10021	e4mc	e4mc	e4mc
+10022	late-game-golems	late-game-golems	Late Game Golems
+10023	iter-rpg		Iter RPG
+10024	stationary-source-blocks		Stationary Source Blocks Potato Edition
+10025	oceanic-expanse	oceanic-expanse	海洋拓展 (Oceanic Expanse)
+10026			数据包加载错误修复 (Datapack Load Error Fix)
+10027			智子 (Sophon-Architectury)
+10028	origins-vampire		起源：吸血鬼 (Origins: Vampire)
+10029			抱歉，我们拒绝为您提供随机液体 (No Random Fluid)
+10030	bad-to-the-bone		Bad to the Bone
+10031	workers	villager-workers	Villager Workers
+10032			克瑞科技 (CregTech)
+10033	sculk-horde	sculk-horde	幽匿部落 (Sculk Horde)
+10034	stratospherical-expansion	stratospherical-expansion	Stratospherical Expansion
+10035	lets-do-candlelight-farm-charm-compat	lets-do-candlelight-farmcharm-compat	烛火晚宴 ([Let's Do] Candlelight)
+10036	let-me-play-iris	let-me-play-iris	Let me play Iris!
+10037	dimensional-depths		Dimensional Depths
+10038	create-molten-vents	create-molten-vents	Create: Molten Vents
+10039	everything-as-a-hat	everything-as-a-hat	Everything as a Hat
+10040			CrashGuard
+10041	world-border-expander		World Border Expander
+10042	htmltech		htmlTech
+10043	extra-tan	extra-tan	Extra TAN
+10044	diamond-economy	diamond-economy	钻石经济 (Diamond Economy)
+10045	texels-paintings	texels-paintings	Texels Paintings
+10046	tinkers-expansion		Tinkers' Expansion
+10047	revelationary	revelationary	Revelationary
+10048	fullstack-watchdog	fullstack-watchdog	FullStack Watchdog
+10049			KeyBindingTweaker
+10050	adventure-apparatus		Adventure Apparatus
+10051	neruina	neruina	Neruina
+10052	kawaii-dishes	kawaii-dishes	Kawaii Dishes
+10053			Gregica++
+10054	keep-my-hand	keep-my-hand	Keep My Hand
+10055	no-lan-cheating	nolancheating	No LAN Cheating
+10056	goat-horn-block-mod	placeable-goat-horns	可放置山羊角 (Placeable Goat Horns)
+10057			OUO (With Task)
+10058	metallics-arts		金属技艺 (Metallics Arts)
+10059	actions-of-stamina		Actions of Stamina
+10060			PktTweaker
+10061	disenchanting-book		Disenchanting Book
+10062	stackdeobf	stackdeobf	StackDeobfuscator
+10063			多页箱子：魔戒版 (Multi Page Chest: LOTR Edition)
+10064	portfolio	portfolio	Portfolio
+10065		nvidium	Nvidium
+10066	merequester	merequester	ME Requester
+10067	invade		入侵 (Invade)
+10068	frame-api	frame-api	🔨 Frame API
+10069			苦力怕喷嚏 (CreeperSneeze)
+10070	realisticclouds		RealisticClouds
+10071	arcane-world		Arcane World
+10072	tiled-cauldron		Tiled Cauldron
+10073	manyideas-christmas	manyideas-christmas	ManyIdeas Christmas
+10074	overflowing-bars	overflowing-bars	Overflowing Bars
+10075	kokoalinux		KokoaLinux
+10076	medievalweapons	medievalweapons	中世纪武器 (MedievalWeapons)
+10077	completionists-index	completionists-index	Completionist's Index
+10078	stoneworks	stoneworks	Stoneworks
+10079			HutoolCore
+10080	mob-lassos	mob-lassos	生物套索 (Mob Lassos)
+10081	mutant-monsters	mutant-monsters	突变怪物 (Mutant Monsters)
+10082			完美玻璃板 (Perfect glass pane)
+10083		physics-toys	Physics Toys
+10084	tarot-cards	tarot-cards	塔罗牌 (Tarot Cards)
+10085			TcpNoDelayMod
+10086	chatmove	chatmove	ChatMove
+10087		forgedloaderapi	ForgedFabricLoaderAPI / ForgedLoaderAPI
