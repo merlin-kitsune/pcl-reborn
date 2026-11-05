@@ -277,7 +277,17 @@ Friend Module ModSecret
     ''' </summary>
     Private Function GetLatestReleaseTag() As String
         Try
-            Return GetLatestReleaseTagByJsDelivr()
+            Dim JsDelivrTag As String = GetLatestReleaseTagByJsDelivr()
+            'jsDelivr 的版本索引有明显延迟：新 Release 发布后它可能还停留在旧版本。
+            '若它给出版本比当前版本还旧，说明索引没跟上，改用 GitHub 发布页确认，避免误报「已是最新」。
+            Dim JsDelivrVer As Version = Nothing
+            Dim CurrentVer As Version = Nothing
+            If Version.TryParse(JsDelivrTag.TrimStart("v"c, "V"c), JsDelivrVer) AndAlso
+               Version.TryParse(VersionBaseName, CurrentVer) AndAlso JsDelivrVer < CurrentVer Then
+                Logger.Info($"jsDelivr 版本索引滞后（{JsDelivrTag} < {VersionBaseName}），改用 GitHub 发布页")
+                Return GetLatestReleaseTagByGitHub()
+            End If
+            Return JsDelivrTag
         Catch ex As Exception
             Logger.Warn(ex, "通过 jsDelivr 获取最新版本号失败，改用 GitHub 发布页")
         End Try
