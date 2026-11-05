@@ -42,8 +42,9 @@ Public Module ModWikiSync
         Try
             Thread.Sleep(RandomInteger(2000, 4000)) '避开启动时的其它联网请求
             Dim ETag As String = If(File.Exists(MetaPath), File.ReadAllText(MetaPath).Trim(), "")
-            If TrySyncFrom(CdnUrl, ETag) Then Return
-            TrySyncFrom(RawUrl, "") 'jsDelivr 不可用时回退到 GitHub 原始链接
+            'GitHub 原始链接是最新的（分支更新后立刻可见）；jsDelivr 有十几小时缓存，仅作镜像回退
+            If TrySyncFrom(RawUrl, ETag) Then Return
+            TrySyncFrom(CdnUrl, "") 'GitHub 原始链接不可用时回退到 jsDelivr 镜像
         Catch ex As Exception
             Logger.Warn(ex, "同步模组中文名列表失败")
         End Try
