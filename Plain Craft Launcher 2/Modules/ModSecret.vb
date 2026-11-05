@@ -267,7 +267,7 @@ Friend Module ModSecret
                 End If
             Catch ex As Exception
                 Logger.Warn(ex, "检查更新失败")
-                Hint($"检查更新失败：{ex.Message}", HintType.Red)
+                Hint($"检查更新失败：{ex.Message}（若本仓库尚未发布任何 Release，请等待作者发布后再试）", HintType.Red)
             End Try
         End Sub)
     End Sub
