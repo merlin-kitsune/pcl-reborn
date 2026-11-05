@@ -75,8 +75,63 @@ public class WikiEntry {
                 results.Add(entry);
             }
         }
+        ApplySupplement(results);
         return results;
     });
+
+    /// <summary>
+    /// 启动器从 GitHub 同步下来的补充条目文件路径（TSV 格式，每行 <c>ID \t CurseForge Slug \t Modrinth Slug \t 中文名</c>，<c>#</c> 开头为注释）。
+    /// <para/>需要在首次访问 <see cref="All"/> 之前赋值；为 <c>null</c> 或文件不存在时直接忽略。
+    /// </summary>
+    public static string? SupplementPath;
+
+    /// <summary>
+    /// 将补充文件中的条目并入内置数据库。已有的条目（同 ID 或同名 Slug）不会被覆盖。
+    /// </summary>
+    private static void ApplySupplement(List<WikiEntry> results) {
+        var path = SupplementPath;
+        if (string.IsNullOrWhiteSpace(path)) return;
+        string[] lines;
+        try {
+            if (!File.Exists(path)) return;
+            lines = File.ReadAllLines(path, Encoding.UTF8);
+        } catch {
+            return; // 补充数据只是锦上添花，读取失败不影响内置数据库
+        }
+
+        var knownSlugs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var knownIds = new HashSet<int>();
+        foreach (var entry in results) {
+            knownIds.Add(entry.Id);
+            foreach (var slug in entry.Slugs.Values) {
+                if (!string.IsNullOrEmpty(slug)) knownSlugs.Add(slug);
+            }
+        }
+
+        foreach (var rawLine in lines) {
+            var line = rawLine.Trim();
+            if (line.Length == 0 || line[0] == '#') continue;
+            var parts = line.Split('\t');
+            if (parts.Length < 4) continue;
+            if (!int.TryParse(parts[0].Trim(), out var id) || id <= 0) continue;
+            var curseForgeSlug = parts[1].Trim();
+            var modrinthSlug = parts[2].Trim();
+            var chineseName = parts[3].Trim();
+            if (chineseName.Length == 0) continue;
+            if (curseForgeSlug.Length == 0 && modrinthSlug.Length == 0) continue;
+            if (knownIds.Contains(id)) continue;
+            if ((curseForgeSlug.Length > 0 && knownSlugs.Contains(curseForgeSlug))
+                || (modrinthSlug.Length > 0 && knownSlugs.Contains(modrinthSlug))) continue;
+
+            var supplement = new WikiEntry { Id = id, ChineseName = chineseName, Popularity = 1 };
+            if (curseForgeSlug.Length > 0) supplement.Slugs.Add(ResourcePlatforms.CurseForge, curseForgeSlug);
+            if (modrinthSlug.Length > 0) supplement.Slugs.Add(ResourcePlatforms.Modrinth, modrinthSlug);
+            results.Add(supplement);
+            knownIds.Add(id);
+            if (curseForgeSlug.Length > 0) knownSlugs.Add(curseForgeSlug);
+            if (modrinthSlug.Length > 0) knownSlugs.Add(modrinthSlug);
+        }
+    }
 
     public override string ToString()
         => $"{Slugs.GetOrDefault(ResourcePlatforms.CurseForge)}&{Slugs.GetOrDefault(ResourcePlatforms.Modrinth)}|{Id}|{ChineseName}，浏览量 {Popularity}";

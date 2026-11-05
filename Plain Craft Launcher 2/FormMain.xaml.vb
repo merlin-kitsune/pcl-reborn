@@ -329,6 +329,8 @@ Public Class FormMain
     Private Sub FormMain_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
         ApplicationStartTick = GetTimeMs()
         Handle = New WindowInteropHelper(Me).Handle
+        '在后台线程同步最新的模组中文名列表（不阻塞启动，失败时静默）
+        ModWikiSync.Init()
         '读取设置
         UpdateBackgroundAndTitleBar()
         PageSetupUI.HiddenRefresh()
