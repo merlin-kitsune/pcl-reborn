@@ -1,7 +1,7 @@
 namespace PCLCS;
 
 /// <summary>
-/// 社区资源的类型。
+/// 第三方资源的类型。
 /// </summary>
 [Flags]
 public enum ResourceTypes {
@@ -26,7 +26,7 @@ public enum ResourceTypes {
 }
 
 /// <summary>
-/// 社区资源的来源平台。
+/// 第三方资源的来源平台。
 /// </summary>
 [Flags]
 public enum ResourcePlatforms {

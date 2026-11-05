@@ -1,5 +1,5 @@
 ''' <summary>
-''' 本地的社区资源文件。
+''' 本地的第三方资源文件。
 ''' </summary>
 Public Class LocalResourceFile
 

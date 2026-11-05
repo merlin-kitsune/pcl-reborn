@@ -1,5 +1,5 @@
 ''' <summary>
-''' 社区资源的项目信息。
+''' 第三方资源的项目信息。
 ''' </summary>
 Public Class ResourceProject
 

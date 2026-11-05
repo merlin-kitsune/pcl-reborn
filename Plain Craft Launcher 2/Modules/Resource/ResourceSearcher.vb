@@ -159,7 +159,7 @@ Public Class ResourceSearcher
     ''' 根据搜索请求获取一系列的工程列表。
     ''' </summary>
     Public Shared Function GetLoader(InputDelegate As Func(Of SearchRequest)) As LoaderTask(Of SearchRequest, Integer)
-        Return New LoaderTask(Of SearchRequest, Integer)("社区资源获取", AddressOf Run, InputDelegate) With {.ReloadTimeout = 60 * 1000}
+        Return New LoaderTask(Of SearchRequest, Integer)("第三方资源获取", AddressOf Run, InputDelegate) With {.ReloadTimeout = 60 * 1000}
     End Function
     Private Shared Sub Run(Task As LoaderTask(Of SearchRequest, Integer))
         Dim Request As SearchRequest = Task.Input

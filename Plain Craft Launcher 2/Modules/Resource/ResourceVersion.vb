@@ -1,5 +1,5 @@
 ''' <summary>
-''' 社区资源的单个可下载版本。
+''' 第三方资源的单个可下载版本。
 ''' </summary>
 Public Class ResourceVersion
 

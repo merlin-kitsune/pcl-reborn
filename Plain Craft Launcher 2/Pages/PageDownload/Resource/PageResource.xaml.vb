@@ -24,7 +24,7 @@ Public Class PageResource
         Set(Value As String)
             If _TypeName = Value Then Return
             _TypeName = Value
-            Loader.Name = $"社区资源获取：{Value}"
+            Loader.Name = $"第三方资源获取：{Value}"
         End Set
     End Property
     Private _TypeName As String = ""

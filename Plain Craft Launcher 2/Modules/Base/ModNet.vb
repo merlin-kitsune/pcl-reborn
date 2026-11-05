@@ -1552,7 +1552,7 @@ FinishExCatch:
                         Next
                     Next
                 Case Else
-                    '社区资源
+                    '第三方资源
                     If File.Check.ActualSize < 0 OrElse File.Check.Hash Is Nothing Then Return Nothing '必须要求指定了文件大小和 Hash
                     For Each Folder In FolderList.Concat(VersionFolders)
                         For Each Candidate In DirectoryUtils.EnumerateFiles(Folder & Type)

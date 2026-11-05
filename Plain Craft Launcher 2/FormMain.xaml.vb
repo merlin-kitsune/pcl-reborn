@@ -1154,7 +1154,7 @@ Public Class FormMain
         ''' </summary>
         InstanceSetup = 6
         ''' <summary>
-        ''' 社区资源详情。这是一个副页面。
+        ''' 第三方资源详情。这是一个副页面。
         ''' </summary>
         ResourceDetail = 7
         ''' <summary>
@@ -1425,7 +1425,7 @@ Public Class FormMain
                 Case PageType.InstanceSetup '版本设置
                     If FrmInstanceLeft Is Nothing Then FrmInstanceLeft = New PageInstanceLeft
                     PageChangeAnim(FrmInstanceLeft, FrmInstanceLeft.PageGet(SubType))
-                Case PageType.ResourceDetail '社区资源详情
+                Case PageType.ResourceDetail '第三方资源详情
                     If FrmDownloadResourceDetail Is Nothing Then FrmDownloadResourceDetail = New PageDownloadResourceDetail
                     PageChangeAnim(New MyPageLeft, FrmDownloadResourceDetail)
                 Case PageType.HelpDetail '帮助详情

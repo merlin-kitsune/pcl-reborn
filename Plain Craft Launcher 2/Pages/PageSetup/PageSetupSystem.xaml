@@ -46,7 +46,7 @@
                     </Grid>
                 </StackPanel>
             </local:MyCard>
-            <local:MyCard Margin="0,0,0,15" Title="社区资源">
+            <local:MyCard Margin="0,0,0,15" Title="第三方资源">
                 <StackPanel Margin="25,37,25,12">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -69,7 +69,7 @@
                         </local:MyComboBox>
                         <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Text="文件名格式" Margin="0,0,25,0" />
                         <local:MyComboBox Grid.Row="2" x:Name="ComboDownloadTranslateV2" Grid.ColumnSpan="2" local:SettingService.Key="ToolDownloadTranslateV2" Grid.Column="1" 
-                                          ToolTip="下载社区资源时，其默认文件名的格式">
+                                          ToolTip="下载第三方资源时，其默认文件名的格式">
                             <local:MyComboBoxItem Content="【机械动力】create-1.21.1-6.0.4" />
                             <local:MyComboBoxItem Content="[机械动力] create-1.21.1-6.0.4" IsSelected="True" />
                             <local:MyComboBoxItem Content="机械动力-create-1.21.1-6.0.4" />
