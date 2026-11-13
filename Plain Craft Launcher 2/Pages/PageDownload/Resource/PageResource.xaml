@@ -35,7 +35,7 @@
                     <local:MyComboBox x:Name="TextSearchVersion" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" IsEditable="True" IsTextSearchEnabled="False">
                         <local:MyComboBoxItem Content="全部 (也可自行输入)" IsSelected="True" />
                         <local:MyComboBoxItem Content="26.2" />
-                        <local:MyComboBoxItem Content="26.1" />
+                        <local:MyComboBoxItem Content="26.1.2" />
                         <local:MyComboBoxItem Content="1.21.11" />
                         <local:MyComboBoxItem Content="1.21.8" />
                         <local:MyComboBoxItem Content="1.21.4" />
