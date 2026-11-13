@@ -914,6 +914,7 @@ cf	ankinbt	200	AnkiNBT	2026-11-13
 cf	annihilation-recreated	200	Annihilation Recreated	2026-11-13
 cf	annihilationblade	200	annihilationblade	2026-11-13
 cf	annotationlib	404		2026-11-13
+cf	annoying-villagers	200	Annoying Villagers (Legacy)	2026-11-13
 cf	annoying-villagers-herobrine-invasion	200	EpicFight: Annoying Villagers	2026-11-13
 cf	annuus	404		2026-11-13
 cf	anointed-items	404		2026-11-13
@@ -2151,6 +2152,7 @@ cf	better-azalea	404		2026-11-13
 cf	better-babies	200	Better Babies	2026-11-13
 cf	better-bad-omen	200	Better Bad Omen	2026-11-13
 cf	better-badlands	200	Better Badlands	2026-11-13
+cf	better-ball-ui	200	Better Ball UI(for Pixelmon)	2026-11-13
 cf	better-barrels	200	Better Barrels	2026-11-13
 cf	better-battle-towers	200	Better Battle Towers	2026-11-13
 cf	better-beacon	404		2026-11-13
@@ -4771,7 +4773,7 @@ cf	craftpresence	200	CraftPresence	2026-11-13
 cf	craftsense	200	CraftSense	2026-11-13
 cf	craftstudio-api	200	CraftStudio API	2026-11-13
 cf	crafttweaker	200	CraftTweaker	2026-11-13
-cf	crafttweaker-editor	err		2026-11-13
+cf	crafttweaker-editor	200	CraftTweaker Editor	2026-11-13
 cf	crafttweaker-gui	200	CraftTweaker GUI	2026-11-13
 cf	crafttweaker-integration	404		2026-11-13
 cf	crafttweaker-sixik-utils-aoa3-nevermine	404		2026-11-13
@@ -5419,6 +5421,7 @@ cf	creepypastacraft-reborn	200	CreepypastaCraft Reborn	2026-11-13
 cf	creepypastas-mod	404		2026-11-13
 cf	creo-lib	404		2026-11-13
 cf	creosote-oil-fuel-power	200	Creosote Oil Fuel \u0026 Power	2026-11-13
+cf	crh-hexie	404		2026-11-13
 cf	crimson-chickens	404		2026-11-13
 cf	crimson-compass	404		2026-11-13
 cf	crimson-gore-craft	200	Crimson Gore Craft	2026-11-13
@@ -6080,7 +6083,7 @@ cf	defiled-lands-reborn	200	Defiled Lands Reborn	2026-11-13
 cf	defiled-lands-reforged	200	Defiled Lands Reforged	2026-11-13
 cf	defiled-lands-rotn-edition	200	Defiled Lands RotN Edition	2026-11-13
 cf	definitive-cannons	200	Definitive Cannons	2026-11-13
-cf	deftulib	err		2026-11-13
+cf	deftulib	200	DeftuLib	2026-11-13
 cf	degradeexplodedblocks	200	DegradeExplodedBlocks	2026-11-13
 cf	dehand	200	Dehand	2026-11-13
 cf	dehydration	200	Dehydration	2026-11-13
@@ -9792,6 +9795,7 @@ cf	gravity-gun-reforged	200	Gravity Gun (Reforged)	2026-11-13
 cf	gravity-torch	200	Gravity Torch	2026-11-13
 cf	gravityapi	200	GravityAPI	2026-11-13
 cf	gravitychanger	200	Gravity Changer	2026-11-13
+cf	gravityengine	404		2026-11-13
 cf	gravityfalls-mod	200	GravityFalls Mod	2026-11-13
 cf	grease	200	Grease	2026-11-13
 cf	great-big-world	200	Great Big World	2026-11-13
@@ -11434,6 +11438,7 @@ cf	iskanderts-utilities	200	Iskandert's Utilities	2026-11-13
 cf	islands	200	Islands	2026-11-13
 cf	isle-of-berk-variant-loader	200	Isle of Berk Variant Loader	2026-11-13
 cf	isleofberk	200	Isle of Berk	2026-11-13
+cf	isometric-projection	200	Isometric Projection	2026-11-13
 cf	isometric-renders	200	Isometric Renders	2026-11-13
 cf	isometric-renders-forked	200	Isometric Renders - Forked	2026-11-13
 cf	iss-affiliated-distant-shock-barrier	200	[ISS DSB]Distant Shock Barrier	2026-11-13
@@ -16190,7 +16195,7 @@ cf	packagedthaumic	200	PackagedThaumic	2026-11-13
 cf	packages	200	Packages	2026-11-13
 cf	packagingprovider	200	PackagingProvider	2026-11-13
 cf	packcompanion	200	PackCompanion	2026-11-13
-cf	packdev-toolkit	err		2026-11-13
+cf	packdev-toolkit	200	Packdev Toolkit	2026-11-13
 cf	packed-inventory	200	Packed Inventory	2026-11-13
 cf	packed-packs	200	Packed Packs	2026-11-13
 cf	packed-up	200	Packed Up - A Farmer's Delight Addon	2026-11-13
@@ -16296,7 +16301,7 @@ cf	partialhearts	200	PartialHearts	2026-11-13
 cf	particle-blocker	200	Particle Blocker	2026-11-13
 cf	particle-core	200	Particle Core	2026-11-13
 cf	particle-culling	200	Particle Culling	2026-11-13
-cf	particle-effects	err		2026-11-13
+cf	particle-effects	200	Particle Effects	2026-11-13
 cf	particle-effects-reforged	200	Particle Effects Reforged	2026-11-13
 cf	particle-interactions	200	Particle Interactions	2026-11-13
 cf	particle-interactions-forgified	200	Particle Interactions Forgified	2026-11-13
@@ -17207,11 +17212,11 @@ cf	propeller-hats	404		2026-11-13
 cf	proper-blindness	404		2026-11-13
 cf	properties-panel	404		2026-11-13
 cf	property-modifier	200	Property Modifier	2026-11-13
-cf	propertyerizer	err		2026-11-13
+cf	propertyerizer	200	Propertyerizer	2026-11-13
 cf	proportional-destruction-particles	200	Proportional Destruction Particles	2026-11-13
 cf	prospect	200	Prospectabandoned	2026-11-13
 cf	protect-mobs-from-daylight	200	Protect Mobs From Daylight	2026-11-13
-cf	protection-engineering	err		2026-11-13
+cf	protection-engineering	200	Protection Engineering	2026-11-13
 cf	protection-pixel	200	Create: Protection Pixel	2026-11-13
 cf	protocharset	200	ProtoCharset	2026-11-13
 cf	proton	404		2026-11-13
@@ -19186,7 +19191,7 @@ cf	simple-delights	200	Simple Delights	2026-11-13
 cf	simple-delights-recooked	200	Simple Delights Recooked	2026-11-13
 cf	simple-difficulty-reforged	200	Simple Difficulty Reforged	2026-11-13
 cf	simple-dimensions	200	Simple Dimensions	2026-11-13
-cf	simple-discord-rich-presence	err		2026-11-13
+cf	simple-discord-rich-presence	200	Simple Discord Rich Presence (Forge /  Fabric)	2026-11-13
 cf	simple-discord-rpc	200	Simple Discord RPC	2026-11-13
 cf	simple-diving-gear	200	Simple Diving Gear	2026-11-13
 cf	simple-double-jump	404		2026-11-13
@@ -19793,6 +19798,7 @@ cf	sophisticated-backpacks-unofficial-fabric-port	200	Sophisticated Backpacks (U
 cf	sophisticated-chest-optimized	200	Sophisticated Chest Optimized	2026-11-13
 cf	sophisticated-core	404		2026-11-13
 cf	sophisticated-core-legacy	404		2026-11-13
+cf	sophisticated-core-unofficial-fabric-continuation	200	Sophisticated Core (Unofficial Fabric Continuation)	2026-11-13
 cf	sophisticated-core-unofficial-fabric-port	200	Sophisticated Core (Unofficial Fabric port)	2026-11-13
 cf	sophisticated-inventory-interactions	200	Sophisticated Inventory Interactions	2026-11-13
 cf	sophisticated-item-actions	200	Sophisticated Item Actions	2026-11-13
@@ -24955,6 +24961,7 @@ mr	annihilationblade	200	annihilationblade	2026-11-13
 mr	annihilationbladeex	200	SlashBlade: Finale Blade Sanctum	2026-11-13
 mr	anno	200	Anno	2026-11-13
 mr	annotationlib	404		2026-11-13
+mr	annoying-villagers	404		2026-11-13
 mr	annoying-villagers-herobrine-invasion	404		2026-11-13
 mr	annoying-villagers-player-npc-weapons-expansion	404		2026-11-13
 mr	annuus	200	Annuus	2026-11-13
@@ -26758,6 +26765,7 @@ mr	child-folder-mod-scanner	200	Child Folder Mod Scanner	2026-11-13
 mr	chili-bullet-weapons	200	Chili Bullet Weapons	2026-11-13
 mr	chime	200	Chime	2026-11-13
 mr	chimes	200	Chimes	2026-11-13
+mr	china-railway-highspeed	404		2026-11-13
 mr	chinese-ancient-blade	200	中华古刃 - Chinese Ancient Blade	2026-11-13
 mr	chinese-anti-japanese-war-equipment	200	War of Resistance Equipment/中国抗日战争装备	2026-11-13
 mr	chinese-festivals	200	Chinese Festivals	2026-11-13
@@ -28537,7 +28545,7 @@ mr	dragionns-stuff	200	Dragionn's Stuff	2026-11-13
 mr	dragns-bettas-aquatics	200	DragN’s Bettas & Aquatics!	2026-11-13
 mr	dragns-crop-overhaul!	err		2026-11-13
 mr	dragns-deadly-dinos!	err		2026-11-13
-mr	dragns-deadly-dinos-reconstructed	err		2026-11-13
+mr	dragns-deadly-dinos-reconstructed	200	DragN's Deadly Dinos: Reconstructed	2026-11-13
 mr	dragns-livestock-overhaul	200	DragN's Livestock Overhaul!	2026-11-13
 mr	dragns-livestock-overhaul-permafrost	200	DragN's Livestock Overhaul: Permafrost	2026-11-13
 mr	dragns-livestock-overhaul-pets-addon!	err		2026-11-13
@@ -30481,6 +30489,7 @@ mr	gravity-gourds	200	Gravity, Gourds, & You	2026-11-13
 mr	gravity-pads	200	Gravity Pads	2026-11-13
 mr	gravity-torch	200	Gravity Torch	2026-11-13
 mr	gravitychanger	200	Gravity Changer	2026-11-13
+mr	gravityengine	404		2026-11-13
 mr	gravy-delight	200	Gravy Delight	2026-11-13
 mr	grease	200	Grease	2026-11-13
 mr	great-big-world	200	Great Big World	2026-11-13
