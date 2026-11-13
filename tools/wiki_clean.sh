@@ -6,7 +6,9 @@
 #
 # 规则（按顺序执行）：
 #   1) 丢弃 cf 与 mr 都为空的条目（游戏本体、启动器/加载器、只在 MC 百科有页面的模组）；
-#   2) 平台链接必须真实存在：缓存 status=404 的摘除；err/缺失 = 未验证，保留；
+#   2) 平台链接必须真实存在：Modrinth 返回 404 的摘除；CF 侧 404 只记未验证、保留
+#      （cfwidget 对关闭第三方 API 的项目也回 404，实测有网页存在却 404 的项目）；
+#      err/缺失 = 未验证，保留；
 #   3) 名称一致性：标题括号里的英文名与平台侧标题归一化后必须互相包含，
 #      不一致说明 MC 百科上的平台链接张冠李戴（例：按键显示 (Keystrokes) 挂的是 essential-mod），摘除；
 #   4) 同一 slug 被多个条目认领时只留一个：名称一致优先，其次 id 更小；其余摘除该链接；
@@ -76,22 +78,30 @@ awk -F'\t' '
     return r
   }
   # 1 = 名称一致；0 = 无法判断（保留）；-1 = 不存在或不一致（摘除）
-  function score(id, platform, slug,   k, nt, np, i) {
+  # 判定用「名字里的 ASCII 片段」与平台标题互相包含；加载器/版式通用词不参与
+  function score(id, platform, slug,   k, nt, i) {
     k = platform SUBSEP slug
     if ((id SUBSEP k) in ovKey) return 1
     if (!(k in st)) return 0
-    if (st[k] == "404") { reason = "not-found"; return -1 }
+    # Modrinth 官方 API 的 404 可信；cfwidget 对关闭第三方 API 的项目也回 404
+    # （实测 supermartijn642s-core-lib 网页存在但 cfwidget 404），因此 CF 侧只记未验证
+    if (st[k] == "404") {
+      if (platform == "cf") { cf404++; return 0 }
+      reason = "not-found"; return -1
+    }
     if (st[k] != "200") return 0
-    if (na == 0) return 0
+    if (ntok == 0) return 0
     nt = norm(ti[k])
     if (nt == "") return 0
-    for (i = 1; i <= na; i++) {
-      np = norm(part[i])
-      if (np == "") continue
-      if (index(np, nt) > 0 || index(nt, np) > 0) return 1
+    for (i = 1; i <= ntok; i++) {
+      if (index(nt, tok[i]) > 0 || index(tok[i], nt) > 0) return 1
     }
     reason = "name-mismatch"
     return -1
+  }
+  BEGIN {
+    split("forge fabric quilt neoforge mod mods edition port legacy unofficial backport fork updated expanded reborn classic neo", g, " ")
+    for (i in g) gen[g[i]] = 1
   }
   $1 == "C" { if (NF >= 5) { k = $2 SUBSEP $3; st[k] = $4; ti[k] = $5 } next }
   $1 == "O" { if (NF >= 4 && $2 !~ /^#/) ovKey[$2 SUBSEP $3 SUBSEP $4] = 1; next }
@@ -105,16 +115,15 @@ awk -F'\t' '
     for (i = 5; i <= NF; i++) name = name " " $i
     rows++
 
-    # 英文名候选：标题里所有括号内容；整个名字都是 ASCII 时直接用整名
-    na = 0
-    split("", part)
+    # 英文名候选：名字里所有长度 >=3 的 ASCII 字母数字片段（去掉通用词）
+    ntok = 0
+    split("", tok)
     s = name
-    while (match(s, /\([^()]*\)/)) {
-      p = substr(s, RSTART + 1, RLENGTH - 2)
+    while (match(s, /[A-Za-z0-9]+/)) {
+      p = tolower(substr(s, RSTART, RLENGTH))
       s = substr(s, RSTART + RLENGTH)
-      if (p != "") { na++; part[na] = p }
+      if (length(p) >= 3 && !(p in gen)) { ntok++; tok[ntok] = p }
     }
-    if (na == 0 && name ~ /^[ -~]+$/) { na = 1; part[1] = name }
 
     has = 0
     if (cf != "") {
@@ -129,7 +138,10 @@ awk -F'\t' '
     }
     if (has) { print "R\t" id "\t" cf "\t" mr "\t" name; keptRows++ } else noLink++
   }
-  END { printf "C\t%d\t%d\t%d\t%d\n", rows, keptRows, noLink, dropped }
+  END {
+    printf "C\t%d\t%d\t%d\t%d\n", rows, keptRows, noLink, dropped
+    printf "U\t%d\n", cf404
+  }
 ' "$work/meta.tsv" "$RAW" > "$work/pass1.tsv"
 
 # 每个 slug 只留一个认领者：名称一致优先，其次 id 更小
@@ -164,12 +176,15 @@ awk -F'\t' '$1 == "R" { print $2 "\t" $3 "\t" $4 "\t" $5 }' "$work/pass2.tsv" \
   cat "$work/rows.tsv"
 } > "$OUT"
 
-rows=0; keptRows=0; noLink=0; dropped=0; kept=0; dupLost=0
-if [ -s "$work/pass1.tsv" ]; then read -r rows keptRows noLink dropped < <(awk -F'\t' '$1 == "C" { print $2 "\t" $3 "\t" $4 "\t" $5 }' "$work/pass1.tsv"); fi
+rows=0; keptRows=0; noLink=0; dropped=0; kept=0; dupLost=0; cf404=0
+if [ -s "$work/pass1.tsv" ]; then
+  read -r rows keptRows noLink dropped < <(awk -F'\t' '$1 == "C" { print $2 "\t" $3 "\t" $4 "\t" $5 }' "$work/pass1.tsv")
+  cf404=$(awk -F'\t' '$1 == "U" { print $2 }' "$work/pass1.tsv")
+fi
 if [ -s "$work/pass2.tsv" ]; then read -r kept dupLost < <(awk -F'\t' '$1 == "C" { print $2 "\t" $3 }' "$work/pass2.tsv"); fi
 
-summary=$(printf 'raw=%s kept=%s no_link=%s links_dropped=%s dup_lost=%s final=%s' \
-  "$rows" "$keptRows" "$noLink" "$dropped" "$dupLost" "$kept")
+summary=$(printf 'raw=%s kept=%s no_link=%s links_dropped=%s cf_unverified=%s dup_lost=%s final=%s' \
+  "$rows" "$keptRows" "$noLink" "$dropped" "$cf404" "$dupLost" "$kept")
 log "$summary"
 
 if [ -n "$REPORT" ]; then
@@ -177,13 +192,13 @@ if [ -n "$REPORT" ]; then
     printf '# wiki_clean 报告（%s）\n\n' "$(date -u +%F)"
     printf '%s\n\n' "$summary"
     printf '%s\n' '## 被摘除的链接（最多 50 条：id, platform, slug, reason）'
-    if awk -F'\t' '$1 == "D"' "$work/pass1.tsv" | head -n 1 | grep -q .; then
+    if awk -F'\t' '$1 == "D" { f = 1 } END { exit(f ? 0 : 1) }' "$work/pass1.tsv"; then
       awk -F'\t' '$1 == "D" { print $2 "\t" $3 "\t" $4 "\t" $5 }' "$work/pass1.tsv" | head -n 50
     else
       printf '(无)\n'
     fi
     printf '\n%s\n' '## 同名 slug 冲突被摘除的链接（最多 50 条：id, platform, slug）'
-    if awk -F'\t' '$1 == "X"' "$work/pass2.tsv" | head -n 1 | grep -q .; then
+    if awk -F'\t' '$1 == "X" { f = 1 } END { exit(f ? 0 : 1) }' "$work/pass2.tsv"; then
       awk -F'\t' '$1 == "X" { print $2 "\t" $3 "\t" $4 }' "$work/pass2.tsv" | head -n 50
     else
       printf '(无)\n'
