@@ -1,13 +1,24 @@
-# 抓取 MC 百科（mcmod.cn）的模组平台链接与中文名，结果推到 wiki-data 分支的 wiki/modules.tsv。
+# 抓取 MC 百科（mcmod.cn）的模组平台链接与中文名，清理后推到 wiki-data 分支。
 #
-# 结构：plan（算差集 + 切片）→ crawl（matrix 分片抓取）→ merge（合并 + 门禁 + 推送）
-#   * 抓取节奏：串行、每页随机 sleep 4~6s；单分片 400 页 ≈ 37 分钟，远低于单 job 6 小时上限
-#   * max-parallel 控制同时打站点的分片数：每个分片是独立 runner 的独立出口 IP，各自 5~8s/页；
-#     并发压到 8 是为了不让同一批 Azure 出口 IP 被 mcmod 的 WAF 判定为异常（2026-11 本地 6 并发曾被封）
+# 结构：plan（算差集 + 切片）→ crawl（matrix 分片抓取）→ merge（合并成 raw）
+#       → probe_plan/probe（校验平台 slug 是否真实存在、抓平台侧标题）
+#       → publish（清理 + 门禁 + 推送）
+#   * 抓取节奏：串行、每页随机 sleep 4~6s；单分片 400 页 ≈ 37 分钟
+#   * max-parallel 控制同时打站点的分片数：每个分片是独立 runner 的独立出口 IP；
+#     并发压到 8 是为了不让同一批 Azure 出口 IP 被 mcmod 的 WAF 判定为异常
+#   * 平台探针：CurseForge 走 cfwidget（curseforge.com 本站对机房 IP 一律 403 挡在 Cloudflare 后），
+#     Modrinth 走官方 v2 API；结果进 wiki/slug-cache.tsv，30 天复查一次
+#   * wiki/modules.raw.tsv 保留原始合并结果，wiki/modules.tsv 是清理后给启动器用的版本
 #   * 只写 wiki-data 分支，绝不推 main
 name: Wiki Crawl
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/wiki-crawl.yml'
+      - 'tools/**'
+      - 'wiki/**'
   workflow_dispatch:
     inputs:
       limit:
@@ -28,6 +39,7 @@ concurrency:
 
 env:
   SHARD_SIZE: '400'
+  PROBE_SHARD_SIZE: '5000'
 
 jobs:
   plan:
@@ -43,14 +55,16 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: 取回 wiki-data 分支上已有的 modules.tsv
+      - name: 取回 wiki-data 分支上已有的数据
         run: |
           set -euo pipefail
           mkdir -p work
           : > work/base.tsv
           if git fetch --depth=1 origin wiki-data:refs/remotes/origin/wiki-data 2>/dev/null; then
             echo '找到 wiki-data 分支'
-            git show refs/remotes/origin/wiki-data:wiki/modules.tsv > work/base.tsv || : > work/base.tsv
+            git show refs/remotes/origin/wiki-data:wiki/modules.raw.tsv > work/base.tsv 2>/dev/null \
+              || git show refs/remotes/origin/wiki-data:wiki/modules.tsv > work/base.tsv 2>/dev/null \
+              || : > work/base.tsv
           else
             echo '没有 wiki-data 分支，base 为空'
           fi
@@ -69,7 +83,7 @@ jobs:
           sort -u work/ids_all.txt > work/all.txt
           # 线上有、本地没有的才抓（含新上架的条目）
           LC_ALL=C comm -23 work/all.txt work/have.txt > work/target.txt
-          if [ -n "${LIMIT:-}" ]; then
+          if [ -n "${{ env.LIMIT }}" ]; then
             head -n "$LIMIT" work/target.txt > work/target_cut.txt
             mv work/target_cut.txt work/target.txt
           fi
@@ -78,11 +92,11 @@ jobs:
           if [ "$total" -eq 0 ]; then
             echo 'matrix=[]' >> "$GITHUB_OUTPUT"
             echo 'has_target=false' >> "$GITHUB_OUTPUT"
-            echo '没有需要抓的 id，下游 job 跳过'
+            echo '没有需要抓的 id，抓取阶段跳过'
             exit 0
           fi
           echo 'has_target=true' >> "$GITHUB_OUTPUT"
-          awk -v chunk="${SHARD_SIZE:-400}" '{
+          awk -v chunk="${{ env.SHARD_SIZE }}" '{
               buf = (buf == "" ? $0 : buf " " $0)
               if (++n % chunk == 0) { printf "%d\t%s\n", shard, buf; shard++; buf = "" }
             }
@@ -131,10 +145,11 @@ jobs:
           retention-days: 7
 
   merge:
-    name: Merge and push
+    name: Merge raw
     needs: [plan, crawl]
-    # 个别分片失败（被 WAF 挡住、runner 超时）时也要把已经抓到的数据合进去
-    if: always() && needs.plan.result == 'success' && needs.plan.outputs.has_target == 'true'
+    # 个别分片失败（被 WAF 挡住、runner 超时）时也要把已经抓到的数据合进去；
+    # 没有新 id 时 crawl 被跳过，这里仍然要把旧数据原样带下去
+    if: always() && needs.plan.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -145,7 +160,6 @@ jobs:
 
       - name: 下载全部分片
         uses: actions/download-artifact@v7
-        # 全部分片都失败时没有任何 artifact，别把 merge 整条打挂
         continue-on-error: true
         with:
           pattern: wiki-shard-*
@@ -156,35 +170,221 @@ jobs:
           set -euo pipefail
           : > base.tsv
           if git fetch --depth=1 origin wiki-data:refs/remotes/origin/wiki-data 2>/dev/null; then
-            git show refs/remotes/origin/wiki-data:wiki/modules.tsv > base.tsv || : > base.tsv
+            git show refs/remotes/origin/wiki-data:wiki/modules.raw.tsv > base.tsv 2>/dev/null \
+              || git show refs/remotes/origin/wiki-data:wiki/modules.tsv > base.tsv 2>/dev/null \
+              || : > base.tsv
           fi
           echo "base 行数: $(wc -l < base.tsv | tr -d ' ')"
 
       - name: 合并
         run: |
           set -euo pipefail
-          # download-artifact 会把每个分片放进 shards/<artifact 名>/ 子目录，用 find 兜住两种布局
           mapfile -t shards < <(find shards -type f -name 'shard.tsv' 2>/dev/null | sort)
           if [ ${#shards[@]} -eq 0 ]; then
             echo '没有可用分片，沿用旧数据'
-            cp base.tsv merged.tsv
+            cp base.tsv raw.tsv
           else
             echo "分片数: ${#shards[@]}"
-            bash tools/wiki_merge.sh --base base.tsv --shard "${shards[@]}" --out merged.tsv
+            bash tools/wiki_merge.sh --base base.tsv --shard "${shards[@]}" --out raw.tsv
           fi
           echo '--- 合并结果前 5 行:'
-          head -5 merged.tsv
+          head -5 raw.tsv
 
-      - name: 启动器门禁（>1024 字节且非注释 TAB 行 >= 20）
+      - name: 原始数据门禁（>1024 字节且非注释 TAB 行 >= 20）
         id: gate
         run: |
           set -euo pipefail
-          size=$(wc -c < merged.tsv | tr -d ' ')
-          rows=$(awk '!/^#/ && index($0, "\t") > 0' merged.tsv | wc -l | tr -d ' ')
+          size=$(wc -c < raw.tsv | tr -d ' ')
+          rows=$(awk '!/^#/ && index($0, "\t") > 0' raw.tsv | wc -l | tr -d ' ')
           echo "size=$size rows=$rows"
           if [ "$size" -le 1024 ] || [ "$rows" -lt 20 ]; then
             echo 'ok=false' >> "$GITHUB_OUTPUT"
-            echo "::warning::合并产物没过启动器门禁（>1024 字节且非注释 TAB 行 >=20），放弃推送以免覆盖已有数据"
+            echo "::warning::合并产物没过门禁（>1024 字节且非注释 TAB 行 >=20），后续不会推送"
+          else
+            echo 'ok=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 上传合并产物
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: wiki-merged
+          path: raw.tsv
+          if-no-files-found: warn
+          retention-days: 7
+
+  probe_plan:
+    name: Probe plan
+    needs: [merge]
+    if: always() && needs.merge.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      matrix: ${{ steps.split.outputs.matrix }}
+      count: ${{ steps.split.outputs.count }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: 下载合并产物
+        uses: actions/download-artifact@v7
+        with:
+          name: wiki-merged
+          path: .
+
+      - name: 取回探针缓存
+        run: |
+          set -euo pipefail
+          : > cache_old.tsv
+          if git fetch --depth=1 origin wiki-data:refs/remotes/origin/wiki-data 2>/dev/null; then
+            git show refs/remotes/origin/wiki-data:wiki/slug-cache.tsv > cache_old.tsv 2>/dev/null || : > cache_old.tsv
+          fi
+          echo "已有缓存行数: $(wc -l < cache_old.tsv | tr -d ' ')"
+
+      - name: 生成待探针清单
+        id: split
+        run: |
+          set -euo pipefail
+          awk -F'\t' '!/^#/ && NF >= 4 { if ($2 != "") print "cf\t" $2; if ($3 != "") print "mr\t" $3 }' raw.tsv \
+            | sort -u > slugs.tsv
+          echo "raw 里引用的平台 slug 数: $(wc -l < slugs.tsv | tr -d ' ')"
+          bash tools/wiki_probe.sh --list slugs.tsv --cache cache_old.tsv --plan todo.tsv
+          rm -f slice-*.tsv
+          split -l "${{ env.PROBE_SHARD_SIZE }}" -d -a 3 --additional-suffix=.tsv todo.tsv slice-
+          count=$(ls slice-*.tsv 2>/dev/null | wc -l | tr -d ' ')
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          if [ "$count" -eq 0 ]; then
+            echo 'matrix=[]' >> "$GITHUB_OUTPUT"
+            echo '缓存全部新鲜，本轮不需要探针'
+            exit 0
+          fi
+          awk 'BEGIN { printf "{\"include\":[" }
+            { if (NR > 1) printf ","; printf "{\"shard\":\"%03d\"}", NR - 1 }
+            END { print "]}" }' < <(ls slice-*.tsv | sort) > matrix.json
+          echo "matrix=$(cat matrix.json)" >> "$GITHUB_OUTPUT"
+          echo "待探针分片: $count"
+
+      - name: 上传分片清单
+        if: steps.split.outputs.count != '0'
+        uses: actions/upload-artifact@v7
+        with:
+          name: probe-list
+          path: slice-*.tsv
+          if-no-files-found: warn
+          retention-days: 7
+
+  probe:
+    name: Probe shard ${{ matrix.shard }}
+    needs: [probe_plan]
+    if: needs.probe_plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix: ${{ fromJson(needs.probe_plan.outputs.matrix) }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: 下载分片清单
+        uses: actions/download-artifact@v7
+        with:
+          name: probe-list
+          path: lists
+
+      - name: 取回探针缓存
+        run: |
+          set -euo pipefail
+          : > cache_old.tsv
+          if git fetch --depth=1 origin wiki-data:refs/remotes/origin/wiki-data 2>/dev/null; then
+            git show refs/remotes/origin/wiki-data:wiki/slug-cache.tsv > cache_old.tsv 2>/dev/null || : > cache_old.tsv
+          fi
+
+      - name: 探针
+        run: |
+          set -euo pipefail
+          bash tools/wiki_probe.sh --list "lists/slice-${{ matrix.shard }}.tsv" --cache cache_old.tsv --out cache.tsv --jobs 4
+
+      - name: 上传缓存
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: probe-cache-${{ matrix.shard }}
+          path: cache.tsv
+          if-no-files-found: warn
+          retention-days: 7
+
+  publish:
+    name: Clean and push
+    needs: [plan, merge, probe]
+    if: always() && needs.merge.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: 下载合并产物
+        uses: actions/download-artifact@v7
+        with:
+          name: wiki-merged
+          path: .
+
+      - name: 下载探针缓存
+        uses: actions/download-artifact@v7
+        continue-on-error: true
+        with:
+          pattern: probe-cache-*
+          path: probes
+
+      - name: 取回旧数据
+        run: |
+          set -euo pipefail
+          : > old_modules.tsv
+          : > cache_old.tsv
+          if git fetch --depth=1 origin wiki-data:refs/remotes/origin/wiki-data 2>/dev/null; then
+            git show refs/remotes/origin/wiki-data:wiki/modules.tsv > old_modules.tsv 2>/dev/null || : > old_modules.tsv
+            git show refs/remotes/origin/wiki-data:wiki/slug-cache.tsv > cache_old.tsv 2>/dev/null || : > cache_old.tsv
+          fi
+          echo "旧 modules 行数: $(wc -l < old_modules.tsv | tr -d ' ')，旧缓存行数: $(wc -l < cache_old.tsv | tr -d ' ')"
+
+      - name: 合并探针缓存
+        run: |
+          set -euo pipefail
+          mapfile -t parts < <(find probes -type f -name 'cache.tsv' 2>/dev/null | sort)
+          {
+            cat cache_old.tsv
+            for f in "${parts[@]:-}"; do
+              if [ -n "$f" ] && [ -f "$f" ]; then cat "$f"; fi
+            done
+          } | awk -F'\t' 'NF >= 3' \
+            | LC_ALL=C sort -t$'\t' -k1,1 -k2,2 -k5,5r \
+            | awk -F'\t' '!seen[$1 SUBSEP $2]++' > cache.tsv
+          echo "合并后缓存行数: $(wc -l < cache.tsv | tr -d ' ')"
+
+      - name: 清理
+        run: |
+          set -euo pipefail
+          bash tools/wiki_clean.sh --raw raw.tsv --cache cache.tsv --overrides wiki/overrides.tsv \
+            --out modules.tsv --report clean-report.md
+
+      - name: 发布门禁（>1024 字节且非注释 TAB 行 >= 20）
+        id: gate
+        run: |
+          set -euo pipefail
+          size=$(wc -c < modules.tsv | tr -d ' ')
+          rows=$(awk '!/^#/ && index($0, "\t") > 0' modules.tsv | wc -l | tr -d ' ')
+          echo "size=$size rows=$rows"
+          if [ "$size" -le 1024 ] || [ "$rows" -lt 20 ]; then
+            echo 'ok=false' >> "$GITHUB_OUTPUT"
+            echo "::warning::清理后只剩 $rows 行，未过启动器门禁，放弃推送以免覆盖已有数据"
           else
             echo 'ok=true' >> "$GITHUB_OUTPUT"
           fi
@@ -193,14 +393,17 @@ jobs:
         id: diff
         run: |
           set -euo pipefail
-          if cmp -s base.tsv merged.tsv; then
+          changed=0
+          cmp -s old_modules.tsv modules.tsv || changed=1
+          cmp -s cache_old.tsv cache.tsv || changed=1
+          if [ "$changed" -eq 0 ]; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
             echo '数据无变化，不推送'
             exit 0
           fi
           added=$(LC_ALL=C comm -13 \
-            <(awk -F'\t' '!/^#/ && $1 ~ /^[0-9]+$/ {print $1}' base.tsv | sort -u) \
-            <(awk -F'\t' '!/^#/ && $1 ~ /^[0-9]+$/ {print $1}' merged.tsv | sort -u) \
+            <(awk -F'\t' '!/^#/ && $1 ~ /^[0-9]+$/ {print $1}' old_modules.tsv | sort -u) \
+            <(awk -F'\t' '!/^#/ && $1 ~ /^[0-9]+$/ {print $1}' modules.tsv | sort -u) \
             | wc -l | tr -d ' ')
           echo 'changed=true' >> "$GITHUB_OUTPUT"
           echo "added=$added" >> "$GITHUB_OUTPUT"
@@ -212,18 +415,20 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          # 切分支会清掉工作区未跟踪文件，先把结果挪到 /tmp
-          cp merged.tsv /tmp/merged.tsv
+          mkdir -p /tmp/out
+          cp modules.tsv raw.tsv cache.tsv clean-report.md /tmp/out/
           if git rev-parse --verify refs/remotes/origin/wiki-data >/dev/null 2>&1; then
             git checkout -B wiki-data refs/remotes/origin/wiki-data
           else
-            # 分支还不存在：开一个只放数据文件的孤儿分支
             git checkout --orphan wiki-data
             git rm -rq --cached . >/dev/null 2>&1 || true
             find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           fi
           mkdir -p wiki
-          cp /tmp/merged.tsv wiki/modules.tsv
-          git add -f wiki/modules.tsv
-          git commit -m "wiki: 更新 modules.tsv（新增 ${{ steps.diff.outputs.added }} 个 id，本轮抓取 ${{ needs.plan.outputs.total }} 页）"
+          cp /tmp/out/modules.tsv wiki/modules.tsv
+          cp /tmp/out/raw.tsv wiki/modules.raw.tsv
+          cp /tmp/out/cache.tsv wiki/slug-cache.tsv
+          cp /tmp/out/clean-report.md wiki/clean-report.md
+          git add -f wiki/modules.tsv wiki/modules.raw.tsv wiki/slug-cache.tsv wiki/clean-report.md
+          git commit -m "wiki: 更新模块数据（新增 ${{ steps.diff.outputs.added }} 个 id，本轮抓取 ${{ needs.plan.outputs.total }} 页）"
           git push origin HEAD:wiki-data

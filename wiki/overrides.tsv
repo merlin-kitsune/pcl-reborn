@@ -1,0 +1,3 @@
+# 人工白名单：id<TAB>platform<TAB>slug
+# 每行强制保留一个平台链接，跳过「不存在」与「名称不一致」判定。
+# 例：207	cf	some-mod-slug
