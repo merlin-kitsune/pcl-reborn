@@ -80,6 +80,17 @@ public class WikiEntry {
     });
 
     /// <summary>
+    /// 内置数据库的内容指纹（SHA-256），用于判断启动器更新后内置数据是否发生变化。
+    /// </summary>
+    public static string BuiltinSignature {
+        get {
+            var bytes = FileUtils.ReadAsBytes(@"Resource\WikiEntries.txt", type: typeof(WikiEntry));
+            using var sha256 = System.Security.Cryptography.SHA256.Create();
+            return BitConverter.ToString(sha256.ComputeHash(bytes)).Replace("-", "");
+        }
+    }
+
+    /// <summary>
     /// 启动器从 GitHub 同步下来的补充条目文件路径（TSV 格式，每行 <c>ID \t CurseForge Slug \t Modrinth Slug \t 中文名</c>，<c>#</c> 开头为注释）。
     /// <para/>需要在首次访问 <see cref="All"/> 之前赋值；为 <c>null</c> 或文件不存在时直接忽略。
     /// </summary>

@@ -2,6 +2,7 @@
 '因此启动时在后台线程从本项目的数据分支同步一份最新的模组中文名列表，
 '缓存到 PCL 目录下的 WikiModules.tsv，由 PCLCS.WikiEntry 在解析内置数据库时并入（不覆盖已有条目）。
 '数据优先走 jsDelivr 通道，GitHub 原始链接作为镜像失效时的备用手段。
+'内置的 WikiEntries.txt 随启动器更新变化时，会先清空旧的本地补充数据再重新同步，避免新旧数据重复。
 
 ''' <summary>
 ''' 从 GitHub 项目仓库同步最新的模组中文名列表。
@@ -19,12 +20,15 @@ Public Module ModWikiSync
     Public ReadOnly Property LocalPath As String = Paths.Base & "PCL\WikiModules.tsv"
     ''' <summary> 记录上次同步的 ETag 的文件，用于避免重复下载。 </summary>
     Private ReadOnly Property MetaPath As String = Paths.Base & "PCL\WikiModules.meta"
+    ''' <summary> 记录上次匹配的内置数据库指纹，用于判断内置 WikiEntries.txt 是否随更新变化。 </summary>
+    Private ReadOnly Property SignaturePath As String = Paths.Base & "PCL\WikiModules.ver"
 
     ''' <summary>
     ''' 设置补充数据的路径，并在后台线程中同步最新数据。
     ''' <para/>必须在任何 WikiEntry.All 的访问之前调用。
     ''' </summary>
     Friend Sub Init()
+        ResetSupplementIfBuiltinChanged()
         Try
             PCLCS.WikiEntry.SupplementPath = LocalPath
         Catch ex As Exception
@@ -35,6 +39,27 @@ Public Module ModWikiSync
             .Name = "WikiSync"
         }
         SyncThread.Start()
+    End Sub
+
+    ''' <summary>
+    ''' 内置的 WikiEntries.txt 发生变化时（启动器更新带来了新的内置数据），
+    ''' 清空旧的补充数据与 ETag，由后续的 Sync 重新下载完整数据，避免新旧数据重复或冲突。
+    ''' </summary>
+    Private Sub ResetSupplementIfBuiltinChanged()
+        Try
+            Dim Signature As String = PCLCS.WikiEntry.BuiltinSignature
+            Dim LastSignature As String = If(File.Exists(SignaturePath), File.ReadAllText(SignaturePath).Trim(), "")
+            If LastSignature = Signature Then Return
+
+            If File.Exists(LocalPath) Then File.Delete(LocalPath)
+            If File.Exists(LocalPath & ".tmp") Then File.Delete(LocalPath & ".tmp")
+            If File.Exists(MetaPath) Then File.Delete(MetaPath)
+            IO.Directory.CreateDirectory(IO.Path.GetDirectoryName(SignaturePath))
+            File.WriteAllText(SignaturePath, Signature, New Text.UTF8Encoding(False))
+            Logger.Info($"内置 Wiki 数据已变化（{If(LastSignature = "", "首次记录", LastSignature.Substring(0, Math.Min(8, LastSignature.Length)))} → {Signature.Substring(0, 8)}），已清空本地补充数据")
+        Catch ex As Exception
+            Logger.Warn(ex, "检查内置 Wiki 数据版本失败")
+        End Try
     End Sub
 
     ''' <summary> 同步一次列表。失败时只记录日志，不打扰用户。 </summary>
