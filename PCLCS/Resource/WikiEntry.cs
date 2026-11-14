@@ -30,6 +30,9 @@ public class WikiEntry {
     /// </summary>
     public static readonly Lazy<List<WikiEntry>> All = new(() => {
         var dataLines = FileUtils.ReadAsLines(@"Resource\WikiEntries.txt", type: typeof(WikiEntry)).ToList();
+        // 兼容文件末尾残留的换行：SplitLines 会为结尾换行产生一个空元素
+        while (dataLines.Count > 0 && string.IsNullOrWhiteSpace(dataLines[^1])) dataLines.RemoveAt(dataLines.Count - 1);
+        if (dataLines.Count == 0) return [];
 
         // 读取最后一行的浏览量
         Queue<int> popularities = [];

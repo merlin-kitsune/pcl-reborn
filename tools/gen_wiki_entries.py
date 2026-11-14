@@ -83,7 +83,7 @@ def main():
         value = old.get(lineno, 0)
         if value: carried += 1
         pops.append(encode86(value))
-    body = '\r\n'.join(slots[1:]) + '\r\n' + ''.join(pops) + '\r\n'
+    body = '\r\n'.join(slots[1:]) + '\r\n' + ''.join(pops)  # 末尾不留换行，解析器以最后一行为浏览量
     with open(a.out, 'w', encoding='utf-8', newline='') as f:
         f.write(body)
     stats = 'lines=%d entries=%d skipped=%d popularity=%d carried=%d max_id=%d' % (
