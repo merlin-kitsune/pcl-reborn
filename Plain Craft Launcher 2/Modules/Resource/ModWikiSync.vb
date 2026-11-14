@@ -1,7 +1,7 @@
 '本地修改：内置的 MC 百科数据库（PCLCS/Resource/WikiEntries.txt）随版本固定，无法覆盖新模组。
 '因此启动时在后台线程从本项目的数据分支同步一份最新的模组中文名列表，
 '缓存到 PCL 目录下的 WikiModules.tsv，由 PCLCS.WikiEntry 在解析内置数据库时并入（不覆盖已有条目）。
-'数据优先走 jsDelivr 通道，GitHub 原始链接作为镜像失效时的备用手段。
+'数据优先走 gh-proxy 通道，GitHub 原始链接作为镜像失效时的备用手段。
 '内置的 WikiEntries.txt 随启动器更新变化时，会先清空旧的本地补充数据再重新同步，避免新旧数据重复。
 
 ''' <summary>
@@ -9,9 +9,9 @@
 ''' </summary>
 Public Module ModWikiSync
 
-    ''' <summary> 数据地址：jsDelivr 通道（由 GitHub Actions 定时抓取并发布到 wiki-data 分支）。 </summary>
+    ''' <summary> 数据地址：gh-proxy 通道（由 GitHub Actions 定时抓取并发布到 wiki-data 分支）。 </summary>
     Private Const CdnUrl As String =
-        "https://cdn.jsdelivr.net/gh/merlin-kitsune/pcl-reborn@wiki-data/wiki/modules.tsv"
+        "https://gh-proxy.com/https://raw.githubusercontent.com/merlin-kitsune/pcl-reborn/wiki-data/wiki/modules.tsv"
     ''' <summary> 数据地址：GitHub 原始链接，作为备用镜像。 </summary>
     Private Const RawUrl As String =
         "https://raw.githubusercontent.com/merlin-kitsune/pcl-reborn/wiki-data/wiki/modules.tsv"
@@ -67,9 +67,9 @@ Public Module ModWikiSync
         Try
             Thread.Sleep(RandomInteger(2000, 4000)) '避开启动时的其它联网请求
             Dim ETag As String = If(File.Exists(MetaPath), File.ReadAllText(MetaPath).Trim(), "")
-            'GitHub 原始链接是最新的（分支更新后立刻可见）；jsDelivr 有十几小时缓存，仅作镜像回退
-            If TrySyncFrom(RawUrl, ETag) Then Return
-            TrySyncFrom(CdnUrl, "") 'GitHub 原始链接不可用时回退到 jsDelivr 镜像
+            'gh-proxy 转发 GitHub 原始链接，国内可访问；直连 raw.githubusercontent.com 作为回退
+            If TrySyncFrom(CdnUrl, ETag) Then Return
+            TrySyncFrom(RawUrl, "") 'gh-proxy 不可用时回退到 GitHub 原始链接
         Catch ex As Exception
             Logger.Warn(ex, "同步模组中文名列表失败")
         End Try

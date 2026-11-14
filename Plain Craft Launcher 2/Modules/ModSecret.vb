@@ -273,56 +273,34 @@ Friend Module ModSecret
     End Sub
 
     ''' <summary>
-    ''' 读取最新版本号。优先走 jsDelivr 的版本索引（国内外都能访问），失败时回退到 GitHub 发布页重定向。
+    ''' 读取最新版本号。优先走 gh-proxy 转发的 GitHub Release API（国内可访问），失败时回退到 GitHub 发布页重定向。
     ''' </summary>
     Private Function GetLatestReleaseTag() As String
         Try
-            Dim JsDelivrTag As String = GetLatestReleaseTagByJsDelivr()
-            'jsDelivr 的版本索引有明显延迟：新 Release 发布后它可能还停留在旧版本。
-            '若它给出版本比当前版本还旧，说明索引没跟上，改用 GitHub 发布页确认，避免误报「已是最新」。
-            Dim JsDelivrVer As Version = Nothing
-            Dim CurrentVer As Version = Nothing
-            If Version.TryParse(JsDelivrTag.TrimStart("v"c, "V"c), JsDelivrVer) AndAlso
-               Version.TryParse(VersionBaseName, CurrentVer) AndAlso JsDelivrVer < CurrentVer Then
-                Logger.Info($"jsDelivr 版本索引滞后（{JsDelivrTag} < {VersionBaseName}），改用 GitHub 发布页")
-                Return GetLatestReleaseTagByGitHub()
-            End If
-            Return JsDelivrTag
+            Return GetLatestReleaseTagByGhProxy()
         Catch ex As Exception
-            Logger.Warn(ex, "通过 jsDelivr 获取最新版本号失败，改用 GitHub 发布页")
+            Logger.Warn(ex, "通过 gh-proxy 获取最新版本号失败，改用 GitHub 发布页")
         End Try
         Return GetLatestReleaseTagByGitHub()
     End Function
 
     ''' <summary>
-    ''' 从 jsDelivr 的包版本索引中读取最新版本号（不经过 GitHub，国内访问更稳定）。
+    ''' 通过 gh-proxy 转发 GitHub Release API 读取最新版本号（不直连 GitHub，国内访问更稳定）。
     ''' </summary>
-    Private Function GetLatestReleaseTagByJsDelivr() As String
+    Private Function GetLatestReleaseTagByGhProxy() As String
         Dim Handler As New System.Net.Http.HttpClientHandler With {.AllowAutoRedirect = True}
         Using Client As New System.Net.Http.HttpClient(Handler)
             Client.Timeout = TimeSpan.FromSeconds(20)
             Using Req As New System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.Get,
-                                                               "https://data.jsdelivr.com/v1/packages/gh/merlin-kitsune/pcl-reborn")
+                                                               "https://gh-proxy.com/https://api.github.com/repos/merlin-kitsune/pcl-reborn/releases/latest")
                 Req.Headers.Add("User-Agent", $"PCL2/{VersionBaseName}")
+                Req.Headers.Add("Accept", "application/vnd.github+json")
                 Using Resp As System.Net.Http.HttpResponseMessage = Client.SendAsync(Req).Result
                     If Not Resp.IsSuccessStatusCode Then Throw New Exception($"HTTP {CInt(Resp.StatusCode)}")
                     Dim Body As JObject = JObject.Parse(Resp.Content.ReadAsStringAsync().Result)
-                    Dim Latest As Version = Nothing
-                    Dim LatestRaw As String = ""
-                    Dim Versions As JArray = TryCast(Body("versions"), JArray)
-                    If Versions IsNot Nothing Then
-                        For Each Item As JToken In Versions
-                            Dim Raw As String = If(TryCast(Item("version"), JValue)?.ToString(), "").Trim()
-                            Dim Ver As Version = Nothing
-                            If Raw = "" OrElse Not Version.TryParse(Raw.TrimStart("v"c, "V"c), Ver) Then Continue For
-                            If Latest Is Nothing OrElse Ver > Latest Then
-                                Latest = Ver
-                                LatestRaw = Raw
-                            End If
-                        Next
-                    End If
-                    If Latest Is Nothing Then Throw New Exception("版本索引中没有可识别的版本号")
-                    Return LatestRaw
+                    Dim Tag As String = If(TryCast(Body("tag_name"), JValue)?.ToString(), "").Trim()
+                    If Tag = "" Then Throw New Exception("Release API 中没有可识别的版本号")
+                    Return Tag
                 End Using
             End Using
         End Using
@@ -365,13 +343,13 @@ Friend Module ModSecret
         '本地修改：官方 Release 页没有附件，最新正式版以「最新正式版.zip」的形式放在仓库根目录
         Dim ZipPath As String = PathTemp & "LatestPCL.zip"
         Dim Target As String = PathTemp & "Latest.exe"
-        '本地修改：优先走 jsDelivr 通道，GitHub 原始链接作为镜像失效时的备用手段
-        Dim CdnUrl As String = "https://cdn.jsdelivr.net/gh/merlin-kitsune/pcl-reborn@main/" & Uri.EscapeDataString("最新正式版.zip")
+        '本地修改：优先走 gh-proxy 通道，GitHub 原始链接作为镜像失效时的备用手段
+        Dim CdnUrl As String = "https://gh-proxy.com/https://raw.githubusercontent.com/merlin-kitsune/pcl-reborn/main/" & Uri.EscapeDataString("最新正式版.zip")
         Dim RawUrl As String = "https://raw.githubusercontent.com/merlin-kitsune/pcl-reborn/main/" & Uri.EscapeDataString("最新正式版.zip")
         Try
             NetDownloadByLoader(CdnUrl, ZipPath, LoaderToSyncProgress)
         Catch ex As Exception
-            Logger.Warn(ex, "从 jsDelivr 下载最新正式版失败，改用 GitHub 原始链接")
+            Logger.Warn(ex, "从 gh-proxy 下载最新正式版失败，改用 GitHub 原始链接")
             NetDownloadByLoader(RawUrl, ZipPath, LoaderToSyncProgress)
         End Try
         Using Archive As System.IO.Compression.ZipArchive = System.IO.Compression.ZipFile.OpenRead(ZipPath)
