@@ -11,6 +11,14 @@ Public Class FormMain
         Dim FeatureList As New List(Of KeyValuePair(Of Integer, String))
         '统计更新日志条目
         If BuildType = BuildTypes.Release Then
+            If LastVersion < 416 Then 'Release 2.99.3.0
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复：部分模组被错误关联到其它模组的中文名，例如 Essential Mod 显示为「按键显示」"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：模组资料采集增加平台检索与名称一致性校验，自动剔除失效或错误的平台链接"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复：更新内置模组资料后自动清理本地旧缓存，避免旧数据与新版本重复"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "新增：版本筛选栏补充 26.1.2"))
+                FeatureCount += 4
+                BugCount += 2
+            End If
             If LastVersion < 415 Then 'Release 2.99.2.0
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "新增：启动后自动同步最新的模组中文名与百科信息，在下载页与搜索中生效（下次启动生效）"))
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：检查更新与下载更新包增加 CDN 通道，访问更稳定"))
