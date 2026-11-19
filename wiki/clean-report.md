@@ -1,6 +1,6 @@
-# wiki_clean 报告（2026-11-18）
+# wiki_clean 报告（2026-11-19）
 
-raw=32549 kept=27158 no_link=5391 links_dropped=1007 cf_unverified=5479 dup_lost=46 final=27112
+raw=32569 kept=27174 no_link=5395 links_dropped=1010 cf_unverified=5485 dup_lost=46 final=27128
 
 ## 被摘除的链接（最多 50 条：id, platform, slug, reason）
 55	cf	tale-of-kingdoms	name-mismatch
@@ -107,4 +107,4 @@ raw=32549 kept=27158 no_link=5391 links_dropped=1007 cf_unverified=5479 dup_lost
 4139	mr	tweakmyclient
 
 ## 其余统计
-rows=32549 kept_rows=27158 no_link_rows=5391 dup_lost_rows=46 final_rows=27112
+rows=32569 kept_rows=27174 no_link_rows=5395 dup_lost_rows=46 final_rows=27128
