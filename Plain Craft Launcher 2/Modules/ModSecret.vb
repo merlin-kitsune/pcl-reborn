@@ -1,5 +1,10 @@
 '由于包含加解密等安全信息，本文件中的部分代码已被删除
 
+Friend Class PclReleaseInfo
+    Public Tag As String
+    Public DownloadUrl As String
+End Class
+
 Friend Module ModSecret
 
     '标注 PCL 的不同分支，仅用于替换标记
@@ -247,20 +252,23 @@ Friend Module ModSecret
     '本地修改：恢复联网检查更新。官方 ServerConfig/notice 走 CDN 签名（SecretCdnSign，开源版已剥离），
     '因此这里改为直接读取 GitHub 官方发布页的 latest 重定向（即官方分发渠道），无需任何密钥。
     Friend Sub UpdateCheckByButton()
+        If IsUpdateDownloading Then
+            Hint("更新正在下载中，请稍候……")
+            Return
+        End If
         RunInThread(
         Sub()
             Try
-                Dim LatestTag As String = GetLatestReleaseTag()
+                Dim Release As PclReleaseInfo = GetLatestRelease()
                 Dim LatestVer As Version = Nothing
                 Dim CurrentVer As Version = Nothing
-                If Not Version.TryParse(LatestTag.TrimStart("v"c, "V"c), LatestVer) Then Throw New Exception($"无法识别最新版本号：{LatestTag}")
+                If Not Version.TryParse(Release.Tag.TrimStart("v"c, "V"c), LatestVer) Then Throw New Exception($"无法识别最新版本号：{Release.Tag}")
                 If Not Version.TryParse(VersionBaseName, CurrentVer) Then Throw New Exception($"无法识别当前版本号：{VersionBaseName}")
                 If LatestVer > CurrentVer Then
-                    Logger.Info($"发现新版本：{LatestTag}（当前 {VersionBaseName}）")
+                    Logger.Info($"发现新版本：{Release.Tag}（当前 {VersionBaseName}）")
                     RunInUi(Sub()
-                                MyMsgBox($"发现新版本：{LatestTag}{vbCrLf}当前版本：{VersionBaseName}{vbCrLf}{vbCrLf}是否前往官方发布页下载？",
-                                        "检查更新", "前往下载", "稍后",
-                                        Button1Action:=Sub() OpenWebsite($"https://github.com/merlin-kitsune/pcl-reborn/releases/tag/{LatestTag}"))
+                                If MyMsgBox($"发现新版本：{Release.Tag}{vbCrLf}当前版本：{VersionBaseName}{vbCrLf}{vbCrLf}是否立即下载并安装？",
+                                            "检查更新", "立即更新", "稍后") = 1 Then DownloadUpdate(Release)
                             End Sub)
                 Else
                     Hint($"当前已是最新版本（{VersionBaseName}）", HintType.Green)
@@ -273,21 +281,50 @@ Friend Module ModSecret
     End Sub
 
     ''' <summary>
-    ''' 读取最新版本号。优先走 gh-proxy 转发的 GitHub Release API（国内可访问），失败时回退到 GitHub 发布页重定向。
+    ''' 启动时按设置检查更新。0 = 自动下载，1 = 提示，2/3 = 不主动检查。
     ''' </summary>
-    Private Function GetLatestReleaseTag() As String
+    Friend Sub UpdateCheckOnStartup()
+        If Settings.Get(Of Integer)("SystemSystemUpdate") >= 2 Then Return
+        RunInNewThread(
+        Sub()
+            Try
+                Dim Release As PclReleaseInfo = GetLatestRelease()
+                Dim LatestVer As Version = Nothing
+                Dim CurrentVer As Version = Nothing
+                If Not Version.TryParse(Release.Tag.TrimStart("v"c, "V"c), LatestVer) Then Return
+                If Not Version.TryParse(VersionBaseName, CurrentVer) Then Return
+                If LatestVer <= CurrentVer Then Return
+                Logger.Info($"发现新版本：{Release.Tag}（当前 {VersionBaseName}）")
+                If Settings.Get(Of Integer)("SystemSystemUpdate") = 1 Then
+                    RunInUi(Sub()
+                                If MyMsgBox($"发现新版本：{Release.Tag}{vbCrLf}当前版本：{VersionBaseName}{vbCrLf}{vbCrLf}是否立即下载并安装？",
+                                            "检查更新", "立即更新", "稍后") = 1 Then DownloadUpdate(Release)
+                            End Sub)
+                Else
+                    DownloadUpdate(Release)
+                End If
+            Catch ex As Exception
+                Logger.Warn(ex, "启动时检查更新失败")
+            End Try
+        End Sub, "UpdateCheckOnStartup", ThreadPriority.BelowNormal)
+    End Sub
+
+    ''' <summary>
+    ''' 读取最新版本信息。优先走 gh-proxy 转发的 GitHub Release API（国内可访问），失败时回退到 GitHub 发布页重定向。
+    ''' </summary>
+    Private Function GetLatestRelease() As PclReleaseInfo
         Try
-            Return GetLatestReleaseTagByGhProxy()
+            Return GetLatestReleaseByGhProxy()
         Catch ex As Exception
-            Logger.Warn(ex, "通过 gh-proxy 获取最新版本号失败，改用 GitHub 发布页")
+            Logger.Warn(ex, "通过 gh-proxy 获取最新版本信息失败，改用 GitHub 发布页")
         End Try
-        Return GetLatestReleaseTagByGitHub()
+        Return GetLatestReleaseByGitHub()
     End Function
 
     ''' <summary>
-    ''' 通过 gh-proxy 转发 GitHub Release API 读取最新版本号（不直连 GitHub，国内访问更稳定）。
+    ''' 通过 gh-proxy 转发 GitHub Release API 读取最新版本与下载地址（不直连 GitHub，国内访问更稳定）。
     ''' </summary>
-    Private Function GetLatestReleaseTagByGhProxy() As String
+    Private Function GetLatestReleaseByGhProxy() As PclReleaseInfo
         Dim Handler As New System.Net.Http.HttpClientHandler With {.AllowAutoRedirect = True}
         Using Client As New System.Net.Http.HttpClient(Handler)
             Client.Timeout = TimeSpan.FromSeconds(20)
@@ -300,10 +337,33 @@ Friend Module ModSecret
                     Dim Body As JObject = JObject.Parse(Resp.Content.ReadAsStringAsync().Result)
                     Dim Tag As String = If(TryCast(Body("tag_name"), JValue)?.ToString(), "").Trim()
                     If Tag = "" Then Throw New Exception("Release API 中没有可识别的版本号")
-                    Return Tag
+                    Dim DownloadUrl As String = ""
+                    Dim Assets As JArray = TryCast(Body("assets"), JArray)
+                    If Assets IsNot Nothing Then
+                        For Each AssetToken As JToken In Assets
+                            Dim Asset As JObject = TryCast(AssetToken, JObject)
+                            If Asset Is Nothing Then Continue For
+                            Dim Name As String = If(TryCast(Asset("name"), JValue)?.ToString(), "")
+                            Dim Url As String = If(TryCast(Asset("browser_download_url"), JValue)?.ToString(), "")
+                            If Name.EndsWithF(".zip", True) AndAlso Url <> "" Then
+                                DownloadUrl = Url
+                                Exit For
+                            End If
+                        Next
+                    End If
+                    If DownloadUrl = "" Then DownloadUrl = GetReleaseDownloadUrl(Tag)
+                    Return New PclReleaseInfo With {.Tag = Tag, .DownloadUrl = DownloadUrl}
                 End Using
             End Using
         End Using
+    End Function
+
+    ''' <summary>
+    ''' 读取 GitHub 发布页的最新版本号（跟随 /releases/latest 的重定向，避免 API 限流）。
+    ''' </summary>
+    Private Function GetLatestReleaseByGitHub() As PclReleaseInfo
+        Dim Tag As String = GetLatestReleaseTagByGitHub()
+        Return New PclReleaseInfo With {.Tag = Tag, .DownloadUrl = GetReleaseDownloadUrl(Tag)}
     End Function
 
     ''' <summary>
@@ -329,10 +389,127 @@ Friend Module ModSecret
         End Using
     End Function
 
-    Friend IsUpdateWaitingRestart As Boolean = False
-    Public Sub UpdateRestart(TriggerRestartAndByEnd As Boolean)
+    ''' <summary>
+    ''' 按 Release 标签拼出附件下载地址，作为 API 未返回 assets 时的兜底。
+    ''' </summary>
+    Private Function GetReleaseDownloadUrl(Tag As String) As String
+        Dim VersionTag As String = Tag.TrimStart("v"c, "V"c)
+        Return $"https://github.com/merlin-kitsune/pcl-reborn/releases/download/{Uri.EscapeDataString(Tag)}/PCL2-Reborn-{Uri.EscapeDataString(VersionTag)}.zip"
+    End Function
+
+    Private Function GetGhProxyUrl(Url As String) As String
+        If Url.StartsWithF("https://gh-proxy.com/") Then Return Url
+        Return "https://gh-proxy.com/" & Url
+    End Function
+
+    Private Sub DownloadUpdate(Release As PclReleaseInfo)
+        If IsUpdateDownloading Then Return
+        IsUpdateDownloading = True
+        RunInNewThread(
+        Sub()
+            Dim ZipPath As String = PathTemp & "UpdatePCL.zip"
+            Dim NewExe As String = Paths.Base & "PCL\Plain Craft Launcher 2.exe"
+            Try
+                Hint($"正在下载启动器更新：{Release.Tag}")
+                Directory.CreateDirectory(Paths.Base & "PCL")
+                '避免上次下载中断后留下的残缺压缩包被误当成完整文件
+                FileUtils.Delete(ZipPath)
+                NetDownloadByLoader({GetGhProxyUrl(Release.DownloadUrl), Release.DownloadUrl}, ZipPath)
+                Using Archive As ZipArchive = ZipFile.OpenRead(ZipPath)
+                    Dim Entry As ZipArchiveEntry = Archive.Entries.FirstOrDefault(Function(e) String.Equals(e.Name, "Plain Craft Launcher 2.exe", StringComparison.OrdinalIgnoreCase))
+                    If Entry Is Nothing Then Entry = Archive.Entries.FirstOrDefault(Function(e) e.Name.EndsWithF(".exe", True))
+                    If Entry Is Nothing Then Throw New Exception("更新包中没有找到 PCL 可执行文件")
+                    FileUtils.Delete(NewExe)
+                    Entry.ExtractToFile(NewExe, True)
+                End Using
+                FileUtils.Delete(ZipPath)
+                IsUpdateWaitingRestart = True
+                Logger.Info($"启动器更新已下载：{Release.Tag} -> {NewExe}")
+                RunInUi(Sub()
+                            If MyMsgBox($"新版本 {Release.Tag} 已下载完成。" & vbCrLf & "是否立即重启以完成更新？",
+                                        "更新", "立即重启", "稍后") = 1 Then
+                                IsUpdateRestartOnExit = True
+                                FrmMain.EndProgram(False)
+                            Else
+                                Hint("更新将在下次退出启动器时自动应用", HintType.Green)
+                            End If
+                        End Sub)
+            Catch ex As Exception
+                Logger.Warn(ex, "下载启动器更新失败")
+                RunInUi(Sub() Hint($"下载启动器更新失败：{ex.Message}", HintType.Red))
+            Finally
+                IsUpdateDownloading = False
+            End Try
+        End Sub, "DownloadUpdate", ThreadPriority.BelowNormal)
     End Sub
+
+    Friend IsUpdateDownloading As Boolean = False
+    Friend IsUpdateWaitingRestart As Boolean = False
+    Friend IsUpdateRestartOnExit As Boolean = False
+
+    ''' <summary>
+    ''' 用新版本替换当前可执行文件，并可选地重启。
+    ''' 由 --update 参数在新进程中调用，此时旧进程已经或正在退出。
+    ''' </summary>
     Public Sub UpdateReplace(ProcessId As Integer, OldFileName As String, NewFileName As String, TriggerRestart As Boolean)
+        Try
+            If ProcessId > 0 Then
+                Try
+                    Using OldProcess As Process = Process.GetProcessById(ProcessId)
+                        If Not OldProcess.WaitForExit(60000) Then Throw New Exception($"等待旧版启动器退出超时（PID {ProcessId}）")
+                    End Using
+                Catch ex As ArgumentException
+                    '旧进程已经退出
+                End Try
+            End If
+            '当前进程正从 OldFileName 运行，Windows 不允许直接覆盖正在运行的可执行文件，
+            '因此先把旧文件改名为备份，复制成功后再删除备份；失败时回滚。
+            Dim OldBackup As String = OldFileName & ".old"
+            Try
+                FileUtils.Delete(OldBackup)
+            Catch ex As Exception
+                Throw New Exception($"无法清理旧的更新备份：{ex.Message}", ex)
+            End Try
+            FileUtils.Move(OldFileName, OldBackup)
+            Try
+                FileUtils.Copy(NewFileName, OldFileName)
+            Catch ex As Exception
+                Try
+                    If FileUtils.Exists(OldFileName) Then FileUtils.Delete(OldFileName)
+                    FileUtils.Move(OldBackup, OldFileName)
+                Catch restoreEx As Exception
+                    Throw New Exception($"复制新版本失败：{ex.Message}；恢复旧版本也失败：{restoreEx.Message}", ex)
+                End Try
+                Throw
+            End Try
+            If TriggerRestart Then
+                '此进程（--update）不会初始化 Logger，不能走会写日志的 StartProcess
+                Process.Start(New ProcessStartInfo(OldFileName) With {
+                    .WorkingDirectory = IO.Path.GetDirectoryName(OldFileName),
+                    .UseShellExecute = True
+                })
+            End If
+        Catch ex As Exception
+            MsgBox($"应用更新失败：{ex.Message}", MsgBoxStyle.Critical, "PCL 更新")
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' 启动更新进程。由即将退出的旧实例调用，新实例会等待旧 PID 退出后替换文件。
+    ''' </summary>
+    Public Sub UpdateRestart(TriggerRestartAndByEnd As Boolean)
+        Try
+            Dim NewExe As String = Paths.Base & "PCL\Plain Craft Launcher 2.exe"
+            If Not FileUtils.Exists(NewExe) Then
+                Logger.Warn("自动更新：未找到已下载的新版本文件，跳过更新")
+                Return
+            End If
+            Dim Args As String = $"--update {Process.GetCurrentProcess().Id} ""{PathExe}"" ""{NewExe}"" {If(TriggerRestartAndByEnd, "true", "false")}"
+            StartProcess(PathExe, Args)
+            Logger.Info("已启动更新进程，等待当前实例退出")
+        Catch ex As Exception
+            Logger.Error(ex, "启动自动更新进程失败")
+        End Try
     End Sub
 
     ''' <summary>

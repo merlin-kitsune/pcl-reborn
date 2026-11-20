@@ -40,7 +40,12 @@ Public Class Application
             If e.Args.Length > 0 Then
                 If e.Args(0) = "--update" Then
                     '自动更新
-                    UpdateReplace(e.Args(1), e.Args(2).Trim(""""), e.Args(3).Trim(""""), e.Args(4))
+                    If e.Args.Length < 5 Then Environment.Exit(ProcessReturnValues.Fail)
+                    Dim ProcessId As Integer
+                    Integer.TryParse(e.Args(1), ProcessId)
+                    Dim TriggerRestart As Boolean
+                    Boolean.TryParse(e.Args(4).Trim(""""), TriggerRestart)
+                    UpdateReplace(ProcessId, e.Args(2).Trim(""""), e.Args(3).Trim(""""), TriggerRestart)
                     Environment.Exit(ProcessReturnValues.TaskDone)
                 ElseIf e.Args(0) = "--gpu" Then
                     '调整显卡设置

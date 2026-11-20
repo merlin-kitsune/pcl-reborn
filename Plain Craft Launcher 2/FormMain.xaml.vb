@@ -439,11 +439,14 @@ Public Class FormMain
             '清理自动更新文件
             Try
                 FileUtils.Delete(Paths.Base & "PCL\Plain Craft Launcher 2.exe")
+                FileUtils.Delete(PathExe & ".old")
             Catch ex As Exception
                 Logger.Warn(ex, "清理自动更新文件失败")
             End Try
             '上报
             Telemetry("启动")
+            '启动时检查启动器更新
+            UpdateCheckOnStartup()
             '本地修改：已禁用开源版启动提示（CF Key / MS Client ID 均已补齐，更新功能已恢复）
         End Sub, "初始化", ThreadPriority.Lowest)
 
@@ -591,7 +594,7 @@ Public Class FormMain
         On Error Resume Next
         IsProgramEnding = True
         AniControlEnabled += 1
-        If IsUpdateWaitingRestart Then UpdateRestart(False)
+        If IsUpdateWaitingRestart Then UpdateRestart(IsUpdateRestartOnExit)
         If ReturnCode = ProcessReturnValues.Exception Then
             If Not IsLogShown Then
                 FeedbackInfo()
