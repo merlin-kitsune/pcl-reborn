@@ -7,7 +7,8 @@
 #
 #   --ids FILE        每行一个 class id（# 注释与空行会被忽略）
 #   --out FILE        TSV 输出，追加写入：id<TAB>cfSlug<TAB>mrSlug<TAB>中文名
-#                     （没有的项目留空，但 4 列 tab 分隔始终保留）
+#                     （没有的项目留空，但 4 列 tab 分隔始终保留；同一 id 可能有多个
+#                       平台变体行，例如 c2me-fabric 与 c2me-neoforge）
 #   --delay MIN MAX   每页之间的随机等待秒数（默认 4 6）
 #   --limit N         最多抓取 N 个 id
 #   --resume          跳过 --out 里已经存在的 id（断点续抓）
@@ -39,7 +40,7 @@ usage() {
 用法: bash tools/wiki_crawl.sh --ids FILE --out FILE [--delay MIN MAX] [--limit N] [--resume]
 
   --ids FILE        每行一个 class id
-  --out FILE        TSV 输出（id<TAB>cfSlug<TAB>mrSlug<TAB>中文名），追加写入
+  --out FILE        TSV 输出（id<TAB>cfSlug<TAB>mrSlug<TAB>中文名），追加写入；同一 id 可有多行平台变体
   --delay MIN MAX   每页随机等待秒数（默认 4 6）
   --limit N         最多抓取 N 个 id
   --resume          跳过 --out 中已存在的 id
@@ -152,38 +153,101 @@ parse_title() {
   printf '%s' "$raw"
 }
 
-# 按 <li> 块作用域解析平台链接，输出 "cfSlug<TAB>mrSlug"
+# 去掉 slug 末尾的 loader 后缀，用来识别同一模组的不同加载器变体。
+# 只认明确的后缀，避免把 c2me-ocl 这类真正独立的分支当成变体。
+slug_root() {
+  local s=$1
+  case $s in
+    *-neoforge) s=${s%-neoforge} ;;
+    *-fabric)   s=${s%-fabric} ;;
+    *-quilt)    s=${s%-quilt} ;;
+    *-forge)    s=${s%-forge} ;;
+    *-legacy)   s=${s%-legacy} ;;
+  esac
+  printf '%s' "$s"
+}
+
+# 按 <li> 块作用域解析平台链接，每个平台变体输出一行 "cfSlug<TAB>mrSlug"。
+# 第一行是主组合（首个 CF + 首个 MR）；同根节点的额外 loader 变体各占一行。
 # 全页扫描会把正文里提到的无关模组也收进来，所以必须先切块再取链接。
 extract_platform() {
   local html=$1
-  local cf='' mr=''
-  local block links val decoded kind slug
+  local block links val decoded slug existing dup
+  local -a cf_all=() mr_all=()
   while IFS= read -r block; do
-    case $block in
-      *link.mcmod.cn/target/*) ;;
-      *) continue ;;
-    esac
-    links=$(printf '%s' "$block" | grep -oE 'link\.mcmod\.cn/target/[A-Za-z0-9_+/=%-]+' | sed -e 's|.*/target/||')
-    [ -n "$links" ] || continue
-    for val in $links; do
-      case $val in
-        *%*) val=$(printf '%b' "${val//%/\\x}") ;;   # 万一是 URL 编码过的 base64
-      esac
-      decoded=$(b64_decode "$val" 2>/dev/null) || decoded=''
-      [ -n "$decoded" ] || continue
-      # 平台种类直接由解码后的域名判定（同一个 <li> 里还有 title="CurseForge"/"Modrinth"
-      # 的 span，但域名是更硬的证据，两者冲突时信域名）
-      if [ -z "$cf" ]; then
-        slug=$(cf_slug_of "$decoded" 2>/dev/null) || slug=''
-        [ -n "$slug" ] && cf=$slug
-      fi
-      if [ -z "$mr" ]; then
-        slug=$(mr_slug_of "$decoded" 2>/dev/null) || slug=''
-        [ -n "$slug" ] && mr=$slug
-      fi
+    links=''
+    if [[ "$block" == *link.mcmod.cn/target/* ]]; then
+      links=$(printf '%s' "$block" | grep -oE 'link\.mcmod\.cn/target/[A-Za-z0-9_+/=%-]+' | sed -e 's|.*/target/||')
+    fi
+    if [ -n "$links" ]; then
+      for val in $links; do
+        case "$val" in
+          *%*) val=$(printf '%b' "${val//%/\\x}") ;;   # 万一是 URL 编码过的 base64
+        esac
+        decoded=$(b64_decode "$val" 2>/dev/null) || decoded=''
+        if [ -n "$decoded" ]; then
+          # 平台种类直接由解码后的域名判定（同一个 <li> 里还有 title="CurseForge"/"Modrinth"
+          # 的 span，但域名是更硬的证据，两者冲突时信域名）
+          slug=$(cf_slug_of "$decoded" 2>/dev/null) || slug=''
+          if [ -n "$slug" ]; then
+            dup=0
+            for existing in "${cf_all[@]}"; do [ "$existing" = "$slug" ] && { dup=1; break; }; done
+            [ "$dup" -eq 1 ] || cf_all+=("$slug")
+          fi
+          slug=$(mr_slug_of "$decoded" 2>/dev/null) || slug=''
+          if [ -n "$slug" ]; then
+            dup=0
+            for existing in "${mr_all[@]}"; do [ "$existing" = "$slug" ] && { dup=1; break; }; done
+            [ "$dup" -eq 1 ] || mr_all+=("$slug")
+          fi
+        fi
+      done
+    fi
+  done < <(tr '\n' ' ' < "$html" | sed -E 's/<li([[:space:]>])/\n<li\1/g'; printf '\n')
+
+  local primary_cf= primary_mr= root_cf= root_mr= variant_root r
+  # 根取最短的 root，避免 c2me-ocl 排在 c2me-fabric 前面时把根定错
+  for slug in "${cf_all[@]}"; do
+    r=$(slug_root "$slug")
+    if [ -z "$root_cf" ] || [ "${#r}" -lt "${#root_cf}" ]; then root_cf=$r; fi
+  done
+  for slug in "${cf_all[@]}"; do
+    [ "$slug" = "$root_cf" ] && { primary_cf=$slug; break; }
+  done
+  if [ -z "$primary_cf" ]; then
+    for slug in "${cf_all[@]}"; do
+      [ "$(slug_root "$slug")" = "$root_cf" ] && { primary_cf=$slug; break; }
     done
-  done < <(tr '\n' ' ' < "$html" | sed -E 's/<li([[:space:]>])/\n<li\1/g')
-  printf '%s\t%s' "$cf" "$mr"
+  fi
+  for slug in "${mr_all[@]}"; do
+    r=$(slug_root "$slug")
+    if [ -z "$root_mr" ] || [ "${#r}" -lt "${#root_mr}" ]; then root_mr=$r; fi
+  done
+  for slug in "${mr_all[@]}"; do
+    [ "$slug" = "$root_mr" ] && { primary_mr=$slug; break; }
+  done
+  if [ -z "$primary_mr" ]; then
+    for slug in "${mr_all[@]}"; do
+      [ "$(slug_root "$slug")" = "$root_mr" ] && { primary_mr=$slug; break; }
+    done
+  fi
+  if [ -n "$primary_cf" ] || [ -n "$primary_mr" ]; then
+    printf "%s\t%s\n" "$primary_cf" "$primary_mr"
+  fi
+  for slug in "${cf_all[@]}"; do
+    [ "$slug" = "$primary_cf" ] && continue
+    variant_root=$(slug_root "$slug")
+    [ "$variant_root" != "$slug" ] || continue
+    [ "$variant_root" = "$root_cf" ] || continue
+    printf "%s\t\n" "$slug"
+  done
+  for slug in "${mr_all[@]}"; do
+    [ "$slug" = "$primary_mr" ] && continue
+    variant_root=$(slug_root "$slug")
+    [ "$variant_root" != "$slug" ] || continue
+    [ "$variant_root" = "$root_mr" ] || continue
+    printf "\t%s\n" "$slug"
+  done
 }
 
 done_ids="$tmp_dir/done_ids.txt"
@@ -266,14 +330,15 @@ while IFS= read -r raw_line || [ -n "$raw_line" ]; do
     continue
   fi
 
-  plat=$(extract_platform "$page")
-  cf=${plat%%$'\t'*}
-  mr=${plat#*$'\t'}
-  [ "$mr" = "$plat" ] && mr=''
-
-  printf '%s\t%s\t%s\t%s\n' "$id" "$cf" "$mr" "$name" >> "$OUT_FILE"
-  written=$(( written + 1 ))
-  log "ok id=$id cf=$cf mr=$mr name=$name"
+  mapfile -t plat_rows < <(extract_platform "$page")
+  for plat_row in "${plat_rows[@]}"; do
+    cf=${plat_row%%$'\t'*}
+    mr=${plat_row#*$'\t'}
+    [ "$mr" = "$plat_row" ] && mr=''
+    printf '%s\t%s\t%s\t%s\n' "$id" "$cf" "$mr" "$name" >> "$OUT_FILE"
+  done
+  written=$(( written + ${#plat_rows[@]} ))
+  log "ok id=$id rows=${#plat_rows[@]} name=$name"
   sleep "$(rand_between "$DELAY_MIN" "$DELAY_MAX")"
 done < "$IDS_FILE"
 

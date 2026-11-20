@@ -8,11 +8,12 @@
 #   --shard FILES...  一个或多个分片（可重复给 --shard）
 #   --out FILE        合并结果，首行固定写 "# id<TAB>cf<TAB>mr<TAB>name"
 #
-# 去重规则（同一 id）：
-#   1) 优先保留"有 slug（cf 或 mr 非空）"的记录；
-#   2) 同等情况保留中文名更长的（按 UTF-8 字符数，不是字节数）；
-#   3) 再相同则保留先出现的。
-# 输出按 id 数值升序。
+# 去重规则（同一 id + cf + mr）：
+#   1) 完全相同的平台组合只保留一行；
+#   2) 同一 id 的不同平台 slug 全部保留（例如 c2me-fabric 与 c2me-neoforge）；
+#   3) 同名同平台组合保留中文名更长的（按 UTF-8 字符数，不是字节数）；
+#   4) 再相同则保留先出现的。
+# 输出按 id 数值升序，再按 cf、mr 字典序。
 #
 # 退出码：0 成功；1 参数错误
 set -u -o pipefail
@@ -112,29 +113,27 @@ LC_ALL=C awk -F'\t' -v OFS='\t' '
     for (i = 5; i <= NF; i++) name = name "\t" $i   # 名字里带 tab 也不丢
     gsub(/^[ \t]+|[ \t]+$/, "", name)
 
-    has = (cf != "" || mr != "") ? 1 : 0
+    key = id SUBSEP cf SUBSEP mr
     len = clen(name)
-    if (!(id in best_has)) {
-      order[++n] = id
-      best_has[id] = has; best_len[id] = len; rec[id] = id "\t" cf "\t" mr "\t" name
+    if (!(id in seen_id)) { seen_id[id] = 1; unique_ids++ }
+    if (!(key in best_len)) {
+      order[++n] = key
+      best_len[key] = len; rec[key] = id "\t" cf "\t" mr "\t" name
       next
     }
-    better = 0
-    if (has > best_has[id]) better = 1
-    else if (has == best_has[id] && len > best_len[id]) better = 1
-    if (better) {
-      best_has[id] = has; best_len[id] = len; rec[id] = id "\t" cf "\t" mr "\t" name
+    if (len > best_len[key]) {
+      best_len[key] = len; rec[key] = id "\t" cf "\t" mr "\t" name
     }
   }
   END {
     for (i = 1; i <= n; i++) print rec[order[i]]
-    printf "wiki_merge: 输入行 %d -> 唯一 id %d\n", NR, n > "/dev/stderr"
+    printf "wiki_merge: 输入行 %d -> 唯一 (id,cf,mr) %d（唯一 id %d）\n", NR, n, unique_ids > "/dev/stderr"
   }
 ' "$cand" > "$body" || die 'awk 合并失败'
 
 {
   printf '# id\tcf\tmr\tname\n'
-  sort -n -k1,1 "$body"
+  LC_ALL=C sort -t $'\t' -k1,1n -k2,2 -k3,3 "$body"
 } > "$OUT_FILE" || die "无法写入 $OUT_FILE"
 
 out_rows=$(wc -l < "$OUT_FILE" | tr -d ' ')

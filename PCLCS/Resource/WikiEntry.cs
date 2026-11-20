@@ -100,7 +100,7 @@ public class WikiEntry {
     public static string? SupplementPath;
 
     /// <summary>
-    /// 将补充文件中的条目并入内置数据库。已有的条目（同 ID 或同名 Slug）不会被覆盖。
+    /// 将补充文件中的条目并入内置数据库。已有的条目（同平台同 Slug）不会被覆盖，但同一 ID 可以追加不同平台的 Slug。
     /// </summary>
     private static void ApplySupplement(List<WikiEntry> results) {
         var path = SupplementPath;
@@ -114,11 +114,10 @@ public class WikiEntry {
         }
 
         var knownSlugs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        var knownIds = new HashSet<int>();
+        string SlugKey(ResourcePlatforms platform, string slug) => $"{(int)platform}\u0001{slug}";
         foreach (var entry in results) {
-            knownIds.Add(entry.Id);
-            foreach (var slug in entry.Slugs.Values) {
-                if (!string.IsNullOrEmpty(slug)) knownSlugs.Add(slug);
+            foreach (var pair in entry.Slugs) {
+                if (!string.IsNullOrEmpty(pair.Value)) knownSlugs.Add(SlugKey(pair.Key, pair.Value));
             }
         }
 
@@ -133,17 +132,20 @@ public class WikiEntry {
             var chineseName = parts[3].Trim();
             if (chineseName.Length == 0) continue;
             if (curseForgeSlug.Length == 0 && modrinthSlug.Length == 0) continue;
-            if (knownIds.Contains(id)) continue;
-            if ((curseForgeSlug.Length > 0 && knownSlugs.Contains(curseForgeSlug))
-                || (modrinthSlug.Length > 0 && knownSlugs.Contains(modrinthSlug))) continue;
-
             var supplement = new WikiEntry { Id = id, ChineseName = chineseName, Popularity = 1 };
-            if (curseForgeSlug.Length > 0) supplement.Slugs.Add(ResourcePlatforms.CurseForge, curseForgeSlug);
-            if (modrinthSlug.Length > 0) supplement.Slugs.Add(ResourcePlatforms.Modrinth, modrinthSlug);
+            var added = false;
+            if (curseForgeSlug.Length > 0 && !knownSlugs.Contains(SlugKey(ResourcePlatforms.CurseForge, curseForgeSlug))) {
+                supplement.Slugs.Add(ResourcePlatforms.CurseForge, curseForgeSlug);
+                knownSlugs.Add(SlugKey(ResourcePlatforms.CurseForge, curseForgeSlug));
+                added = true;
+            }
+            if (modrinthSlug.Length > 0 && !knownSlugs.Contains(SlugKey(ResourcePlatforms.Modrinth, modrinthSlug))) {
+                supplement.Slugs.Add(ResourcePlatforms.Modrinth, modrinthSlug);
+                knownSlugs.Add(SlugKey(ResourcePlatforms.Modrinth, modrinthSlug));
+                added = true;
+            }
+            if (!added) continue;
             results.Add(supplement);
-            knownIds.Add(id);
-            if (curseForgeSlug.Length > 0) knownSlugs.Add(curseForgeSlug);
-            if (modrinthSlug.Length > 0) knownSlugs.Add(modrinthSlug);
         }
     }
 

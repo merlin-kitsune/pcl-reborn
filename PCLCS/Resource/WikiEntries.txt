@@ -3508,7 +3508,7 @@ emotecraft@|表情工艺 (Emotecraft)
 pattysmorestuff|PattysMoreStuff
 hats|帽子 (Hats)
 smoother-bedrock|平滑基岩层 (Smoother Bedrock)
-c2me-fabric@|C^2M 引擎 (C^2M-Engine/Concurrent Chunk Management Engine)
+c2me@c2me-fabric|C^2M 引擎 (C^2M-Engine/Concurrent Chunk Management Engine)¨@c2me-neoforge|C^2M 引擎 (C^2M-Engine/Concurrent Chunk Management Engine)
 datapack-anvil@dpanvil|DataPack Anvil
 nuclear-science@|核科学 (Nuclear Science)
 glaretorch|强光火把 (Glare Torch)
