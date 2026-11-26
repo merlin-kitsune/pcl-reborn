@@ -27480,6 +27480,7 @@
 33092	atvideo		荷包蛋的视频播放器 (Atvideo)
 33093	twilight-difficulty-trinkets		暮色难度·饰品 (Twilight Difficulty · Trinkets)
 33095	cs-curse-spells-irons-spells-addon		Curse Spells
+33097	food-catalog		食品目录 (Food Catalog)
 33098	limitlessenchantments	limitlessenchantments	Limitless Enchantments
 33099	eternal-pools-a-poolrooms-mod		Eternal Pools (A Poolrooms Mod)
 33100	ordinatio		Ordinatio
@@ -27556,3 +27557,65 @@
 33196	better-dragon-meal		更好的冰火龙食 (Better Dragon Meal)
 33199	the-interstice-beyond-the-walls	interstice-beyond-the-walls	The Interstice: Beyond the Walls
 33200	hands-on-vanilla		Hands-On Vanilla
+33201	sculk-apple		幽匿苹果 (Sculk Apple)
+33202	moscovium		镆 (Moscovium)
+33203	singularity-cannon		Singularity Cannon
+33204	the-creator-mod		The Creator
+33205	just-enough-structures	just-enough-structures	Just Enough Structures
+33206	theabyss		The Abyss: The First Light
+33207	boiling-cauldron-forge		沸鼎烟火 Forge (Boiling Cauldron Forge)
+33208	the-shooting-star-addition-sx-01-solar-flare		The Shooting Star Addition [SX-01 Solar Flare]
+33209	nofireoverlay	nofireoverlay	NoFireOverlay
+33210	mob-hop	mob-hop	Mob Hop
+33211	ids-questwright		ID's Questwright
+33212	lazy-cat		懒猫 (Lazy Cat)
+33213	dx12		DX12Mod
+33214	raw-block-furnace		粗矿块熔炉 (RawBlockFurnace)
+33215	ae2-split-cpu		AE2 分裂 CPU (AE2 Split CPU)
+33216	shadow-bosses-dialogs		Shadow Bosses Dialogs
+33218	shape-shifter-curse-primalstinct		幻形者诅咒：原始本能 (Shape Shifter Curse - Primalstinct)
+33222	kaleidoscope-colombia		森罗物语：哥伦比亚 (Kaleidoscope Colombia)
+33223	cataclysm-delicacies-cataclysm-delight		灾变饕宴 (Cataclysm Delicacies)
+33225	rpg-gods-rebelieve		RPG Gods ReBelieve
+33227	touhou-spell-danmaku		东方法术：弹幕 (Touhou Spell:Danmaku)
+33228	heavy-gear		沉重装备 (Heavy Gear)
+33229	heavy-trident		沉重三叉戟 (Heavy Trident)
+33230	backport-throwing-disc		飞盘 (Backport Throwing Disc)
+33231	z80z-loot-beam		Z80Z Loot Beam
+33235	touhou-maid-sleep-well		车万女仆：睡个好觉 (Touhou Maid: Sleep Well)
+33238	maid-restaurant-fix		女仆餐厅：修复 (Maid Restaurant: Fix)
+33239	origins-classes-neoforge		起源：职业（NeoForge） (Origins: Classes (NeoForge))
+33240	origins-js		起源JS (Origins JS)
+33240	origins-js-legacy		起源JS (Origins JS)
+33241	tlmaid-dine-nest		车万女仆：食寝相伴 (TLMaid: Dine & Nest)
+33243	spell-card-declaration		车万女仆：符卡宣言 (Spell card declaration)
+33246	aeautopatterns		自动样板终端
+33247	cinematic-subtitles		电影化字幕 (Cinematic Subtitles)
+33248	summoning-ritual-optimization		召唤仪式JEI优化 (Summoning Ritual Optimization)
+33249	jei-attribute		JEI属性查看 (JEI Attribute)
+33250	thaumaturge-tinker		Thaumaturge Tinker
+33253	chest-cavity-unofficial-forge-port		胸腔（非官方锻造移植版） (Chest Cavity (Unofficial Forge Port))
+33255	dragon-armor-stand		龙盔甲架 (Dragon Armor Stand)
+33257	spline-roads		Spline Roads
+33260	benzene-chess		苯象棋 (Benzene Chess)
+33263	cnpc-hostility		CNPC Hostility
+33264	power-lag	power-lag	Power Lag
+33265	arbitrary-delight	arbitrary-delight	Arbitrary Delight
+33266	no-restart		模组热加载 (NoRestart)
+33267	qnm		QNM
+33270	audio-management		音频管理 (Audio Management)
+33271	true-crafter		True Crafter
+33272	remote-bot-fetch		Remote Bot Fetch
+33273	extended-height		Extended Height
+33274	applied-crafted-energistics		应用机巧能源 (Applied Crafted Energistics)
+33276	sh-common-lib		SH Common Lib (sh-common-lib)
+33277	rebongo		宾果游戏：非官方Neoforge版
+33280	botania-revived		Botania Revived
+33282	saturn-lib		Saturn
+33283	infinity-what-botania-additions		什么无限：植物魔法附加 (Infinity What:Botania Additions)
+33285	create-communist-technologies		Create: Communist Technologies
+33286	extra-botany-revived		Extra Botany Revived
+33287	masterful-botany		Masterful Botany
+33288	thaumaturge-tech-compats		Thaumaturge Tech Compats
+33289	thaumaturge-tooltip-plus		神秘工具提示+ (Thaumaturge Tooltip Plus)
+33290	botania-backpack-upgrades-revived		Botania Backpack Upgrades Revived
