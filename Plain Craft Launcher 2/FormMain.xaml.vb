@@ -11,13 +11,26 @@ Public Class FormMain
         Dim FeatureList As New List(Of KeyValuePair(Of Integer, String))
         '统计更新日志条目
         If BuildType = BuildTypes.Release Then
+            If LastVersion < 420 Then 'Release 2.99.5.1
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(9, "安全：lwjgl-freetype 兜底原生库统一到 Mojang FreeType 2.15.0 修复版（3.4.x 用 3.4.3-mojang-2.15.0，3.3.x 用 3.4.1-mojang-2.15.0.3）；检测到旧构建 3.4.3-mojang（2.14.3）时自动升级；保留强制关闭字体 hinting 的运行时防护"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(8, "修复：更新后弹窗不显示更新内容"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(7, "修复：Windows x86 没有 3.4.3-mojang-2.15.0 原生包时回退到 3.4.1-mojang-2.15.0.3"))
+            End If
+            If LastVersion < 419 Then 'Release 2.99.5.0
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(6, "修复：Minecraft2Shell 字体漏洞（恶意资源包可触发远程代码执行，RCE）"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "修复：Natives 目录旧 freetype.dll 可能遮蔽替换后的新库"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "优化：检查更新与最新正式版下载统一走 gh-proxy"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "优化：模组资料平台校验、清理错链并重建内置库"))
+            End If
+            If LastVersion < 417 Then 'Release 2.99.4.0
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复：恢复启动器自动更新，支持立即重启或下次退出时应用"))
+                FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复：检查更新指向的 Release 标签不存在时下载地址 404"))
+            End If
             If LastVersion < 416 Then 'Release 2.99.3.0
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复：部分模组被错误关联到其它模组的中文名，例如 Essential Mod 显示为「按键显示」"))
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化：模组资料采集增加平台检索与名称一致性校验，自动剔除失效或错误的平台链接"))
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复：更新内置模组资料后自动清理本地旧缓存，避免旧数据与新版本重复"))
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "新增：版本筛选栏补充 26.1.2"))
-                FeatureCount += 4
-                BugCount += 2
             End If
             If LastVersion < 415 Then 'Release 2.99.2.0
                 FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "新增：启动后自动同步最新的模组中文名与百科信息，在下载页与搜索中生效（下次启动生效）"))

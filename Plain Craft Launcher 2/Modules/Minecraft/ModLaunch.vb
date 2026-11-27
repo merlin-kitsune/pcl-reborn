@@ -1648,6 +1648,15 @@ NextInstance:
 
 #Region "解压 Natives"
 
+    ''' <summary>
+    ''' 判断库条目是否已被替换为带 Mojang FreeType 修复的原生库。
+    ''' </summary>
+    Private Function McLaunchIsFreetypePatched(Name As String) As Boolean
+        Return Name IsNot Nothing AndAlso
+               Name.StartsWith("org.lwjgl:lwjgl-freetype:", StringComparison.Ordinal) AndAlso
+               Name.IndexOf("-mojang", StringComparison.Ordinal) >= 0
+    End Function
+
     Private Sub McLaunchNatives(Loader As LoaderTask(Of Integer, Integer))
 
         '创建文件夹
@@ -1659,9 +1668,7 @@ NextInstance:
         Dim ExistFiles As New List(Of String)
         Dim HasPatchedFreetype As Boolean = False
         For Each Native As McLibEntry In McLibListGet(McInstanceSelected, True)
-            If Native.OriginalName IsNot Nothing AndAlso
-               Native.OriginalName.StartsWith("org.lwjgl:lwjgl-freetype:", StringComparison.Ordinal) AndAlso
-               Native.OriginalName.IndexOf("-mojang-", StringComparison.Ordinal) >= 0 Then
+            If McLaunchIsFreetypePatched(Native.OriginalName) Then
                 HasPatchedFreetype = True
             End If
             If Not Native.IsNatives Then Continue For
