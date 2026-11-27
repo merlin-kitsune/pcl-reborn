@@ -8,6 +8,12 @@
 
 ---
 
+## 安全公告（请优先阅读）
+
+本次更新修复 **Minecraft2Shell**：恶意资源包通过字体触发 FreeType 越界写，可导致 **远程代码执行（RCE）**。受影响范围为 Minecraft 1.20.5 起所有使用 lwjgl-freetype 的版本（含 26.x，至少覆盖到 26.4 快照）。由于目前所有官方 lwjgl-freetype 原生库都不包含该漏洞的修复，仅替换原生库不足以防护；2.99.5.0 会在启动时强制关闭字体 hinting，并保留官方 FreeType 2.15.0 作为第二层防护。请所有用户尽快更新。
+
+---
+
 ## 新增
 
 - 版本筛选栏补充 **26.1.2**（此前需要手动输入版本号）
@@ -31,7 +37,7 @@
 - 修复更新内置模组资料后本地旧缓存与新数据并存导致的重复与错名问题：内置资料发生变化时自动清空本地 `PCL\WikiModules.tsv` 并重新同步
 - 恢复启动器自动更新：从 GitHub Release 的附件下载新版本，解压后由 `--update` 进程替换旧文件；支持「立即重启」与「下次退出时应用」，并在替换正在运行的可执行文件前先改名备份，避免更新失败
 - 修复「检查更新」指向的 Release 标签不存在时下载地址 404 的问题
-- 修复 Minecraft 1.20.5 起所有使用 lwjgl-freetype 的版本（含 26.x，至少到 26.4 快照）资源包字体触发的 FreeType 越界写漏洞（Minecraft2Shell）：由于所有官方 lwjgl-freetype 原生库均不带该漏洞的修复，启动器会在受影响版本启动时挂载 FreeType 字体防护补丁，强制 `FT_Load_Glyph` / `FT_Load_Char` 使用 `FT_LOAD_NO_HINTING`，使字体自带的 TrueType 字节码不执行；同时仍将原生库替换或校验为官方 FreeType 2.15.0 构建作为第二层防护，基础 Java Jar 保持不变。代价是小字渲染会略微变柔；1.20.4 及更早不受影响。已安装的受影响版本会在启动时自动补全替换库，并清理 Natives 目录中可能遮蔽新库的旧 freetype.dll；新下载的受影响版本同样使用替换后的库
+- 修复 Minecraft 1.20.5 起所有使用 lwjgl-freetype 的版本（含 26.x，至少到 26.4 快照）资源包字体触发的 FreeType 越界写漏洞（Minecraft2Shell），该漏洞可被恶意资源包利用实现**远程代码执行（RCE）**：由于所有官方 lwjgl-freetype 原生库均不带该漏洞的修复，启动器会在受影响版本启动时挂载 FreeType 字体防护补丁，强制 `FT_Load_Glyph` / `FT_Load_Char` 使用 `FT_LOAD_NO_HINTING`，使字体自带的 TrueType 字节码不执行；同时仍将原生库替换或校验为官方 FreeType 2.15.0 构建作为第二层防护，基础 Java Jar 保持不变。代价是小字渲染会略微变柔；1.20.4 及更早不受影响。已安装的受影响版本会在启动时自动补全替换库，并清理 Natives 目录中可能遮蔽新库的旧 freetype.dll；新下载的受影响版本同样使用替换后的库
 
 ## 下载
 
