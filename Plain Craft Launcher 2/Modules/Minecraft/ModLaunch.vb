@@ -1651,7 +1651,13 @@ NextInstance:
         '解压文件
         McLaunchLog("正在解压 Natives 文件")
         Dim ExistFiles As New List(Of String)
+        Dim HasPatchedFreetype As Boolean = False
         For Each Native As McLibEntry In McLibListGet(McInstanceSelected, True)
+            If Native.OriginalName IsNot Nothing AndAlso
+               Native.OriginalName.StartsWith("org.lwjgl:lwjgl-freetype:", StringComparison.Ordinal) AndAlso
+               Native.OriginalName.IndexOf("-mojang-", StringComparison.Ordinal) >= 0 Then
+                HasPatchedFreetype = True
+            End If
             If Not Native.IsNatives Then Continue For
             Dim Zip As ZipArchive
             Try
@@ -1690,6 +1696,9 @@ NextInstance:
             If Zip IsNot Nothing Then Zip.Dispose()
         Next
 
+        '删除可能遮蔽类路径中新原生库的旧 FreeType DLL
+        If HasPatchedFreetype Then McLaunchRemoveLegacyFreetype(Target)
+
         '删除多余文件
         For Each FileName As String In DirectoryUtils.EnumerateFiles(Target)
             If ExistFiles.Contains(FileName) Then Continue For
@@ -1703,6 +1712,29 @@ NextInstance:
             End Try
         Next
 
+    End Sub
+    ''' <summary>
+    ''' 删除 Natives 文件夹中残留的旧 FreeType DLL，防止其覆盖随类路径加载的 2.15.0 原生库。
+    ''' </summary>
+    Private Sub McLaunchRemoveLegacyFreetype(Target As String)
+        Dim Files As String()
+        Try
+            Files = IO.Directory.GetFiles(Target, "*", IO.SearchOption.AllDirectories)
+        Catch ex As Exception
+            McLaunchLog("枚举 Natives 文件夹失败：" & Target & "；" & ex.GetDisplay(True))
+            Throw New Exception("无法枚举 Natives 文件夹以清理旧 FreeType 原生库：" & Target)
+        End Try
+        For Each FileName As String In Files
+            If Not PathUtils.GetLastPart(FileName).Equals("freetype.dll", StringComparison.OrdinalIgnoreCase) Then Continue For
+            Try
+                McLaunchLog("删除旧 FreeType 原生库：" & FileName)
+                IO.File.SetAttributes(FileName, IO.FileAttributes.Normal)
+                IO.File.Delete(FileName)
+            Catch ex As Exception
+                McLaunchLog("删除旧 FreeType 原生库失败：" & FileName & "；" & ex.GetDisplay(True))
+                Throw New Exception("无法删除旧 FreeType 原生库，请关闭正在运行的 Minecraft 后重试：" & FileName)
+            End Try
+        Next
     End Sub
     ''' <summary>
     ''' 获取 Natives 文件夹路径，以 \ 结尾。

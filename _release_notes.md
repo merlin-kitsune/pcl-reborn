@@ -31,7 +31,7 @@
 - 修复更新内置模组资料后本地旧缓存与新数据并存导致的重复与错名问题：内置资料发生变化时自动清空本地 `PCL\WikiModules.tsv` 并重新同步
 - 恢复启动器自动更新：从 GitHub Release 的附件下载新版本，解压后由 `--update` 进程替换旧文件；支持「立即重启」与「下次退出时应用」，并在替换正在运行的可执行文件前先改名备份，避免更新失败
 - 修复「检查更新」指向的 Release 标签不存在时下载地址 404 的问题
-- 修复 Minecraft 1.20.5–1.21.11 资源包字体触发的 FreeType 越界写漏洞（Minecraft2Shell）：将这些版本使用的 lwjgl-freetype 原生库替换为 Mojang 的 FreeType 2.15.0 构建，基础 Java Jar 保持不变；1.20.4 及更早不受影响
+- 修复 Minecraft 1.20.5–1.21.11 资源包字体触发的 FreeType 越界写漏洞（Minecraft2Shell）：将这些版本使用的 lwjgl-freetype 原生库替换为 Mojang 的 FreeType 2.15.0 构建，基础 Java Jar 保持不变；1.20.4 及更早不受影响。已安装的受影响版本会在启动时自动补全替换库，并清理 Natives 目录中可能遮蔽新库的旧 freetype.dll；新下载的受影响版本同样使用替换后的库
 
 ## 下载
 
