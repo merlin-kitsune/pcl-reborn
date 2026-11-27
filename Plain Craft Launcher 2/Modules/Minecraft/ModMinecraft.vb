@@ -1548,6 +1548,80 @@ OnLoaded:
     End Class
 
     ''' <summary>
+    ''' 将 1.20.5+ 的 lwjgl-freetype 原生库替换为 Mojang 带 FreeType 2.15.0 的构建。
+    ''' 只替换 native 条目，保留基础 Java Jar 与 IsNatives 标记。
+    ''' </summary>
+    Private Function McLibFreetypePatch(Entry As McLibEntry, CustomMcFolder As String) As Boolean
+        If Entry Is Nothing OrElse Entry.IsNatives OrElse String.IsNullOrEmpty(Entry.OriginalName) Then Return False
+        Dim Parts = Entry.OriginalName.Split(":"c)
+        If Parts.Length < 4 Then Return False
+        If Parts(0) <> "org.lwjgl" OrElse Parts(1) <> "lwjgl-freetype" Then Return False
+        If Not Parts(3).StartsWith("natives-", StringComparison.Ordinal) Then Return False
+        Dim PatchedVersion = McLibFreetypePatchedVersion(Parts(2))
+        If PatchedVersion Is Nothing Then Return False
+        Dim Classifier = If(Parts(3) = "natives-macos-patch", "natives-macos", Parts(3))
+        Dim Data = McLibFreetypeNativeGet(PatchedVersion, Classifier)
+        If Data Is Nothing Then
+            Logger.Warn($"没有可用的 FreeType 2.15.0 原生库：{Entry.OriginalName}")
+            Return False
+        End If
+        Dim OldName = Entry.OriginalName
+        Entry.OriginalName = $"org.lwjgl:lwjgl-freetype:{PatchedVersion}:{Classifier}"
+        Entry.Url = Data(0)
+        Entry.SHA1 = Data(1)
+        Entry.Size = CLng(Data(2))
+        Entry.LocalPath = McLibGet(Entry.OriginalName, CustomMcFolder:=CustomMcFolder)
+        Logger.Info($"已将 lwjgl-freetype 原生库替换为 FreeType 2.15.0 构建：{OldName} -> {Entry.OriginalName}")
+        Return True
+    End Function
+
+    ''' <summary>
+    ''' 返回当前基础版本应使用的 FreeType 2.15.0 原生库版本；无需替换时返回 Nothing。
+    ''' </summary>
+    Private Function McLibFreetypePatchedVersion(BaseVersion As String) As String
+        If String.IsNullOrEmpty(BaseVersion) OrElse BaseVersion.IndexOf("-mojang", StringComparison.OrdinalIgnoreCase) >= 0 Then Return Nothing
+        Dim DashIndex = BaseVersion.IndexOf("-"c)
+        Dim Numeric = If(DashIndex >= 0, BaseVersion.Substring(0, DashIndex), BaseVersion)
+        If Numeric.StartsWith("3.3.", StringComparison.Ordinal) Then Return "3.4.1-mojang-2.15.0.3"
+        Select Case Numeric
+            Case "3.4.0", "3.4.1", "3.4.2", "3.4.3"
+                Return "3.4.3-mojang-2.15.0"
+        End Select
+        Return Nothing
+    End Function
+
+    ''' <summary>
+    ''' 返回指定版本与 classifier 的官方原生包 URL、SHA1 与大小；没有对应项时返回 Nothing。
+    ''' </summary>
+    Private Function McLibFreetypeNativeGet(Version As String, Classifier As String) As String()
+        Select Case Version & "|" & Classifier
+            Case "3.4.1-mojang-2.15.0.3|natives-windows"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.1-mojang-2.15.0.3/lwjgl-freetype-3.4.1-mojang-2.15.0.3-natives-windows.jar", "c9d78fd1df6e7ff7eff4db0126786755a6a19cd9", "1190827"}
+            Case "3.4.1-mojang-2.15.0.3|natives-windows-arm64"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.1-mojang-2.15.0.3/lwjgl-freetype-3.4.1-mojang-2.15.0.3-natives-windows-arm64.jar", "c97ff519f79011208e5fb8be9bed7743d3b6da51", "1043882"}
+            Case "3.4.1-mojang-2.15.0.3|natives-windows-x86"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.1-mojang-2.15.0.3/lwjgl-freetype-3.4.1-mojang-2.15.0.3-natives-windows-x86.jar", "cae34fec6b4622218af1e3b14af90fef58df3013", "1000778"}
+            Case "3.4.1-mojang-2.15.0.3|natives-linux"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.1-mojang-2.15.0.3/lwjgl-freetype-3.4.1-mojang-2.15.0.3-natives-linux.jar", "0a6df23d807a883883eda82941b7d0dc31813259", "1423205"}
+            Case "3.4.1-mojang-2.15.0.3|natives-macos"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.1-mojang-2.15.0.3/lwjgl-freetype-3.4.1-mojang-2.15.0.3-natives-macos.jar", "5491169c04d6fd9088d7c0e1efa58820ad26d303", "1225021"}
+            Case "3.4.1-mojang-2.15.0.3|natives-macos-arm64"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.1-mojang-2.15.0.3/lwjgl-freetype-3.4.1-mojang-2.15.0.3-natives-macos-arm64.jar", "8f1c52741cbb1ba5f5a9af7ec122dea7e3f68946", "1125234"}
+            Case "3.4.3-mojang-2.15.0|natives-windows"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.3-mojang-2.15.0/lwjgl-freetype-3.4.3-mojang-2.15.0-natives-windows.jar", "f85d0f5acaa594f9e93d657f8feff85d6a427b6a", "1190826"}
+            Case "3.4.3-mojang-2.15.0|natives-windows-arm64"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.3-mojang-2.15.0/lwjgl-freetype-3.4.3-mojang-2.15.0-natives-windows-arm64.jar", "5f475c76490bb368f235017985d8d9dc6b5b5121", "1043884"}
+            Case "3.4.3-mojang-2.15.0|natives-linux"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.3-mojang-2.15.0/lwjgl-freetype-3.4.3-mojang-2.15.0-natives-linux.jar", "f20ae220999240d484896d839694b02c2a655608", "1423204"}
+            Case "3.4.3-mojang-2.15.0|natives-macos"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.3-mojang-2.15.0/lwjgl-freetype-3.4.3-mojang-2.15.0-natives-macos.jar", "6a46815640d9ce43533200986a330642a96e9590", "1225020"}
+            Case "3.4.3-mojang-2.15.0|natives-macos-arm64"
+                Return {"https://libraries.minecraft.net/org/lwjgl/lwjgl-freetype/3.4.3-mojang-2.15.0/lwjgl-freetype-3.4.3-mojang-2.15.0-natives-macos-arm64.jar", "95ef1d3420179187f0b5e1ba947329b539e73412", "1125234"}
+        End Select
+        Return Nothing
+    End Function
+
+    ''' <summary>
     ''' 检查是否符合 Json 中的 Rules。
     ''' </summary>
     ''' <param name="RuleToken">Json 中的 "rules" 项目。</param>
@@ -1727,6 +1801,11 @@ OnLoaded:
                 End Try
             End If
 
+        Next
+
+        '将 1.20.5+ 的 lwjgl-freetype 原生库替换为带 FreeType 2.15.0 的构建
+        For Each LibEntry As McLibEntry In BasicArray
+            McLibFreetypePatch(LibEntry, CustomMcFolder)
         Next
 
         '去重

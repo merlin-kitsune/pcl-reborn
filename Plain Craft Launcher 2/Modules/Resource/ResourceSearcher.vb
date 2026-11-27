@@ -189,7 +189,7 @@ Public Class ResourceSearcher
         RawSearchText = StrConv(RawSearchText, VbStrConv.SimplifiedChinese) '繁体转简体
 
         Dim IsChineseSearch As Boolean =
-            RawSearchText.RegexCheck("[\u4e00-\u9fbb]") AndAlso Not String.IsNullOrEmpty(RawSearchText) AndAlso
+            RawSearchText.RegexCheck("[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]") AndAlso Not String.IsNullOrEmpty(RawSearchText) AndAlso
             (Request.Type = ResourceTypes.Mod OrElse Request.Type = ResourceTypes.DataPack) '目前仅对 Mod 和数据包进行中文搜索，注意整合包的名称可能已经有中文了
         Dim CurseForgeAltSearchText As String = Nothing, ModrinthAltSearchText As String = Nothing, ModrinthSlugs As New List(Of String) '从中文转为英文的替代搜索内容
         If IsChineseSearch Then

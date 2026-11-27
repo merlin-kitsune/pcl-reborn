@@ -486,7 +486,7 @@ GroupDone:
                 End If
                 '获取基本信息
                 Dim FileName As String
-                If Project.TranslatedName = Project.RawName Then
+                If Project.TranslatedName = Project.RawName OrElse Not Project.TranslatedName.RegexCheck("[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]") Then
                     FileName = File.FileName
                 Else
                     Dim ChineseName As String = Project.TranslatedName.BeforeFirst(" (").BeforeFirst(" - ").

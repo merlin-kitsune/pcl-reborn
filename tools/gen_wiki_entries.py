@@ -4,12 +4,13 @@ DIGITS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz/+=!?@#$
 
 def encode86(value, width=3):
     if value < 0: raise ValueError(value)
+    original = value
     out = ''
     while value:
         value, rem = divmod(value, 86)
         out = DIGITS[rem] + out
     out = out or '0'
-    if len(out) > width: raise ValueError('popularity too large: %d' % value)
+    if len(out) > width: raise ValueError('popularity too large: %d' % original)
     return out.rjust(width, '0')
 
 def decode86(text):
@@ -64,7 +65,7 @@ def main():
             if len(p) < 4 or not p[0].isdigit(): continue
             rows.append((int(p[0]), p[1].strip(), p[2].strip(), p[3]))
     max_id = max([r[0] for r in rows] + list(old.keys()))
-    slots = [''] * (max_id + 1)
+    slots = [[] for _ in range(max_id + 1)]
     entries = 0
     skipped = 0
     for wid, cf, mr, name in rows:
@@ -73,13 +74,18 @@ def main():
         if not spec or not name:
             skipped += 1
             continue
-        cell = spec + '|' + name
-        slots[wid] = cell if not slots[wid] else slots[wid] + '\u00a8' + cell
+        slots[wid].append(spec + '|' + name)
         entries += 1
     pops = []
     carried = 0
     for lineno in range(1, max_id + 1):
-        if slots[lineno] == '': continue
+        if not slots[lineno]:
+            slots[lineno] = ''
+            continue
+        # CurseForge 优先，保持同一平台内的原始顺序
+        cells = [c for c in slots[lineno] if not c.startswith('@')]
+        cells += [c for c in slots[lineno] if c.startswith('@')]
+        slots[lineno] = '\u00a8'.join(cells)
         value = old.get(lineno, 0)
         if value: carried += 1
         pops.append(encode86(value))

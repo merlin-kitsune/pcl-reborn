@@ -578,7 +578,7 @@ Public Class ResourceProject
         '检查下列代码时可以参考 #1567 的测试例
         Dim Title As String = RawName
         Dim SubtitleList As List(Of String)
-        If TranslatedName = RawName Then
+        If TranslatedName = RawName OrElse Not TranslatedName.RegexCheck("[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]") Then
             '没有中文翻译
             '将所有名称分段
             Dim NameLists = TranslatedName.Split({" | ", " - ", "(", ")", "[", "]", "{", "}"}, True).
