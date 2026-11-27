@@ -1,6 +1,6 @@
 # wiki_clean 报告（2026-11-27）
 
-raw=33090 kept=27680 no_link=5410 links_dropped=1031 cf_unverified=5561 dup_lost=45 final=27635
+raw=33091 kept=27681 no_link=5410 links_dropped=1031 cf_unverified=5561 dup_lost=45 final=27636
 
 ## 被摘除的链接（最多 50 条：id, platform, slug, reason）
 55	cf	tale-of-kingdoms	name-mismatch
@@ -107,4 +107,4 @@ raw=33090 kept=27680 no_link=5410 links_dropped=1031 cf_unverified=5561 dup_lost
 3890	mr	masterful-machinery
 
 ## 其余统计
-rows=33090 kept_rows=27680 no_link_rows=5410 dup_lost_rows=45 final_rows=27635
+rows=33091 kept_rows=27681 no_link_rows=5410 dup_lost_rows=45 final_rows=27636
