@@ -1548,8 +1548,8 @@ OnLoaded:
     End Class
 
     ''' <summary>
-    ''' 将 1.20.5+ 的 lwjgl-freetype 原生库替换为 Mojang 带 FreeType 2.15.0 的构建。
-    ''' 只替换 native 条目，保留基础 Java Jar 与 IsNatives 标记。
+    ''' 将 1.20.5+ 以及 26.x 的 lwjgl-freetype 原生库统一为 Mojang 带 FreeType 2.15.0 的构建。
+    ''' 只处理 native 条目，保留基础 Java Jar 与 IsNatives 标记；已带 Mojang 2.15.0 构建的条目也会校验并保留。
     ''' </summary>
     Private Function McLibFreetypePatch(Entry As McLibEntry, CustomMcFolder As String) As Boolean
         If Entry Is Nothing OrElse Entry.IsNatives OrElse String.IsNullOrEmpty(Entry.OriginalName) Then Return False
@@ -1557,9 +1557,9 @@ OnLoaded:
         If Parts.Length < 4 Then Return False
         If Parts(0) <> "org.lwjgl" OrElse Parts(1) <> "lwjgl-freetype" Then Return False
         If Not Parts(3).StartsWith("natives-", StringComparison.Ordinal) Then Return False
-        Dim PatchedVersion = McLibFreetypePatchedVersion(Parts(2))
-        If PatchedVersion Is Nothing Then Return False
         Dim Classifier = If(Parts(3) = "natives-macos-patch", "natives-macos", Parts(3))
+        Dim PatchedVersion = McLibFreetypePatchedVersion(Parts(2), Classifier)
+        If PatchedVersion Is Nothing Then Return False
         Dim Data = McLibFreetypeNativeGet(PatchedVersion, Classifier)
         If Data Is Nothing Then
             Logger.Warn($"没有可用的 FreeType 2.15.0 原生库：{Entry.OriginalName}")
@@ -1571,23 +1571,47 @@ OnLoaded:
         Entry.SHA1 = Data(1)
         Entry.Size = CLng(Data(2))
         Entry.LocalPath = McLibGet(Entry.OriginalName, CustomMcFolder:=CustomMcFolder)
-        Logger.Info($"已将 lwjgl-freetype 原生库替换为 FreeType 2.15.0 构建：{OldName} -> {Entry.OriginalName}")
+        If OldName = Entry.OriginalName Then
+            Logger.Info($"已确认 lwjgl-freetype 原生库为 FreeType 2.15.0 构建：{OldName}")
+        Else
+            Logger.Info($"已将 lwjgl-freetype 原生库替换为 FreeType 2.15.0 构建：{OldName} -> {Entry.OriginalName}")
+        End If
         Return True
     End Function
 
     ''' <summary>
-    ''' 返回当前基础版本应使用的 FreeType 2.15.0 原生库版本；无需替换时返回 Nothing。
+    ''' 返回指定 lwjgl-freetype 版本与 classifier 应使用的 FreeType 2.15.0 原生库版本；无需或无法替换时返回 Nothing。
+    ''' 26.1/26.2 已使用 3.4.1-mojang-2.15.0.3，26.3/26.4 已使用 3.4.3-mojang-2.15.0，保留并校验；
+    ''' 早期 26.1 快照的 3.3.x 与 26.3 快照的 3.4.x 则替换到对应 2.15.0 构建。
     ''' </summary>
-    Private Function McLibFreetypePatchedVersion(BaseVersion As String) As String
-        If String.IsNullOrEmpty(BaseVersion) OrElse BaseVersion.IndexOf("-mojang", StringComparison.OrdinalIgnoreCase) >= 0 Then Return Nothing
-        Dim DashIndex = BaseVersion.IndexOf("-"c)
-        Dim Numeric = If(DashIndex >= 0, BaseVersion.Substring(0, DashIndex), BaseVersion)
-        If Numeric.StartsWith("3.3.", StringComparison.Ordinal) Then Return "3.4.1-mojang-2.15.0.3"
-        Select Case Numeric
-            Case "3.4.0", "3.4.1", "3.4.2", "3.4.3"
-                Return "3.4.3-mojang-2.15.0"
-        End Select
-        Return Nothing
+    Private Function McLibFreetypePatchedVersion(LibraryVersion As String, Classifier As String) As String
+        If String.IsNullOrEmpty(LibraryVersion) Then Return Nothing
+
+        '已带 Mojang 2.15.0 构建的版本直接保留；x86 若目标包不存在则回退到 3.4.1
+        If LibraryVersion = "3.4.1-mojang-2.15.0.3" OrElse LibraryVersion = "3.4.3-mojang-2.15.0" Then
+            If Classifier = "natives-windows-x86" AndAlso McLibFreetypeNativeGet(LibraryVersion, Classifier) Is Nothing Then
+                Return "3.4.1-mojang-2.15.0.3"
+            End If
+            Return LibraryVersion
+        End If
+        If LibraryVersion.IndexOf("-mojang", StringComparison.OrdinalIgnoreCase) >= 0 Then Return Nothing
+
+        Dim DashIndex = LibraryVersion.IndexOf("-"c)
+        Dim Numeric = If(DashIndex >= 0, LibraryVersion.Substring(0, DashIndex), LibraryVersion)
+        Dim Target As String
+        If Numeric.StartsWith("3.3.", StringComparison.Ordinal) Then
+            Target = "3.4.1-mojang-2.15.0.3"
+        ElseIf Numeric.StartsWith("3.4.", StringComparison.Ordinal) Then
+            Target = "3.4.3-mojang-2.15.0"
+        Else
+            Return Nothing
+        End If
+
+        '3.4.3-mojang 没有 Windows x86 原生包，32 位 Windows 回退到 3.4.1-mojang 的 x86 包
+        If Classifier = "natives-windows-x86" AndAlso McLibFreetypeNativeGet(Target, Classifier) Is Nothing Then
+            Return "3.4.1-mojang-2.15.0.3"
+        End If
+        Return Target
     End Function
 
     ''' <summary>

@@ -58,6 +58,9 @@
 	<ItemGroup>
 		<EmbeddedResource Include="Launch\JavaWrapper.jar" LogicalName="Launch\JavaWrapper.jar" />
 		<EmbeddedResource Include="Launch\LwjglUnsafeAgent.jar" LogicalName="Launch\LwjglUnsafeAgent.jar" />
+		<EmbeddedResource Include="Launch\FreetypeHintAgent.jar" LogicalName="Launch\FreetypeHintAgent.jar" />
+		<None Include="Launch\FreetypeHintAgent.java" />
+		<None Include="Launch\FreetypeHintAgent.README.md" />
 		<EmbeddedResource Include="Resource\WikiEntries.txt" LogicalName="Resource\WikiEntries.txt" />
 		<EmbeddedResource Include="Minecraft\OptiFineHashes.json" LogicalName="Minecraft\OptiFineHashes.json" />
 	</ItemGroup>

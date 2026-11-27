@@ -895,6 +895,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lwjgl-unsafe-agent.jar" />
+    <None Include="Resources\FreetypeHintAgent.jar" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MeloongCore\Shared\MeloongCore.csproj">

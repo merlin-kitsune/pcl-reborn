@@ -1295,6 +1295,12 @@ NextInstance:
         If UseLUA Then Args.Add($"-javaagent:""{LaunchUtils.ExtractPatch("Launch\LwjglUnsafeAgent.jar", PathPure.Value)}""")
         McLaunchLog("使用 LUA：" & UseLUA)
 
+        'FreeType 字体字节码防护：官方 native 不包含新漏洞修复，强制关闭 hinting
+        Dim UseFreetypeHintGuard As Boolean = McLibListGet(McInstanceSelected, False).Any(
+            Function(e) e.OriginalName IsNot Nothing AndAlso e.OriginalName.StartsWith("org.lwjgl:lwjgl-freetype:", StringComparison.Ordinal))
+        If UseFreetypeHintGuard Then Args.Add($"-javaagent:""{LaunchUtils.ExtractPatch("Launch\FreetypeHintAgent.jar", PathPure.Value)}""")
+        McLaunchLog("使用 FreeType 字体防护：" & UseFreetypeHintGuard)
+
 #Region "内存管理"
 
         McLaunchLog("当前剩余内存：" & Math.Round(My.Computer.Info.AvailablePhysicalMemory / 1024 / 1024 / 1024 * 10) / 10 & "G")
