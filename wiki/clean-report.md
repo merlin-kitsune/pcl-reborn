@@ -1,6 +1,6 @@
 # wiki_clean 报告（2026-11-27）
 
-raw=33090 kept=27668 no_link=5422 links_dropped=1031 cf_unverified=5561 dup_lost=48 final=27620
+raw=33090 kept=27680 no_link=5410 links_dropped=1031 cf_unverified=5561 dup_lost=45 final=27635
 
 ## 被摘除的链接（最多 50 条：id, platform, slug, reason）
 55	cf	tale-of-kingdoms	name-mismatch
@@ -77,10 +77,12 @@ raw=33090 kept=27668 no_link=5422 links_dropped=1031 cf_unverified=5561 dup_lost
 1225	mr	charcoal_pit
 1269	cf	advent-of-ascension-nevermine
 1452	cf	the-creeping-nether
+1776	cf	ender-compass
 1789	mr	fantastic-lib
 1796	cf	touhou-little-maid
 1845	cf	galacticraft-legacy
 1845	mr	galacticraft-legacy
+1898	cf	mystical-adaptations
 2104	mr	terrafirmacraft
 2404	cf	old-combat-system
 2536	cf	thaumcraft
@@ -94,17 +96,15 @@ raw=33090 kept=27668 no_link=5422 links_dropped=1031 cf_unverified=5561 dup_lost
 3508	mr	pattysmorestuff
 3518	cf	cc-restitched
 3548	mr	fabrication
+3646	cf	limitless
 3677	mr	arrp
 3698	cf	fabric-api
 3725	cf	tinkers-construct
 3725	mr	tinkers-construct
+3737	cf	locatebiome
 3824	cf	thermal-foundation
 3837	mr	taterzens
 3890	mr	masterful-machinery
-4001	cf	the-agartha-mod
-4055	mr	zetaforged
-4093	mr	smooth-chunks
-4139	mr	tweakmyclient
 
 ## 其余统计
-rows=33090 kept_rows=27668 no_link_rows=5422 dup_lost_rows=48 final_rows=27620
+rows=33090 kept_rows=27680 no_link_rows=5410 dup_lost_rows=45 final_rows=27635
