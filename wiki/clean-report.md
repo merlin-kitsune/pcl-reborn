@@ -1,4 +1,4 @@
-# wiki_clean 报告（2026-11-26）
+# wiki_clean 报告（2026-11-27）
 
 raw=33090 kept=27668 no_link=5422 links_dropped=1031 cf_unverified=5561 dup_lost=48 final=27620
 
