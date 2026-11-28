@@ -554,6 +554,7 @@ cf	ai-art-deco-1	200	AI Art Deco 1	2026-11-13
 cf	ai-command	404		2026-11-13
 cf	ai-improvements	200	AI Improvements: Performance Tuning	2026-11-13
 cf	ai-myhs-plants-vs-zombies	200	Ai_myh's Plants Vs. Zombies	2026-11-13
+cf	ai-pack-translator	200	AI Pack Translator	2026-11-28
 cf	ai-player	200	AI-Player	2026-11-13
 cf	ai-reducer	200	AI Reducer	2026-11-13
 cf	aileron	200	Aileron	2026-11-13
@@ -617,6 +618,7 @@ cf	alekiships	200	aleki's Nifty Ships	2026-11-13
 cf	alekishipsbop	200	Nifty Ships + Biomes O'Plenty Compat	2026-11-13
 cf	alessandrvs-enchantments	404		2026-11-13
 cf	alet	404		2026-11-13
+cf	alex-born-bans	200	Alex_Born_Bans	2026-11-28
 cf	alex-cave-addon	200	alex cave addon	2026-11-13
 cf	alexandrite-and-more	200	Alexandrite And More	2026-11-13
 cf	alexiillib	200	AlexIILLib	2026-11-13
@@ -687,6 +689,7 @@ cf	all-creepypasta-in-one	200	All Creepypasta in One	2026-11-13
 cf	all-da-nuggets	200	All Da Nuggets	2026-11-13
 cf	all-dimension-height-increase	404		2026-11-13
 cf	all-enchantments-for-trade	200	All Enchantments for Trade	2026-11-13
+cf	all-in-one-thoroughbred-raising	200	All-In-One Thoroughbred Raising	2026-11-28
 cf	all-loot-drops	200	All Loot Drops	2026-11-13
 cf	all-mobs-attack-villagers	200	All Mobs Attack Villagers	2026-11-13
 cf	all-mobs-out-of-the-pool	404		2026-11-13
@@ -1082,6 +1085,7 @@ cf	apotheotic-creation	200	Apotheotic Creation	2026-11-13
 cf	apotheotic-hostility	200	Apotheotic Hostility	2026-11-13
 cf	apothic-amendments-enchanting	200	Apothic Amendments - Enchanting	2026-11-13
 cf	apothic-attributes	200	Apothic Attributes	2026-11-13
+cf	apothic-attributes-categories	200	Apothic Attributes Categories	2026-11-28
 cf	apothic-attributes-extension	200	Apothic Attributes Extension	2026-11-13
 cf	apothic-attributes-whitelist	404		2026-11-13
 cf	apothic-combat	200	Better Combat x Apotheosis Compat	2026-11-13
@@ -1116,6 +1120,7 @@ cf	appliances	200	Appliances	2026-11-13
 cf	applications	200	MomentariyModder'Applications	2026-11-13
 cf	applied-additions	404		2026-11-13
 cf	applied-agristics	404		2026-11-13
+cf	applied-botanical-machinery	404		2026-11-28
 cf	applied-botanics-addon	200	Applied Botanics Addon	2026-11-13
 cf	applied-botanics-supergiant	200	Applied-Botanics-Supergiant	2026-11-13
 cf	applied-compatibility	404		2026-11-15
@@ -1156,12 +1161,14 @@ cf	applied-slash	200	Applied Slash	2026-11-13
 cf	applied-soul	200	Applied Soul	2026-11-13
 cf	applied-thaumaturge	200	Applied Thaumaturge	2026-11-13
 cf	applied-web-terminal	200	Applied Web Terminal	2026-11-13
+cf	appliedagriculture	200	AppliedAgriculture	2026-11-28
 cf	appliedas	200	Applied AstralSorcery	2026-11-13
 cf	appliedchisel	200	AppliedChisel	2026-11-13
 cf	appliede	200	AppliedE	2026-11-13
 cf	appliedenergisticsoddities	200	Applied Energistics Oddities	2026-11-13
 cf	appliedenergisticstweaker	404		2026-11-13
 cf	appliedsync	200	AppliedSync	2026-11-13
+cf	appraisal-by-ruivo	200	Appraisal[By Ruivo]	2026-11-28
 cf	apprentices-codex	200	Apprentice's Codex	2026-11-13
 cf	apps-mod	200	Apps Mod	2026-11-13
 cf	apricityui	200	ApricityUI	2026-11-13
@@ -1315,6 +1322,7 @@ cf	armor-durability-hud	200	Armor Durability HUD	2026-11-13
 cf	armor-hider	200	Armor Hider	2026-11-13
 cf	armor-hud-by-mcjunky33	404		2026-11-13
 cf	armor-model-api	200	Armor Model API	2026-11-13
+cf	armor-no-wear	200	Armor No Wear	2026-11-28
 cf	armor-of-the-ages	200	Armor of the Ages	2026-11-13
 cf	armor-poser	404		2026-11-13
 cf	armor-quick-swap	200	Armor Quick Swap	2026-11-13
@@ -2180,6 +2188,7 @@ cf	berry-good	200	Berry Good	2026-11-13
 cf	berry-overgrown	200	Twilight Forest: Berry Overgrown (official addon)	2026-11-13
 cf	berry-pouch	200	Berry Pouch [Cobblemon]	2026-11-13
 cf	berrybush-magic	404		2026-11-13
+cf	berserk-world	200	berserk-world	2026-11-28
 cf	berserker-rpg-class	200	Berserker (RPG Series Plus)	2026-11-13
 cf	bestia	200	Bestia	2026-11-13
 cf	bestiaryblades	200	bestiaryblades	2026-11-21
@@ -2194,6 +2203,7 @@ cf	bettas	200	Bettas	2026-11-13
 cf	better-advanced-tooltips	404		2026-11-13
 cf	better-advancements	200	Better Advancements	2026-11-13
 cf	better-advancements-blessed-edtion	200	Better Advancements - Blessed Edtion	2026-11-13
+cf	better-ae2	200	Better AE2	2026-11-28
 cf	better-agriculture	200	Better Agriculture	2026-11-13
 cf	better-allay	200	Better Allay	2026-11-13
 cf	better-amethyst-plus	404		2026-11-13
@@ -2237,6 +2247,7 @@ cf	better-bows	200	Better Archery	2026-11-13
 cf	better-breeding	404		2026-11-13
 cf	better-brightness-slider	404		2026-11-13
 cf	better-brightness-slider-respawn	404		2026-11-13
+cf	better-buff-display	200	Better Buff Display	2026-11-28
 cf	better-builders-wands	200	Better Builder's Wands	2026-11-13
 cf	better-burning	200	Better Burning	2026-11-13
 cf	better-campfires	200	Better Campfires	2026-11-13
@@ -2409,6 +2420,7 @@ cf	better-questing-triggerer	200	Better Questing Triggerer	2026-11-13
 cf	better-questing-unofficial	200	Better Questing Unofficial	2026-11-13
 cf	better-recipe-book-extended	200	Better Recipe Book (Adorable♡Girl aVa Seriously Extended)	2026-11-13
 cf	better-records	200	Better Records	2026-11-13
+cf	better-refined-storage	404		2026-11-28
 cf	better-rei	200	Better REI	2026-11-21
 cf	better-removal	200	Better Removal	2026-11-13
 cf	better-resource-pack-sorting	200	Better Resource Pack Sorting	2026-11-13
@@ -2910,6 +2922,7 @@ cf	blue-skies	200	Blue Skies	2026-11-13
 cf	blue-skies-tweaks	200	Blue Skies Tweaks	2026-11-13
 cf	blue_skies_tcon	404		2026-11-13
 cf	bluebox	404		2026-11-13
+cf	bluedreams-tacical-mag-slots	200	Bluedream's Tactical  Mag Slots	2026-11-28
 cf	bluedude-dragons	200	Bluedude Dragons	2026-11-13
 cf	blueflame	200	Blue Flame Burning	2026-11-13
 cf	bluelib	200	BlueLib	2026-11-13
@@ -3020,6 +3033,7 @@ cf	borderless-mining	200	Borderless Mining	2026-11-13
 cf	borderzero	404		2026-11-13
 cf	born-in-a-barn	200	Born in a Barn	2026-11-13
 cf	born-in-chaos	200	Born in Chaos	2026-11-13
+cf	born-in-chaos-optimizer	200	Born in Chaos Bug Fixes	2026-11-28
 cf	born-in-configuration	200	Born In Configuration	2026-11-13
 cf	borzoi-dogs	404		2026-11-13
 cf	boss-and-magic-raid-compat	404		2026-11-13
@@ -3206,6 +3220,7 @@ cf	broken-nametags	404		2026-11-13
 cf	broken-tag-fixer	200	Broken Tag Fixer	2026-11-13
 cf	brokenbots-lost-medias-pentaros	404		2026-11-13
 cf	brokenentity-0	404		2026-11-13
+cf	bromaxs-haphazard-battle	200	BROMAX's Haphazard Battle	2026-11-28
 cf	bronze-mod	404		2026-11-13
 cf	bronze-viking	200	Bronze \u0026 Viking	2026-11-13
 cf	brooms	200	Brooms	2026-11-13
@@ -4561,6 +4576,7 @@ cf	compressorfix	200	CompressorFix	2026-11-13
 cf	computercraft	200	ComputerCraft	2026-11-13
 cf	computercraftedu	200	ComputerCraftEdu	2026-11-13
 cf	concatenated-compat	200	Concatenated Compat	2026-11-13
+cf	concept-powers	200	Concept Powers	2026-11-28
 cf	concerto	200	Concerto 协奏曲/一起听	2026-11-13
 cf	concoction	200	Concoction!	2026-11-13
 cf	concrete-and-marble-mod-2	404		2026-11-13
@@ -6597,6 +6613,7 @@ cf	dokimobs	200	dokimobs	2026-11-13
 cf	doles-mod	200	Dole's Mod	2026-11-13
 cf	dolt-compat	200	Dolt Compat	2026-11-13
 cf	dolt-mod-how	200	Dolt's Awesome Tweaks	2026-11-13
+cf	doltastic-enchantments	200	Doltastic Enchantments	2026-11-28
 cf	domestication-innovation	200	Domestication Innovation	2026-11-13
 cf	domestication-innovation-fixed	200	Domestication Innovation Fixed	2026-11-13
 cf	dominionlib	200	DominionLib	2026-11-13
@@ -6713,6 +6730,7 @@ cf	dragon-survival-griffin-addon	200	Small Griffin - Dragon Survival Addon	2026-
 cf	dragon-survival-iaf-integration	200	Dragon Survival: IAF Integration	2026-11-13
 cf	dragon-survival-quick-emotes	404		2026-11-13
 cf	dragon-survival-tacz-compat	200	Dragon Survival TACZ Compat	2026-11-13
+cf	dragon-survival-x-ysm-compat	200	Dragon Survival x YSM Compat	2026-11-28
 cf	dragon-wings	404		2026-11-13
 cf	dragonapi	200	DragonAPI	2026-11-13
 cf	dragonforged	200	Dragonforged	2026-11-13
@@ -7078,6 +7096,7 @@ cf	easy-dungeons	404		2026-11-13
 cf	easy-elevators	200	Easy Elevators	2026-11-13
 cf	easy-elytra-takeoff	200	Easy Elytra Takeoff	2026-11-13
 cf	easy-enchanting	200	Easy Enchanting	2026-11-13
+cf	easy-enchantment-library	200	Easy Enchantment Library	2026-11-28
 cf	easy-exchange	404		2026-11-13
 cf	easy-experience	404		2026-11-13
 cf	easy-feed	200	Easy feeding	2026-11-13
@@ -7828,6 +7847,7 @@ cf	epic-fight-animation-studio	200	Epic Fight - Animation Studio	2026-11-13
 cf	epic-fight-avalon	200	Epic Fight - Avalon	2026-11-13
 cf	epic-fight-better-skill-menu	200	Epic Fight - Better Skill Menu	2026-11-13
 cf	epic-fight-bow-tweak	200	Epic Fight Bow tweak	2026-11-13
+cf	epic-fight-dawn-day	200	Epic Fight: Dawn Day	2026-11-28
 cf	epic-fight-dodge-parry-reward	200	Epic Fight : Dodge Parry Reward	2026-11-13
 cf	epic-fight-dual-axes	200	Epic Fight - Dual Axes	2026-11-13
 cf	epic-fight-dual-spears	200	Epic Fight - Dual Spears	2026-11-13
@@ -8912,6 +8932,7 @@ cf	flashlightmod	200	FlashlightMod	2026-11-13
 cf	flat-bedrock	200	Flat Bedrock (Forge / Fabric)	2026-11-13
 cf	flat-colored-blocks-fabric	200	Flat Colored Blocks - For Fabric	2026-11-21
 cf	flat-colored-blocks-forge	200	Flat Colored Blocks - For Forge	2026-11-13
+cf	flatland	200	Flatland	2026-11-28
 cf	flatsigns	200	FlatSigns	2026-11-13
 cf	flatter-entities	404		2026-11-13
 cf	flatworld	200	FlatWorld	2026-11-13
@@ -10001,6 +10022,7 @@ cf	gradium	200	Gradium	2026-11-13
 cf	gradlemc	404		2026-11-13
 cf	graduated-cylinders	404		2026-11-13
 cf	graffiti	200	Graffiti	2026-11-13
+cf	grafted-chimera	200	Grafted Chimera	2026-11-28
 cf	grand-depths	200	Grand Depths	2026-11-13
 cf	grand-economy	200	Grand Economy	2026-11-13
 cf	grand-strategy	200	Grand Strategy	2026-11-13
@@ -10333,6 +10355,7 @@ cf	handlepro	200	HandlePro	2026-11-20
 cf	handmadegunsmodex	200	HandMadeGuns\u0026VehicleModEX	2026-11-13
 cf	hands-on-delight	200	Hands-On Delight	2026-11-14
 cf	hands-on-furniture	404		2026-11-21
+cf	hands-on-lets-do	404		2026-11-28
 cf	hands-on-vanilla	404		2026-11-23
 cf	handycam	200	Handycam	2026-11-13
 cf	hanew-village	200	Hanew village : the little dragon's village	2026-11-13
@@ -10731,6 +10754,7 @@ cf	honeymilkbucket	200	HoneyMilkBucket	2026-11-13
 cf	hongbao-red-envelope	404		2026-11-13
 cf	honkai-star-rail-12	404		2026-11-13
 cf	hook	200	Hook	2026-11-13
+cf	hook-bell-port	200	Hook Bell Port 	2026-11-28
 cf	hooked	200	Hooked	2026-11-13
 cf	hooked-sable-physics-link	200	Hooked Sable Physics Link	2026-11-13
 cf	hooklib	200	HookLib	2026-11-13
@@ -11037,6 +11061,7 @@ cf	iceberg	200	Iceberg [Neo/Forge]	2026-11-13
 cf	iceberg-fabric	200	Iceberg [Fabric]	2026-11-21
 cf	iced-lava	200	Iced Lava	2026-11-13
 cf	ichorium-kit	200	Ichorium Kit	2026-11-13
+cf	ichorworks-thaumic-tinkerer	200	Ichorworks: Thaumic Tinkerer	2026-11-28
 cf	ichun-gravity-gun-mod-revival	200	iChun Gravity Gun Mod Revival	2026-11-13
 cf	ichunutil	200	iChunUtil	2026-11-13
 cf	icicle	200	Icicle	2026-11-13
@@ -11159,6 +11184,7 @@ cf	immersive-aircraft-steampunked-create-styled	200	Immersive Aircraft -  Steamp
 cf	immersive-aircraft-x-immersive-engineering	200	Immersive Aircraft x Immersive Engineering	2026-11-13
 cf	immersive-armor-hud	200	Immersive Armor HUD	2026-11-13
 cf	immersive-armors	404		2026-11-13
+cf	immersive-bakery	200	Immersive Bakery	2026-11-28
 cf	immersive-bonsai	200	Immersive Bonsai	2026-11-13
 cf	immersive-cables	200	Immersive Cables	2026-11-13
 cf	immersive-cavegen	200	Immersive Cavegen	2026-11-13
@@ -12288,6 +12314,7 @@ cf	keypreset	200	KeyPreset	2026-11-13
 cf	keyswitch	200	KeySwitch	2026-11-20
 cf	kfc	200	The KFC Mod	2026-11-13
 cf	kibe	200	Kibe Utilities	2026-11-13
+cf	kick	200	Kick!	2026-11-28
 cf	kick-shatter	200	Kick \u0026 Shatter	2026-11-14
 cf	kilagraph	200	KilaGraph	2026-11-13
 cf	kill-cam	200	Kill-Cam	2026-11-13
@@ -12315,6 +12342,7 @@ cf	kinetic-minecart	200	Kinetic Minecart	2026-11-13
 cf	kinetic-pixel-dup-bug-fix	200	kinetic pixel dup bug fix	2026-11-13
 cf	kineticcore	200	KineticCore	2026-11-13
 cf	kineticdamage	404		2026-11-13
+cf	king-of-heroes	200	King of Heroes	2026-11-28
 cf	kingdom-of-rin-mobs	200	Kingdom of RIN | Mobs	2026-11-13
 cf	kingdom-of-rin-regions	404		2026-11-13
 cf	kingdomcome-combat	200	Kingdomcome Combat	2026-11-13
@@ -12440,6 +12468,7 @@ cf	kubejs-recipes-create	200	Kubejs Recipes Create	2026-11-13
 cf	kubejs-sanity	200	KubeJS Sanity	2026-11-13
 cf	kubejs-tfc	200	KubeJS TFC	2026-11-13
 cf	kubejs-tfmg	200	KubeJS TFMG	2026-11-13
+cf	kubejs-thaumaturge	404		2026-11-28
 cf	kubejs-thermal	200	KubeJS Thermal	2026-11-13
 cf	kubejs-thermal-augments	404		2026-11-13
 cf	kubejs-tinkers-construct	200	KubeJS Tinkers Construct	2026-11-13
@@ -13148,6 +13177,7 @@ cf	lotr-anvil-reforged	200	LOTR Anvil Reforged	2026-11-13
 cf	lotr-attack-indicator-addon	200	LOTR Attack Indicator Addon	2026-11-13
 cf	lotr-bane-viewer	200	LOTR Bane Viewer	2026-11-13
 cf	lotr-companions-renewed-addon	200	LOTR: Companions (Renewed Addon)	2026-11-13
+cf	lotr-dl	200	LOTR  DL	2026-11-28
 cf	lotr-extended	200	LOTR Continents Extended	2026-11-13
 cf	lotr-horse-heal-alert	404		2026-11-13
 cf	lotr-improvements-lite	200	LOTR Improvements Lite	2026-11-13
@@ -13596,6 +13626,7 @@ cf	marius0x-furniture	200	marius0x Furniture	2026-11-13
 cf	markdownmanual	200	Markdown Manual	2026-11-13
 cf	market-crates	404		2026-11-13
 cf	mars-mod-reborn	200	Mars Mod: Reborn	2026-11-13
+cf	marsims-chaos-mod	200	Chaos Mod: Chaotic Technology	2026-11-28
 cf	marvel-legacy	404		2026-11-13
 cf	marvel-superheroes	200	Marvel Superheroes	2026-11-13
 cf	marvelous-menagerie	404		2026-11-13
@@ -15218,6 +15249,7 @@ cf	myhead	404		2026-11-13
 cf	myluckyblock	200	MyLuckyBlock	2026-11-13
 cf	myosotis	404		2026-11-13
 cf	mypos	404		2026-11-13
+cf	myriad-calamity	200	Myriad Calamity	2026-11-28
 cf	myrtrees	200	Myrtrees	2026-11-13
 cf	myssyheads-sculk-adventures	404		2026-11-13
 cf	mystagrad-cloche-compat	200	MystAgrad Cloche Compat	2026-11-13
@@ -15416,6 +15448,7 @@ cf	neepmeat	200	NEEPMeat	2026-11-13
 cf	nefs-farm-decoration	200	Nef's Farm Decoration \u0026 Explorer gear	2026-11-13
 cf	nei-addons	200	NEI Addons	2026-11-13
 cf	nei-emmaitar	200	NEI Emmaitar	2026-11-13
+cf	nei-features-for-jei	200	NEI Features for JEI	2026-11-28
 cf	nei-integration	200	NEI Integration	2026-11-13
 cf	nei-lotr	200	NEI LOTR	2026-11-13
 cf	nei-lotr-fa	200	NEI LOTR FA	2026-11-13
@@ -15745,6 +15778,7 @@ cf	no-modern-industrialization-efficiency	200	No Modern Industrialization Effici
 cf	no-monster-rooms	404		2026-11-13
 cf	no-moon-jar	200	no_moon.jar	2026-11-13
 cf	no-more-63-ae2	200	Core RPG - Quests Engine	2026-11-13
+cf	no-more-draconicnbt	200	No more DraconicNBT	2026-11-28
 cf	no-more-garbage-in-cell	200	No More Garbage In Cell	2026-11-13
 cf	no-more-inifinite-water	404		2026-11-13
 cf	no-more-magic-choices	200	No More Magic Choices	2026-11-13
@@ -16735,6 +16769,7 @@ cf	patchful	200	Patchful	2026-11-13
 cf	patchouli	200	Patchouli	2026-11-13
 cf	patchouli-cryogenic-simulation-edition	200	Patchouli (Cryogenic Simulation Edition)	2026-11-13
 cf	patchouli-fabric	200	Patchouli (Fabric/Quilt)	2026-11-21
+cf	patchouli-packup	200	patchouli packup	2026-11-28
 cf	patchouli-quests	200	Patchouli Quests	2026-11-13
 cf	patchouli-rofl-edition	200	Patchouli ROFL Edition	2026-11-13
 cf	patchoulibutton	200	PatchouliButton	2026-11-13
@@ -16979,6 +17014,7 @@ cf	pig-grinder	200	Pig Grinder	2026-11-13
 cf	pig-pen-cipher	200	Pig Pen Cipher	2026-11-13
 cf	pig-poop	200	Pig Poop (Fabric)	2026-11-13
 cf	pig-villages-by-bogdan-tokarev	200	Pig villages	2026-11-13
+cf	pig2	200	Pig2	2026-11-28
 cf	pigarmy	200	Pig Army	2026-11-20
 cf	pigeon-post	200	Pigeon Post [FABRIC]	2026-11-13
 cf	piggy-bank	200	Colds: Piggy Bank (FORGE)	2026-11-13
@@ -17067,6 +17103,7 @@ cf	pixelgalaxy	200	PixelGalaxy	2026-11-13
 cf	pixelgamewizards-banded-torches	200	Banded Torches	2026-11-13
 cf	pixelmon	404		2026-11-13
 cf	pixelmon-bank	200	Pixelmon Bank	2026-11-13
+cf	pixelmon-config-regression	200	Pixelmon Config Regression	2026-11-28
 cf	pixelmon-gameshark	200	Gameshark (for Pixelmon)	2026-11-13
 cf	pixelmon-gui-blocks	200	Pixelmon GUI Blocks	2026-11-13
 cf	pixelmonshadercompat	200	PixelmonShaderCompat	2026-11-13
@@ -17398,6 +17435,7 @@ cf	pottery-additional-pots	200	Pottery (Additional Pots)	2026-11-13
 cf	pouch-of-unknown	200	Pouch of Unknown - Item Stages Addon	2026-11-13
 cf	pouch-of-unknown-nirvana	404		2026-11-13
 cf	pouch-of-unknown-reborn	404		2026-11-13
+cf	pouch-of-unknown-reborn-astages	200	Pouch of Unknown: Reborn (AStages)	2026-11-28
 cf	pov-that-one-short-friend	404		2026-11-13
 cf	powah	200	Powah!	2026-11-13
 cf	powah-cable-orb-extension	200	Powah Cable Orb Extension	2026-11-13
@@ -17554,6 +17592,7 @@ cf	project-73926	404		2026-11-13
 cf	project-74246	200	Doomlike Dungeons	2026-11-13
 cf	project-arsenal	200	Project Arsenal	2026-11-13
 cf	project-atmosphere	200	Project Atmosphere: Realistic Climate \u0026 Weather	2026-11-13
+cf	project-babylon-armors	200	Epic Fight: Project Babylon - Armors	2026-11-28
 cf	project-bench	200	Project Bench	2026-11-13
 cf	project-brazier	404		2026-11-13
 cf	project-copper	404		2026-11-13
@@ -18917,6 +18956,7 @@ cf	rustic-engineer	200	Rustic Engineer	2026-11-13
 cf	rustic-furniture-compat	200	Rustic Furniture Compat (READ THE DESCRIPTION)	2026-11-13
 cf	rustic-pancakes	200	Rustic Pancakes	2026-11-13
 cf	rustic-pipes	404		2026-11-13
+cf	rustic-recrafted	200	Rustic Recrafted	2026-11-28
 cf	rustic-renaissance	200	Rustic Renaissance	2026-11-13
 cf	rustic-thaumaturgy	200	Rustic Thaumaturgy	2026-11-13
 cf	rusticated	200	Rusticated	2026-11-13
@@ -19018,6 +19058,7 @@ cf	sanlib	200	SanLib	2026-11-13
 cf	santa-logistics	200	Create: Santa Logistics	2026-11-13
 cf	sao-ui	200	SAO UI	2026-11-13
 cf	saomclib	200	saomclib	2026-11-13
+cf	saphyra-reborn	200	Saphyra Reborn	2026-11-28
 cf	saphyre	404		2026-11-13
 cf	sapience	404		2026-11-13
 cf	saplanting	200	Saplanting	2026-11-13
@@ -19326,6 +19367,7 @@ cf	serene-tweaks	404		2026-11-13
 cf	serene-wild	404		2026-11-13
 cf	serializationisbad	200	SerializationIsBad	2026-11-13
 cf	serious-player-animations	200	Serious Player Animations	2026-11-13
+cf	serious-player-animations-refoxed	200	Serious Player Animations Refoxed	2026-11-28
 cf	servantry	404		2026-11-13
 cf	server-browser	200	Server Browser - In Game Server Listings	2026-11-13
 cf	server-chat-history	200	Server Chat History	2026-11-13
@@ -19591,6 +19633,7 @@ cf	sillys-crossbow-fix	404		2026-11-13
 cf	silver-samurai-battle-damaged-red-blade	200	Silver Samurai: Battle-Damaged Red Blade	2026-11-13
 cf	silverbirch	200	Silver Birch	2026-11-13
 cf	silveroak-outpost	200	Silveroak Outpost	2026-11-13
+cf	silverstar	200	SilverStar	2026-11-28
 cf	sim-u	200	Sim-U 	2026-11-13
 cf	sim-u-kraft-old	404		2026-11-13
 cf	sim-u-kraft-reloaded	200	Sim-U-Kraft Reloaded	2026-11-13
@@ -19838,6 +19881,7 @@ cf	siost-spell-icons-overlay-scroll-textures	200	[SIOST]Spell Icons Overlay Scro
 cf	sips	200	Sips	2026-11-13
 cf	siren-head-reborn	200	Siren Head: Reborn	2026-11-13
 cf	siren-head-the-arrival	200	Siren Head: The Arrival	2026-11-13
+cf	siren-head-the-sirens-field-java-port	200	Siren Head: The Siren's Field (Java Port)	2026-11-28
 cf	sisser	200	Sisser	2026-11-13
 cf	sit	200	Sit	2026-11-13
 cf	sit-chill	200	Sit \u0026 Chill	2026-11-13
@@ -20069,6 +20113,7 @@ cf	smallcolonies	200	SmallColonies for Minecolonies	2026-11-13
 cf	smaller-nether-portals	200	Smaller Nether Portals	2026-11-13
 cf	smallerfpsincrements	200	SmallerFPSIncrements	2026-11-13
 cf	smallstairs	200	SmallStairs	2026-11-13
+cf	smart-clean	200	Smart Clean	2026-11-28
 cf	smart-completion	200	Smart Completion	2026-11-13
 cf	smart-copper-golems	200	Smart Copper Golems	2026-11-13
 cf	smart-creeper	200	Smart Creeper	2026-11-13
@@ -20295,6 +20340,7 @@ cf	sophisticated-storage-create-integration	200	Sophisticated Storage Create Int
 cf	sophisticated-storage-in-motion	200	Sophisticated Storage in Motion	2026-11-13
 cf	sophisticated-storage-legacy	200	Sophisticated Storage Legacy	2026-11-13
 cf	sophisticated-storage-plus	200	Sophisticated Storage Plus	2026-11-13
+cf	sophisticated-storage-unofficial-fabric	404		2026-11-28
 cf	sophisticated-storage-unofficial-fabric-port	200	Sophisticated Storage (Unofficial Fabric port)	2026-11-13
 cf	sophisticated-wolves	200	Sophisticated wolves	2026-11-13
 cf	sophisticatedinjections	404		2026-11-13
@@ -20712,6 +20758,7 @@ cf	star-miner	404		2026-11-13
 cf	star-optimized	200	Star Optimized	2026-11-13
 cf	star-rail-apocalyptic-shadow	200	Star Rail: Apocalyptic Shadow	2026-11-13
 cf	star-rating	404		2026-11-13
+cf	star-struck	200	Star_Struck	2026-11-28
 cf	star-technology-core	200	Star Technology - Core	2026-11-13
 cf	star-wars-planets-ad-astra	200	Star Wars Planets  [Forge/Fabric]	2026-11-13
 cf	starbunclemania	200	StarbuncleMania	2026-11-13
@@ -21255,12 +21302,14 @@ cf	tactical-imbuements	200	Tactical Imbuements	2026-11-13
 cf	tactical-melee-attribute-compat	404		2026-11-13
 cf	tactical-rpg-minecraft-turn-based-tactics-mod	200	Tactical RPG: Turn-based Tactics Game	2026-11-21
 cf	tactical-throwing	404		2026-11-13
+cf	tactile	200	Tactile: Immersive Ambience \u0026 Animations	2026-11-28
 cf	tacz-1-21-1	200	[UNOFFICIAL] TaCZ NeoForge Port	2026-11-13
 cf	tacz-40k	200	Tacz 40k	2026-11-13
 cf	tacz-accessory-table	200	TaCZ Accessory Table	2026-11-13
 cf	tacz-additions	200	TaCZ Additions	2026-11-13
 cf	tacz-addon	200	TaCZ addon	2026-11-13
 cf	tacz-aeronautics-compat	200	TACZ Aeronautics compat	2026-11-13
+cf	tacz-ammo-box	404		2026-11-28
 cf	tacz-ammo-query	200	TaCZ Ammo Query	2026-11-13
 cf	tacz-applied-ammo-box	200	[TaCZ] Applied Ammo Box	2026-11-13
 cf	tacz-arcana-timeless-and-classics-guns	200	TacZ:Arcana (Timeless and Classics Guns)	2026-11-13
@@ -22101,6 +22150,7 @@ cf	the-quackening	200	The Quackening	2026-11-13
 cf	the-quest-of-entity-303	200	The Quest of Entity 303	2026-11-13
 cf	the-rc-mod	200	The RC Mod	2026-11-13
 cf	the-realistic-leaves-mod	200	The Realistic Leaves Mod	2026-11-13
+cf	the-return-of-the-overlord-herobrine	200	The Return of the Overlord Herobrine	2026-11-28
 cf	the-reverse	200	Reverse:MC	2026-11-13
 cf	the-rings-of-power	200	The Rings of Power	2026-11-13
 cf	the-rise-of-minerals	200	The Rise Of Minerals	2026-11-13
@@ -24288,6 +24338,7 @@ cf	whoosh	200	Whoosh	2026-11-13
 cf	whos-there-ghost-players	200	Who's There?: Ghost Players	2026-11-13
 cf	why-am-i-on-fire	404		2026-11-13
 cf	why-am-i-on-fire-refoxed	404		2026-11-13
+cf	why-creepers-fear-cats	200	Why Creepers Fear Cats	2026-11-28
 cf	why-does-my-food-taste-like-that	404		2026-11-13
 cf	why-does-my-glass-sound-like-that	200	Why Does My Glass Sound Like That	2026-11-13
 cf	why-stack-only-64	200	Why stack only 64	2026-11-13
@@ -24382,6 +24433,7 @@ cf	wireless-speakers	404		2026-11-13
 cf	wireless-utilities	200	Wireless Utilities	2026-11-13
 cf	wishful-recipes	200	Wishful Recipes	2026-11-13
 cf	wishing-fountain	200	Wishing Fountain	2026-11-13
+cf	wishing-fountain-port	200	Wishing Fountain Port	2026-11-28
 cf	wisla	200	Wisla - What is Sauron looking at	2026-11-13
 cf	witch-mobility	200	Witch Mobility [Forge \u0026 Fabric]	2026-11-13
 cf	witch-tower	200	Witch Tower	2026-11-13
@@ -24697,6 +24749,7 @@ cf	xymultichat	404		2026-11-13
 cf	yabba	200	YABBA	2026-11-13
 cf	yacl	200	YetAnotherConfigLib	2026-11-13
 cf	yagens-attributes	200	Yagen's Attributes	2026-11-13
+cf	yagens-mobs	200	Yagen's Mobs	2026-11-28
 cf	yakisugi	200	Yakisugi	2026-11-13
 cf	yakumoblade	404		2026-11-13
 cf	yakurum-mod	200	Yakurum	2026-11-13
@@ -25013,9 +25066,9 @@ cf	zycraft	200	ZYCraft	2026-11-13
 cf	zyins-hud	200	Zyin's HUD	2026-11-13
 cf	zzz-craft	404		2026-11-13
 cf	zzzzz-custom-configs	200	ZZZZZ Custom Configs	2026-11-13
-mr	(hordes)-zombie-virus-antidote	err		2026-11-27
-mr	(mortius)-the-deep-void	err		2026-11-27
-mr	(ssrdfv)-separate-sable-render-distance-for-voxy	err		2026-11-27
+mr	(hordes)-zombie-virus-antidote	err		2026-11-28
+mr	(mortius)-the-deep-void	err		2026-11-28
+mr	(ssrdfv)-separate-sable-render-distance-for-voxy	err		2026-11-28
 mr	-doublejump-	404		2026-11-13
 mr	-empty-hand-	404		2026-11-13
 mr	-fakeplayer-	404		2026-11-13
@@ -25149,7 +25202,7 @@ mr	ad-astra-pandoras-frontier	404		2026-11-13
 mr	ad-astra-planet-screen-expanded	200	Ad Astra: Planet Screen Expanded	2026-11-13
 mr	ad-astra-rocketed	200	Ad Astra: Rocketed	2026-11-13
 mr	ad-astra-star	200	Ad Astra: Star	2026-11-13
-mr	ad-tetra!	err		2026-11-27
+mr	ad-tetra!	err		2026-11-28
 mr	ad_extendra	200	Ad Extendra	2026-11-13
 mr	ad_extendra-continuation	200	Dandi2k8's Ad Extendra	2026-11-13
 mr	adapaxels	200	AdaPaxels	2026-11-13
@@ -25430,12 +25483,12 @@ mr	alekishipsbop	200	Nifty Ships + Biomes O'Plenty Compat	2026-11-13
 mr	alessandrv-enchantments	200	Alessandrv's Enchantments	2026-11-13
 mr	alexis-64-food	200	Alexis 64's Food	2026-11-27
 mr	alexs-caves	200	Alex's Caves	2026-11-13
-mr	alexs-caves-(unofficial-port)	err		2026-11-27
+mr	alexs-caves-(unofficial-port)	err		2026-11-28
 mr	alexs-caves-adventure	200	Alex's Caves: Adventure	2026-11-13
 mr	alexs-caves-better-combat	200	Alex's Caves Better Combat	2026-11-13
 mr	alexs-caves-continued	200	Alex's Caves Continued	2026-11-13
 mr	alexs-caves-delight	200	Alex's Caves Delight	2026-11-13
-mr	alexs-caves-delight-(-farmers-delight-alexs-caves-add-on)	err		2026-11-27
+mr	alexs-caves-delight-(-farmers-delight-alexs-caves-add-on)	err		2026-11-28
 mr	alexs-caves-enriched	200	Alex's Caves: Enriched	2026-11-13
 mr	alexs-caves-exemplified	200	Alexs Caves Exemplified	2026-11-13
 mr	alexs-caves-mobs-accurate-mob-spawn	200	Alex's Caves Accurate Mob Spawn	2026-11-13
@@ -25445,7 +25498,7 @@ mr	alexs-caves-renewed	200	Alex's Caves RENEWED	2026-11-27
 mr	alexs-cloud-storage	200	Cloud Storage	2026-11-13
 mr	alexs-mediumcore	200	Mediumcore	2026-11-13
 mr	alexs-mobs	200	Alex's Mobs	2026-11-13
-mr	alexs-mobs(1.21.1)	err		2026-11-27
+mr	alexs-mobs(1.21.1)	err		2026-11-28
 mr	alexs-mobs-continued	200	Alex's Mobs Continued	2026-11-13
 mr	alexs-mobs-extra-music	200	Alex's Mobs Extra Music	2026-11-13
 mr	alexs-mobs-interaction	200	Alex's Mobs Interaction	2026-11-13
@@ -25484,7 +25537,7 @@ mr	alloygery	200	Alloygery	2026-11-13
 mr	allthefood	200	AllTheFood	2026-11-13
 mr	allthemodium	200	AllTheModium	2026-11-27
 mr	allthetrims	200	All The Trims	2026-11-13
-mr	allurement!	err		2026-11-27
+mr	allurement!	err		2026-11-28
 mr	almanac	200	Almanac	2026-11-13
 mr	almightly-staff	200	Almightly Staff	2026-11-13
 mr	almost-bedtime	404		2026-11-13
@@ -25500,7 +25553,7 @@ mr	alterna	200	Alterna	2026-11-13
 mr	alternate-current	200	Alternate Current	2026-11-13
 mr	alternate-current-unofficial	200	Alternate Current Unofficial	2026-11-13
 mr	alternative-chunkloading	200	Alternative Chunkloading	2026-11-13
-mr	alternative-twilight(remastered)	err		2026-11-27
+mr	alternative-twilight(remastered)	err		2026-11-28
 mr	alternative-world-save-location	200	Alternative World Save Location	2026-11-13
 mr	alternative_twilight	200	alternative_twilight	2026-11-13
 mr	altorigingui	200	Alternate Origin GUI	2026-11-13
@@ -25709,7 +25762,7 @@ mr	anvilcraft-via	200	AnvilCraft: Void in Air	2026-11-13
 mr	anvilcraft_doge_plus	200	AnvilCraftDogePlus	2026-11-13
 mr	anvilcraftdingdongji	200	AnvilCraft: DingDongJi	2026-11-13
 mr	anvilcraftpigsplus	200	AnvilCraft: PigsPlus	2026-11-13
-mr	any-lanterns!	err		2026-11-27
+mr	any-lanterns!	err		2026-11-28
 mr	any-random-drops	200	Any Random drops	2026-11-13
 mr	anyblade	200	Anything SlashBlade	2026-11-13
 mr	anyfps	200	anyfps	2026-11-13
@@ -25777,7 +25830,7 @@ mr	april-fools	200	April Fools	2026-11-13
 mr	apron	200	Apron	2026-11-13
 mr	apugli	404		2026-11-13
 mr	aqa	200	AnvilCraft: Qualia Addon	2026-11-13
-mr	aqua-acrobatics-legacy-(ragecraft-version)	err		2026-11-27
+mr	aqua-acrobatics-legacy-(ragecraft-version)	err		2026-11-28
 mr	aqua-geode	200	Aqua Geode	2026-11-27
 mr	aquaculture	200	Aquaculture 2	2026-11-13
 mr	aquaculture-delight	200	Aquaculture Delight	2026-11-13
@@ -25795,7 +25848,7 @@ mr	arachnophobia-mode	200	Arachnophobia Mode For Minecraft	2026-11-13
 mr	araxers-bestiary	200	Araxer's Bestiary	2026-11-13
 mr	arbitrary-delight	200	Arbitrary Delight	2026-11-26
 mr	arboreal-nature	200	Arboreal Nature	2026-11-13
-mr	arborfirmacraft-(afc)	err		2026-11-27
+mr	arborfirmacraft-(afc)	err		2026-11-28
 mr	arc	200	Arc Lib	2026-11-13
 mr	arcadia-ah	200	Arcadia Auction House	2026-11-13
 mr	arcadia-lib	200	Arcadia Lib	2026-11-13
@@ -25928,7 +25981,7 @@ mr	arst-motion-blur	200	Arst Motion Blur	2026-11-13
 mr	art-of-forging-tetra	200	Art of Forging: A Tetra Addon	2026-11-13
 mr	artemis-thin-logs	200	Artemis' Thin Logs	2026-11-13
 mr	arthropocolypse	200	Arthropocolypse	2026-11-13
-mr	arthys-ebonite-(ae)	err		2026-11-27
+mr	arthys-ebonite-(ae)	err		2026-11-28
 mr	artifacts	200	Artifacts	2026-11-13
 mr	artifacts-delight	200	Artifacts Delight	2026-11-27
 mr	artifacts-merging	200	Artifacts Merging	2026-11-13
@@ -26558,7 +26611,7 @@ mr	better-potion-visuals	200	Better Potion Visuals	2026-11-13
 mr	better-quest-pop-up	200	Better Quest Pop-up	2026-11-13
 mr	better-questing-gamestages-expansion	200	Better Questing - Gamestages Expansion	2026-11-13
 mr	better-questing-quest-book	200	Better Questing - Quest Book	2026-11-13
-mr	better-recipe-book-(extended)	err		2026-11-27
+mr	better-recipe-book-(extended)	err		2026-11-28
 mr	better-resource-pack-sorting	200	Better Resource Pack Sorting	2026-11-13
 mr	better-respawn	200	Better Respawn	2026-11-13
 mr	better-safe-bed	200	Better Safe Bed	2026-11-13
@@ -27285,7 +27338,7 @@ mr	capejs	200	CapeJS	2026-11-13
 mr	capes	200	Capes	2026-11-13
 mr	capitals-a-monarchy-mod-for-mca-reborn	200	MCA Capitals | A Monarchy Mod for MCA Reborn	2026-11-13
 mr	caps	200	Caps | 连锁采集	2026-11-13
-mr	caps_awim%60s-tactical-equipment-1.20.1-1.16.5	err		2026-11-27
+mr	caps_awim%60s-tactical-equipment-1.20.1-1.16.5	err		2026-11-28
 mr	capsule	200	Capsule	2026-11-13
 mr	capture-nets	200	Capture Nets	2026-11-13
 mr	caracal_mob	200	Caracal mob	2026-11-13
@@ -27340,7 +27393,7 @@ mr	carpettngaddtion	200	CarpetTNGAddtion	2026-11-13
 mr	carrasconlib	200	#CarrasconLib	2026-11-13
 mr	carrier	200	Carrier	2026-11-27
 mr	carrot-rarity	200	Carrot Rarity	2026-11-13
-mr	carry-cats!	err		2026-11-27
+mr	carry-cats!	err		2026-11-28
 mr	carry-me	200	Carry Me	2026-11-13
 mr	carry-on	200	Carry On	2026-11-13
 mr	carry-on-extend	200	Carry On Extend	2026-11-13
@@ -27381,10 +27434,10 @@ mr	cataclysms	200	Cataclysms [By TheOman]	2026-11-13
 mr	catalyst	200	Catalyst	2026-11-13
 mr	catframe	200	CatFrame	2026-11-13
 mr	cats-expanded	200	Cats Expanded	2026-11-13
-mr	cattlestrophic!	err		2026-11-27
+mr	cattlestrophic!	err		2026-11-28
 mr	catvision	200	CatVision	2026-11-27
 mr	catwalks-llc	200	Catwalks LLC	2026-11-13
-mr	cauldron++	err		2026-11-27
+mr	cauldron++	err		2026-11-28
 mr	cauldron-cubes	200	Cauldron Cubes	2026-11-13
 mr	cauldron-fix	200	Cauldron Fix	2026-11-13
 mr	cauldronfix	200	CauldronFix	2026-11-13
@@ -27394,7 +27447,7 @@ mr	cave-delight	200	Cave Delight	2026-11-13
 mr	cave-dust	200	Cave Dust	2026-11-13
 mr	cave-dweller-evolved	200	Cave Dweller Evolved	2026-11-13
 mr	cave-dweller-overhaul	404		2026-11-13
-mr	cave-dweller-reimagined-(fabric)	err		2026-11-27
+mr	cave-dweller-reimagined-(fabric)	err		2026-11-28
 mr	cave-enhancements	200	Cave Enhancements	2026-11-13
 mr	cave-tweaks	200	Cave Tweaks	2026-11-13
 mr	cavebiomeapi	200	CaveBiomeAPI	2026-11-13
@@ -27646,7 +27699,7 @@ mr	choups-drakvyrn-mod	200	Choup's Drakvyrn Mod	2026-11-27
 mr	chovys-apocalypse	200	Chovy's Apocalypse	2026-11-13
 mr	chowder-express	200	Chowder Express	2026-11-13
 mr	christmas-culinary-desires-(-decorations)	404		2026-11-13
-mr	christmas-delight-(farmers-delight-addon)	err		2026-11-27
+mr	christmas-delight-(farmers-delight-addon)	err		2026-11-28
 mr	christmas-dweller	200	Christmas Dweller	2026-11-13
 mr	christmas-music-discs	200	Christmas Music Discs	2026-11-13
 mr	chroma-world-border	200	Chroma World Border	2026-11-13
@@ -27704,7 +27757,7 @@ mr	cit-resewn	200	CIT Resewn	2026-11-13
 mr	cit-resewn-jsonlagpatch	200	CIT Resewn JSONLagPatch	2026-11-13
 mr	cit-resewn-neopatcher	200	CITResewnNeoPatcher	2026-11-13
 mr	citadel	200	Citadel	2026-11-13
-mr	citadel-(1.21.1-port)	err		2026-11-27
+mr	citadel-(1.21.1-port)	err		2026-11-28
 mr	citreforged	200	CIT Reforged	2026-11-13
 mr	citrus	200	Citrus	2026-11-13
 mr	city-of-chambers	200	City of Chambers	2026-11-27
@@ -27759,7 +27812,7 @@ mr	clickmobs	200	Click Mobs	2026-11-27
 mr	clickopener	200	Click Opener Mod	2026-11-13
 mr	clicksigns	200	Click Signs	2026-11-13
 mr	clickthrough	200	ClickThrough	2026-11-13
-mr	clickthrough+	err		2026-11-27
+mr	clickthrough+	err		2026-11-28
 mr	clickthrough2.0	200	Clickthrough 2.0	2026-11-13
 mr	clickvillagers	200	Click Villagers	2026-11-27
 mr	client-commands	200	clientcommands	2026-11-13
@@ -27858,7 +27911,7 @@ mr	cobblemon-spawn-alerts	200	Cobblemon Spawn Alerts	2026-11-13
 mr	cobblemon-spawn-notification	200	Cobblemon Spawn Notification	2026-11-13
 mr	cobblemon-trainers-backpack	200	Cobblemon: Trainers Backpack	2026-11-13
 mr	cobblemon-trials-edition	200	Cobblemon Trials Edition	2026-11-13
-mr	cobblemon-utility+	err		2026-11-27
+mr	cobblemon-utility+	err		2026-11-28
 mr	cobblemonraiddens	200	Cobblemon Raid Dens	2026-11-13
 mr	cobblemonrider1.5	200	CobblemonRider	2026-11-13
 mr	cobblemontrainers	200	CobblemonTrainers (Discontinued)	2026-11-13
@@ -27881,7 +27934,7 @@ mr	coffeegs-colorful-world	200	CoffeeG's Colorful World	2026-11-27
 mr	cofh-core	200	CoFH Core	2026-11-13
 mr	cognition	200	Cognition	2026-11-13
 mr	coin-to-shop	200	Coin to shop消费了！	2026-11-13
-mr	coins!	err		2026-11-27
+mr	coins!	err		2026-11-28
 mr	coins-je	200	Coins JE	2026-11-13
 mr	cold-light	200	Cold Light	2026-11-13
 mr	cold-snap-horde	200	Cold Snap Horde	2026-11-13
@@ -28023,7 +28076,7 @@ mr	compromise	200	Compromise	2026-11-13
 mr	computercraft	200	ComputerCraft	2026-11-13
 mr	concentration	200	Concentration	2026-11-13
 mr	concerto	200	Concerto	2026-11-13
-mr	concoction!	err		2026-11-27
+mr	concoction!	err		2026-11-28
 mr	condensed-creative	200	Condensed Creative	2026-11-13
 mr	confetti-lib	200	Confetti Lib	2026-11-13
 mr	confetti-stuff	200	Confetti Stuff	2026-11-13
@@ -28064,7 +28117,7 @@ mr	connectedness	200	Connectedness	2026-11-13
 mr	connectiblechains	200	Connectible Chains [Fabric]	2026-11-13
 mr	connector	200	Sinytra Connector	2026-11-13
 mr	connector-extras	200	Connector Extras	2026-11-13
-mr	connectored-c2me-(c2me-fork-for-connector)	err		2026-11-27
+mr	connectored-c2me-(c2me-fork-for-connector)	err		2026-11-28
 mr	connectorlib	200	Connectorlib	2026-11-13
 mr	conquest-reforged	200	Conquest Reforged	2026-11-13
 mr	conrad	200	Conrad	2026-11-13
@@ -28157,7 +28210,7 @@ mr	copperworks	200	Copperworks	2026-11-27
 mr	copy-item	200	Copy-Item	2026-11-13
 mr	copyblock	200	Copy block（复制方块）	2026-11-13
 mr	copycats	200	Create: Copycats+	2026-11-13
-mr	copycats+-aeronautics-weight	err		2026-11-27
+mr	copycats+-aeronautics-weight	err		2026-11-28
 mr	copyid	200	CopyID	2026-11-13
 mr	cor	200	Creatures of Runeterra a League of Legends mod	2026-11-13
 mr	coral-up	200	Coral Up	2026-11-13
@@ -28284,10 +28337,10 @@ mr	cravencrafts-bloody-bits	200	CravenCraft's Bloody Bits	2026-11-13
 mr	crawl	200	Crawl	2026-11-13
 mr	crawl-on-demand	200	Crawl on Demand	2026-11-13
 mr	crawling-chaos	200	Crawling Chaos	2026-11-13
-mr	craziness-awakened-(orespawn-remake)	err		2026-11-27
+mr	craziness-awakened-(orespawn-remake)	err		2026-11-28
 mr	crazy-ae2-addons	200	Crazy AE2 Addons	2026-11-13
 mr	crazy-alloy	200	Crazy Alloy	2026-11-27
-mr	crazy-chocobos!	err		2026-11-27
+mr	crazy-chocobos!	err		2026-11-28
 mr	crazy-hunters-manhunt-ai	200	Crazy Hunters: Manhunt AI	2026-11-13
 mr	crazyae	200	CrazyAE	2026-11-13
 mr	crazyvillagers	200	CrazyVillagers	2026-11-13
@@ -28426,7 +28479,7 @@ mr	create-design-n-decor	200	Create: Design n' Decor	2026-11-13
 mr	create-diamond-factory	200	Create: Diamond & Factory	2026-11-13
 mr	create-diesel-generators	200	Create: Diesel Generators	2026-11-13
 mr	create-diesel-generators-fabric-restitched	200	Create: Diesel Generators [Fabric Restitched]	2026-11-13
-mr	create-dimension,-steamworks-realm	err		2026-11-27
+mr	create-dimension,-steamworks-realm	err		2026-11-28
 mr	create-dragons-plus	200	Create: Dragons Plus	2026-11-13
 mr	create-dreams-and-desires	200	Create: Dreams & Desires	2026-11-13
 mr	create-dreams-n-desires-updated-to-create-6	200	Create: Dreams n' Desires Updated to Create 6	2026-11-13
@@ -28690,7 +28743,7 @@ mr	create-tipsy-n-high	200	Create: Tipsy n' Dizzy	2026-11-13
 mr	create-totem-factory	200	Create: Totem Factory	2026-11-13
 mr	create-towed	200	Create: Towed	2026-11-13
 mr	create-track-map	200	Create Track Map	2026-11-13
-mr	create-track-map-(unofficial-fork)	err		2026-11-27
+mr	create-track-map-(unofficial-fork)	err		2026-11-28
 mr	create-track-switch-radio	200	Create: Track Switch Radio	2026-11-13
 mr	create-tracks	200	Create: Tracks	2026-11-27
 mr	create-tracks-plus	200	Create: Tracks+	2026-11-13
@@ -28703,7 +28756,7 @@ mr	create-train-perspective-fix	200	Create: Train Perspective Fix	2026-11-13
 mr	create-trains-on-trains	200	Create: Trains On Trains	2026-11-13
 mr	create-trainutilities	200	Create Train Utilities (Create Train Doors)	2026-11-13
 mr	create-transit	200	Create: Transit	2026-11-13
-mr	create-transmission!	err		2026-11-27
+mr	create-transmission!	err		2026-11-28
 mr	create-trimmed	200	Create: Trimmed	2026-11-13
 mr	create-tweaked-controllers	200	Create: Tweaked Controllers	2026-11-13
 mr	create-twistermill	200	Create: Twistermill (VS / Sable & Aeronautics)	2026-11-13
@@ -28720,7 +28773,7 @@ mr	create-versatile-gearbox	200	Create Versatile Gearbox	2026-11-13
 mr	create-vertical-chain-conveyors	200	Create: Vertical Chain Conveyors	2026-11-13
 mr	create-vibrant-vaults	200	Create: Vibrant Vaults	2026-11-13
 mr	create-villager-labor	200	Create Villager Labor	2026-11-13
-mr	create-vintage-(unofficial-port)	err		2026-11-27
+mr	create-vintage-(unofficial-port)	err		2026-11-28
 mr	create-vintage-improvements	200	Create: Vintage Improvements	2026-11-13
 mr	create-vvvf-simulator	200	Create: VVVF-Simulator	2026-11-27
 mr	create-waterparked	200	Create: Waterparked	2026-11-13
@@ -28924,7 +28977,7 @@ mr	curious-chests	200	Curious Chests	2026-11-13
 mr	curious-lanterns	200	Curious Lanterns	2026-11-13
 mr	curiousmobs	200	curiousmobs	2026-11-13
 mr	current-game-music-track	200	Current Game Music Track	2026-11-13
-mr	curse%2B	err		2026-11-27
+mr	curse%2B	err		2026-11-28
 mr	curse-breaker	200	Curse Breaker	2026-11-13
 mr	curse-of-pandora	200	Curse of Pandora	2026-11-13
 mr	curse-of-the-warden	200	Curse Of The Warden	2026-11-13
@@ -29026,7 +29079,7 @@ mr	cut-and-colored	200	Cut And Colored	2026-11-13
 mr	cut-through	200	Cut Through	2026-11-13
 mr	cute-companions-ducks	200	Cute Companions: Ducks	2026-11-13
 mr	cute-mob-models	200	Cute Mob Models	2026-11-13
-mr	cute-n-sweet!	err		2026-11-27
+mr	cute-n-sweet!	err		2026-11-28
 mr	cutepuppymod	200	CutePuppyMod	2026-11-13
 mr	cutetrade	404		2026-11-13
 mr	cutt_promix	200	Pro Assistant Cutting Board	2026-11-13
@@ -29120,7 +29173,7 @@ mr	darksmelting	200	DarkSmelting	2026-11-13
 mr	darkspawn	200	DarkSpawn	2026-11-13
 mr	darktitlebar	200	DarkTitleBar	2026-11-13
 mr	darktitlebar-forge	200	DarkTitleBarForge	2026-11-13
-mr	darling-decorations!	err		2026-11-27
+mr	darling-decorations!	err		2026-11-28
 mr	darwin-sprinting-system	200	Darwin Sprinting System	2026-11-13
 mr	darwin-water-ambience	200	Darwin Water Ambience	2026-11-13
 mr	dash	200	Dash	2026-11-13
@@ -29220,7 +29273,7 @@ mr	decorative-wooden-lattices	200	Decorative Wooden Lattices	2026-11-13
 mr	decoween	200	Decoween	2026-11-13
 mr	deep-aether	200	Deep Aether	2026-11-13
 mr	deep-below	200	Deep Below	2026-11-13
-mr	deep-blue-a-bettas-aquatics-addon!	err		2026-11-27
+mr	deep-blue-a-bettas-aquatics-addon!	err		2026-11-28
 mr	deep-dark-trader	200	Deep Dark Trader	2026-11-13
 mr	deep-mob-learning-refabricated	200	Deep Mob Learning: Refabricated	2026-11-13
 mr	deep-resonance	200	Deep Resonance	2026-11-13
@@ -29292,7 +29345,7 @@ mr	depths-update	200	Depths Update	2026-11-13
 mr	deputy-placement-switch	200	Deputy placement switch	2026-11-13
 mr	derfl007s-road-mod-repaved	200	derfl007's Road Mod: Repaved	2026-11-13
 mr	descendants-weaponry	200	Descendant's Weaponry	2026-11-13
-mr	desert-behemoths-sandworms!	err		2026-11-27
+mr	desert-behemoths-sandworms!	err		2026-11-28
 mr	desert-behemoths-sandworms-fix	200	Desert Behemoths Sandworms - Fix	2026-11-13
 mr	desert-dungeon-dungeonz-addon	200	Desert Dungeon - DungeonZ addon	2026-11-13
 mr	desert-pillager-wall	200	Desert Pillager Wall	2026-11-13
@@ -29332,7 +29385,7 @@ mr	diagonal-windows	200	Diagonal Windows	2026-11-13
 mr	dialogautologin	200	dialog auto login (for authme reloaded servers)	2026-11-13
 mr	diamethyst-arrows	200	Diamethyst Arrows	2026-11-13
 mr	diamethyst-golem	200	Diamethyst Golem	2026-11-13
-mr	diamethysts!	err		2026-11-27
+mr	diamethysts!	err		2026-11-28
 mr	diamond-chest-shops	200	Diamond Chest Shops	2026-11-13
 mr	diamond-economy	200	Diamond Economy	2026-11-13
 mr	diamond-in-the-rough	200	Diamond In The Rough	2026-11-13
@@ -29350,7 +29403,7 @@ mr	differentiate	200	Differentiate	2026-11-27
 mr	difficult-raids	200	Difficult Raids	2026-11-13
 mr	difficult-raids-compatibility-edition	200	Difficult Raids - Compatibility Edition	2026-11-13
 mr	difficulty	200	SIHYWTCAMD	2026-11-13
-mr	difficulty+	err		2026-11-27
+mr	difficulty+	err		2026-11-28
 mr	difficulty-extensions	200	SIHYWTCAMD Extensions	2026-11-13
 mr	difficulty-lock	200	Difficulty Lock	2026-11-13
 mr	difficulty-tweak	200	Difficulty Tweak	2026-11-13
@@ -29488,9 +29541,10 @@ mr	doggy-talents-next	200	Doggy Talents Next	2026-11-13
 mr	dogreborn	200	DogReborn	2026-11-13
 mr	dokimobs	200	dokimobs	2026-11-13
 mr	dolt-mod-how	200	Dolt Mod How	2026-11-13
+mr	doltastic-enchantments	200	Doltastic Enchantments	2026-11-28
 mr	domestication-innovation	200	Domestication Innovation	2026-11-13
 mr	dominatus	200	Dominatus : Refinement	2026-11-13
-mr	don%22t-die	err		2026-11-27
+mr	don%22t-die	err		2026-11-28
 mr	dong-dongs-random-creation	200	Dong Dong's random creation	2026-11-13
 mr	dont-cut-tripwire	200	Don't Cut Tripwire	2026-11-13
 mr	dont-dissapear	200	Don't dissapear on me	2026-11-13
@@ -29531,13 +29585,13 @@ mr	draftout	200	Draftout	2026-11-13
 mr	draggable-lists	200	Draggable Lists	2026-11-13
 mr	dragionns-stuff	200	Dragionn's Stuff	2026-11-13
 mr	dragns-bettas-aquatics	200	DragN’s Bettas & Aquatics!	2026-11-13
-mr	dragns-crop-overhaul!	err		2026-11-27
-mr	dragns-deadly-dinos!	err		2026-11-27
+mr	dragns-crop-overhaul!	err		2026-11-28
+mr	dragns-deadly-dinos!	err		2026-11-28
 mr	dragns-deadly-dinos-reconstructed	200	DragN's Deadly Dinos: Reconstructed	2026-11-13
 mr	dragns-livestock-overhaul	200	DragN's Livestock Overhaul!	2026-11-13
 mr	dragns-livestock-overhaul-permafrost	200	DragN's Livestock Overhaul: Permafrost	2026-11-13
-mr	dragns-livestock-overhaul-pets-addon!	err		2026-11-27
-mr	dragns-valiant-vehicles!	err		2026-11-27
+mr	dragns-livestock-overhaul-pets-addon!	err		2026-11-28
+mr	dragns-valiant-vehicles!	err		2026-11-28
 mr	dragns-wagons	200	DragN's Wagons!	2026-11-27
 mr	dragon-barrel-roll	200	Dragon Barrel Roll	2026-11-13
 mr	dragon-curse-chronicles	200	Dragon Curse Chronicles	2026-11-13
@@ -29562,7 +29616,7 @@ mr	dragonlib	200	DragonLib	2026-11-13
 mr	dragonloot	200	DragonLoot	2026-11-13
 mr	dragonmine-z-super	200	DragonMine Z: Super	2026-11-13
 mr	dragonminez	200	DragonMine Z - Dragon Ball in Minecraft!	2026-11-13
-mr	dragons-egg(s)	err		2026-11-27
+mr	dragons-egg(s)	err		2026-11-28
 mr	dragonsteel-more-magic-series	200	Dragonsteel & Star Alloy [Magical Metallurgy Series]	2026-11-13
 mr	dramatic-doors	200	Dramatic Doors	2026-11-13
 mr	dramatictrees-bop	200	Dramatic Trees - Biomes O' Plenty	2026-11-27
@@ -29615,7 +29669,7 @@ mr	dualhotbar-reworked	200	DualHotbar Reworked	2026-11-13
 mr	dualwielding	200	DualWielding	2026-11-13
 mr	duckies	200	Duckies	2026-11-27
 mr	duckling	200	Duckling	2026-11-13
-mr	ducky!	err		2026-11-27
+mr	ducky!	err		2026-11-28
 mr	ducky-periphs	200	Ducky Peripherals	2026-11-13
 mr	duclib	200	DucLib	2026-11-13
 mr	ductwork	200	Ductwork	2026-11-13
@@ -29629,8 +29683,8 @@ mr	dungeon-difficulty	200	Dungeon Difficulty	2026-11-13
 mr	dungeon-now-loading	200	Dungeon Now Loading	2026-11-13
 mr	dungeon-train	200	Dungeon Train: A Lore-Rich Roguelite RPG Adventure	2026-11-13
 mr	dungeoncrawl	200	Dungeon Crawl	2026-11-13
-mr	dungeons+-more-spawners	err		2026-11-27
-mr	dungeons+-towers	err		2026-11-27
+mr	dungeons+-more-spawners	err		2026-11-28
+mr	dungeons+-towers	err		2026-11-28
 mr	dungeons-and-combat	200	Dungeons and Combat	2026-11-27
 mr	dungeons-and-villages-deeper-and-darker	200	Dungeons And Villages: Deeper and Darker	2026-11-13
 mr	dungeons-artifacts	200	Dungeons Artifacts	2026-11-13
@@ -29802,7 +29856,7 @@ mr	echo-chest	200	Echo Chest	2026-11-13
 mr	echo-chest-experience-obliterator	200	Echo Chest Experience Obliterator	2026-11-13
 mr	echo-clones	200	Echo Clones	2026-11-13
 mr	echo-warrior	200	Echo Warrior	2026-11-27
-mr	echoes-of-the-end-(-structures)	err		2026-11-27
+mr	echoes-of-the-end-(-structures)	err		2026-11-28
 mr	echoes-of-the-past	200	Echoes of the Past	2026-11-13
 mr	echoes-of-time	200	Echoes Of Time	2026-11-13
 mr	echoes-of-utopia	200	The King and The Queen - Echoes of Utopia	2026-11-13
@@ -29819,7 +29873,7 @@ mr	ecologics	200	Ecologics	2026-11-13
 mr	econ	200	eCon	2026-11-13
 mr	economicmarket	200	EconomicMarket	2026-11-13
 mr	economy-api	404		2026-11-13
-mr	economy-coins%2C-bills-and-gems!	err		2026-11-27
+mr	economy-coins%2C-bills-and-gems!	err		2026-11-28
 mr	ecospherical-depths	200	Ecospherical Depths	2026-11-27
 mr	ecospherical-expansion	200	Ecospherical Expansion	2026-11-13
 mr	ecotones	200	Ecotones	2026-11-13
@@ -29924,7 +29978,7 @@ mr	elytra-rebalance	404		2026-11-13
 mr	elytra-recast	200	Elytra Recast	2026-11-13
 mr	elytra-skins	200	Elytra Skins	2026-11-13
 mr	elytra-slot	200	Elytra Slot	2026-11-13
-mr	elytra-slot!	err		2026-11-27
+mr	elytra-slot!	err		2026-11-28
 mr	elytra-toggle	200	Elytra Toggle	2026-11-13
 mr	elytra-trails	200	[ElyT]鞘翅尾迹 elytra-trails	2026-11-13
 mr	elytra-trims	200	Elytra Trims	2026-11-13
@@ -29938,7 +29992,7 @@ mr	elytrahud3	200	ElytraHud3	2026-11-13
 mr	elytrakey	200	ElytraKey	2026-11-13
 mr	elytraplus	200	ElytraPlus	2026-11-13
 mr	elytras-disabled	200	Elytras Disabled	2026-11-13
-mr	elytraswapper+	err		2026-11-27
+mr	elytraswapper+	err		2026-11-28
 mr	elytraswimfix	200	ElytraSwimFix	2026-11-13
 mr	elytratime	200	Elytra Time	2026-11-13
 mr	em4es	200	EM4ES: ExplorerMapForEveryStructure	2026-11-13
@@ -29963,7 +30017,7 @@ mr	emendatusenigmatica	200	Emendatus Enigmatica	2026-11-13
 mr	emerald-craft	200	Emerald Craft	2026-11-13
 mr	emerald-edition	200	Emerald Edition	2026-11-13
 mr	emerald-equipment	200	Emerald Equipment	2026-11-13
-mr	emerald-on-a-stick-(villager-follower)	err		2026-11-27
+mr	emerald-on-a-stick-(villager-follower)	err		2026-11-28
 mr	emeraldcraft	200	EmeraldCraft	2026-11-13
 mr	emerging-technology-hydroponics-community-edition	200	Emerging Technology: Community Edition	2026-11-27
 mr	emf-compat-carry-on	200	EMF Compat: Carry On	2026-11-13
@@ -29982,7 +30036,7 @@ mr	emi-enchanting	200	EMI Enchanting	2026-11-13
 mr	emi-loot	200	EMI Loot	2026-11-13
 mr	emi-ores	200	EMI Ores	2026-11-13
 mr	emi-patternizer	200	EMI Patternizer	2026-11-13
-mr	emi-professions-(emip)	err		2026-11-27
+mr	emi-professions-(emip)	err		2026-11-28
 mr	emi-recipe-pin	200	EMI Recipe Pin	2026-11-13
 mr	emi-structures	200	EMI Structures	2026-11-13
 mr	emi_farmersdelight	200	EMI Farmer's Delight	2026-11-13
@@ -30085,7 +30139,7 @@ mr	endefinder	200	末影探索者 Endefinder	2026-11-13
 mr	endemic	200	Endemic	2026-11-13
 mr	ender-chest-persistence	200	Ender Chest Persistence	2026-11-13
 mr	ender-chested	200	Ender Chested	2026-11-13
-mr	ender-christmas+	err		2026-11-27
+mr	ender-christmas+	err		2026-11-28
 mr	ender-compass	200	Ender Compass	2026-11-27
 mr	ender-crop	200	Ender Crop	2026-11-13
 mr	ender-dragon-loot	200	Ender Dragon Loot│末影龍戰利品	2026-11-27
@@ -30201,7 +30255,7 @@ mr	enigmatic-addons-fix	404		2026-11-13
 mr	enigmatic-armor	200	Enigmatic Armor	2026-11-13
 mr	enigmatic-legacy	200	Enigmatic Legacy	2026-11-13
 mr	enigmatic_extra	200	enigmatic_extra	2026-11-13
-mr	enigmaticlegacy+	err		2026-11-27
+mr	enigmaticlegacy+	err		2026-11-28
 mr	enlightend	200	Enlightend	2026-11-13
 mr	ennuis_bigger_inventories	200	Ennui's Bigger Inventories	2026-11-13
 mr	enriched	200	Enriched	2026-11-13
@@ -30504,6 +30558,7 @@ mr	extended-crafting	200	Extended Crafting	2026-11-13
 mr	extended-drawers	200	Extended Drawers	2026-11-13
 mr	extended-drawers-polymer	200	Polymer Patch for Extended Drawers	2026-11-13
 mr	extended-flywheels	200	Create: Extended Flywheels	2026-11-13
+mr	extended-hotbar	200	Extended Hotbar	2026-11-28
 mr	extended-industrialization	200	Extended Industrialization	2026-11-13
 mr	extended-mushrooms	200	Extended Mushrooms	2026-11-13
 mr	extended-oritech	200	Extended Oritech	2026-11-13
@@ -30685,7 +30740,7 @@ mr	fancy-delight	200	Fancy Delight	2026-11-13
 mr	fancy-dyes	200	Fancy Dyes	2026-11-13
 mr	fancy-enchantments	200	Fancy Enchantments	2026-11-13
 mr	fancy-entity-renderer	200	Fancy Entity Renderer	2026-11-13
-mr	fancy-ferrets!	err		2026-11-27
+mr	fancy-ferrets!	err		2026-11-28
 mr	fancy-frames	200	Fancy Frames	2026-11-13
 mr	fancy-health-bar	200	Fancy Health Bar	2026-11-13
 mr	fancy-notify	200	Fancy Notify | Better Toasts	2026-11-13
@@ -30905,7 +30960,7 @@ mr	fishermans-haven	200	[HUGE UPDATE] Fisherman's Haven	2026-11-13
 mr	fishermens-trap	200	Fishermen's Trap [Neo/Fabric]	2026-11-13
 mr	fishery	200	Robin's Fishery	2026-11-13
 mr	fishes-undead-rise-ye	200	Fishes! Undead, Rise Ye	2026-11-27
-mr	fishing+	err		2026-11-27
+mr	fishing+	err		2026-11-28
 mr	fishing-indicators	200	Fishing Indicators	2026-11-13
 mr	fishing-real	200	Fishing Real	2026-11-13
 mr	fishing-rod-fix	200	Fishing Rod Fix	2026-11-13
@@ -31182,7 +31237,7 @@ mr	fragile-torches	200	Fragile Torches	2026-11-27
 mr	fragmentum	200	Fragmentum	2026-11-13
 mr	frame-api	200	🔨 Frame API	2026-11-13
 mr	frame-changer	200	Frame Changer	2026-11-13
-mr	frame-void-patch-(mc-59363)	err		2026-11-27
+mr	frame-void-patch-(mc-59363)	err		2026-11-28
 mr	framed	200	HELP! I'm being framed!	2026-11-27
 mr	framed-maps-fix	200	Framed Maps Fix	2026-11-13
 mr	framedblocks	200	FramedBlocks	2026-11-13
@@ -31487,7 +31542,7 @@ mr	giant-torii	200	Giant Torii	2026-11-13
 mr	giant-tree-stump	200	Giant Tree Stump	2026-11-13
 mr	giant-yellow-tree	200	Giant Yellow Tree	2026-11-13
 mr	giantess-toki	200	Giantess Toki & more	2026-11-13
-mr	giddy-guinea-pigs!	err		2026-11-27
+mr	giddy-guinea-pigs!	err		2026-11-28
 mr	gift-drop	200	Gift drop	2026-11-13
 mr	gigeresque	200	Gigeresque	2026-11-13
 mr	gilded-armor	200	Gilded Armor	2026-11-13
@@ -31577,7 +31632,7 @@ mr	goety-dargui	200	Goety DarGui	2026-11-13
 mr	goety-event-horizon	200	Goety Event Horizon	2026-11-13
 mr	goety-expansion	200	Goety:Expansion	2026-11-13
 mr	goety-fabric	200	Goety-Fabric	2026-11-13
-mr	goety-gotta-summon-em-all!	err		2026-11-27
+mr	goety-gotta-summon-em-all!	err		2026-11-28
 mr	goety-hostility	200	Goety Hostility	2026-11-13
 mr	goety-integration	200	Goety Integration	2026-11-13
 mr	goety-invasion	200	Goety & Invasion	2026-11-27
@@ -31673,7 +31728,7 @@ mr	great-big-world	200	Great Big World	2026-11-13
 mr	great-scrollable-tooltips	200	Great Scrollable Tooltips	2026-11-13
 mr	greate	200	Greate	2026-11-13
 mr	greedy-villagers	200	Greedy Villagers	2026-11-13
-mr	greek-fantasy-(unofficial-port)	err		2026-11-27
+mr	greek-fantasy-(unofficial-port)	err		2026-11-28
 mr	green-screen	200	Green Screen	2026-11-13
 mr	greenery	200	Greenery🌿	2026-11-13
 mr	greenthumb	200	Green Thumb	2026-11-27
@@ -31710,7 +31765,7 @@ mr	groundedorigins	200	Grounded Origins	2026-11-13
 mr	growableores	200	GrowableOres	2026-11-13
 mr	growableores-extension	200	GrowableOres Extension	2026-11-13
 mr	growmeal	200	Growmeal	2026-11-13
-mr	growmeal-(fabric)	err		2026-11-27
+mr	growmeal-(fabric)	err		2026-11-28
 mr	groxs-villagers	200	Grox's Villagers	2026-11-13
 mr	gt-community-additions	200	GT Community Additions	2026-11-13
 mr	gt-craft-ivmts	200	GT CRAFT [IV/MTS]	2026-11-13
@@ -31741,7 +31796,7 @@ mr	gtp	200	Grand Teleport (GTP)	2026-11-13
 mr	gtwp	200	GTWoodProcessing	2026-11-13
 mr	guard-horn	200	Guard Horn	2026-11-13
 mr	guard-villagers	200	Guard Villagers	2026-11-13
-mr	guard-villagers-(fabricquilt)	err		2026-11-27
+mr	guard-villagers-(fabricquilt)	err		2026-11-28
 mr	guard-villagers-1.21.1	200	Guard Villagers (Fabric/Quilt) [1.21.1]	2026-11-13
 mr	guard-villagers-automatic-guard-conversion	200	Guard Villagers - Autonomous Villager Defense	2026-11-13
 mr	guard-villagers-tacz-support	200	Guard Villagers TACZ Support	2026-11-13
@@ -31774,7 +31829,7 @@ mr	hadean-breathe	200	Hadean Breathe	2026-11-13
 mr	hadean-spells	404		2026-11-15
 mr	haema	200	Haema	2026-11-13
 mr	hagds_tpa	200	HAGD's_tpa	2026-11-13
-mr	hah!-ueuh	err		2026-11-27
+mr	hah!-ueuh	err		2026-11-28
 mr	hair-c	200	Hair C	2026-11-13
 mr	hairy-zombies	200	Hairy Zombies	2026-11-27
 mr	halfdoors	200	Halfdoors	2026-11-13
@@ -31796,13 +31851,14 @@ mr	hamstercore	200	HamsterCore	2026-11-13
 mr	hamstermod	200	Hamster Mod	2026-11-13
 mr	hamsters	200	Hamsters	2026-11-13
 mr	hamsters-delight	404		2026-11-13
-mr	hamtastic-hamsters!	err		2026-11-27
+mr	hamtastic-hamsters!	err		2026-11-28
 mr	hand-magic	200	Hand Magic	2026-11-13
 mr	hand-magic-renewed	200	Hand Magic: Renewed	2026-11-13
 mr	hand-over-your-items	200	Hand Over Your Items	2026-11-13
 mr	handcrafted	200	Handcrafted	2026-11-13
 mr	handful	200	Handful	2026-11-13
 mr	handheld-moon	200	Handheld Moon - (with flashlight)	2026-11-13
+mr	handson-letsdo	200	Hands-On Let's Do	2026-11-28
 mr	handycam	200	Handycam	2026-11-13
 mr	handycommands_lff	200	HandyCommands	2026-11-13
 mr	hang-glider	200	Hang Glider	2026-11-13
@@ -31881,7 +31937,7 @@ mr	headfix	200	Head Name Fix	2026-11-13
 mr	headindex	200	Head Index	2026-11-13
 mr	headpats	200	Headpats	2026-11-27
 mr	heads	200	Heads	2026-11-13
-mr	heads-hurt-too!	err		2026-11-27
+mr	heads-hurt-too!	err		2026-11-28
 mr	headshot-respawn	200	Headshot Respawn	2026-11-13
 mr	healer	200	Healer	2026-11-13
 mr	healight	200	Healight	2026-11-13
@@ -31932,7 +31988,7 @@ mr	helicopters-madness	200	Helicopters Madness	2026-11-13
 mr	helium_client	200	Helium Client	2026-11-13
 mr	hell-on-earth	200	Hell On Earth	2026-11-27
 mr	helldivers-2-spread-democracy	200	Helldivers 2 - Spread Democracy	2026-11-13
-mr	hellions-sniffer+	err		2026-11-27
+mr	hellions-sniffer+	err		2026-11-28
 mr	hellish-blahaj	200	Hellish Blåhaj	2026-11-13
 mr	hellish-trials	200	Hellish Trials	2026-11-13
 mr	hello-crosshair	200	Hello Crosshair	2026-11-13
@@ -32254,7 +32310,7 @@ mr	i-cant-believe-its-not-1215	200	I Can't Believe It's Not 1.21.5	2026-11-13
 mr	i-didnt-mean-it-that-way	200	I didn't mean it that way	2026-11-13
 mr	i-dont-see-you	200	I Don't See You	2026-11-13
 mr	i-feel-bad	200	I Feel Bad	2026-11-13
-mr	i-hate-flesh-reborn-(ihfr)	err		2026-11-27
+mr	i-hate-flesh-reborn-(ihfr)	err		2026-11-28
 mr	i-have-slept	404		2026-11-13
 mr	i-just-want-to-ruin-nether-ceiling	200	I Just Want to Ruin nether Ceiling	2026-11-13
 mr	i-know-what-im-doing	200	I Know What I'm Doing	2026-11-13
@@ -32267,7 +32323,7 @@ mr	i-wanna-music	200	I Wanna Music	2026-11-13
 mr	i-wanna-show	200	I Wanna Show	2026-11-13
 mr	i-wanna-skate	200	I Wanna Skate	2026-11-13
 mr	i-wanna-travel	200	i Wanna Travel	2026-11-27
-mr	i-want-cute-plushies-!	err		2026-11-27
+mr	i-want-cute-plushies-!	err		2026-11-28
 mr	i-want-to-spin	200	I want to spin	2026-11-13
 mr	i..am-steve	200	I.. am steve	2026-11-13
 mr	i113ws-camera-lib	200	i113w's Camera Lib	2026-11-13
@@ -32360,7 +32416,7 @@ mr	illager-viking-longship	200	Illager Viking Longship	2026-11-27
 mr	illager-war-trireme	200	Illager War Trireme	2026-11-27
 mr	illager-warship	200	Illager Warship	2026-11-13
 mr	illagerblabber	200	IllagerBlabber	2026-11-13
-mr	illagers+	err		2026-11-27
+mr	illagers+	err		2026-11-28
 mr	illagers-wear-armor	200	Illagers Wear Armor	2026-11-13
 mr	illageruniverse	200	Illager Universe	2026-11-13
 mr	illuminated	200	Illuminated	2026-11-13
@@ -32543,7 +32599,7 @@ mr	infinitory	200	Infinitory	2026-11-13
 mr	infinitubes	200	InfiniTubes	2026-11-13
 mr	infinity-cave	200	Infinity Cave	2026-11-27
 mr	infinity-gauntlet-mod	200	Infinity Gauntlet Mod	2026-11-27
-mr	infinity-golem-boss-fight-(beta)	err		2026-11-27
+mr	infinity-golem-boss-fight-(beta)	err		2026-11-28
 mr	infinity-item-editor	200	Infinity Item Editor	2026-11-13
 mr	infinity-item-editor-re	200	Infinity Item Editor Re	2026-11-13
 mr	infinity-pattern-provider	200	无限样板供应器（Infinity Pattern Provider）	2026-11-13
@@ -32605,7 +32661,7 @@ mr	instantly-destroy-tree-clear-path-for-horse-riding	200	Instantly Destroy Tree
 mr	instantly-interact-internally	200	Instantly Interact Internally	2026-11-13
 mr	instantsleep	200	InstantSleep	2026-11-27
 mr	instinct-dltb	200	Instinct [DLTB]	2026-11-18
-mr	instrument%2B%2B	err		2026-11-27
+mr	instrument%2B%2B	err		2026-11-28
 mr	instrumental-mobs	200	Instrumental Mobs	2026-11-13
 mr	intact-ruined-nether-portal	200	Intact Ruined Nether Portal	2026-11-13
 mr	intangible-effect	200	Intangible Effect	2026-11-13
@@ -32724,7 +32780,7 @@ mr	iron-bookshelves	200	Iron Bookshelves	2026-11-13
 mr	iron-chest-fix	200	Iron Chest Fix	2026-11-13
 mr	iron-chest-unofficial	200	Iron Chest Unofficial	2026-11-13
 mr	iron-chests	200	Iron Chests	2026-11-13
-mr	iron-chests-(with-netherite-chest)	err		2026-11-27
+mr	iron-chests-(with-netherite-chest)	err		2026-11-28
 mr	iron-chests-fabric	200	Iron Chests (Fabric)	2026-11-13
 mr	iron-door-key	200	Iron Door Key	2026-11-13
 mr	iron-ender-chests	200	Iron Ender Chests	2026-11-13
@@ -32774,7 +32830,7 @@ mr	isometric-renders-forked	200	Isometric Renders - Forked	2026-11-13
 mr	iss-affiliateddistant-shock-barrier	200	[ISS DSB]Distant Shock Barrier	2026-11-13
 mr	iss-food-spelling	200	ISS: Food Spelling	2026-11-13
 mr	isskjs	200	KubeJS Iron's Spells	2026-11-13
-mr	it-follows!	err		2026-11-27
+mr	it-follows!	err		2026-11-28
 mr	it-seems-loosely-connected-to-the-ceiling	200	It seems loosely connected to the ceiling	2026-11-13
 mr	it-takes-a-pillage	200	It Takes a Pillage	2026-11-13
 mr	it-takes-a-pillage-continuation	200	It Takes a Pillage Continuation	2026-11-13
@@ -33002,7 +33058,7 @@ mr	just-enough-botania	200	Just Enough Botania	2026-11-13
 mr	just-enough-dimensions	200	Just Enough Dimensions	2026-11-13
 mr	just-enough-effect-descriptions-jeed	200	Just Enough Effect Descriptions (JEED)	2026-11-13
 mr	just-enough-farmers-recipes	200	Just Enough Farmer's Recipes	2026-11-13
-mr	just-enough-fishing-(jef)	err		2026-11-27
+mr	just-enough-fishing-(jef)	err		2026-11-28
 mr	just-enough-guns	200	Just Enough Guns	2026-11-13
 mr	just-enough-lightmans-trades	200	Just Enough Lightman's Trades	2026-11-13
 mr	just-enough-mekanism-multiblocks	200	Just Enough Mekanism Multiblocks	2026-11-13
@@ -33023,7 +33079,8 @@ mr	just-more-cakes	200	Just More Cakes!	2026-11-13
 mr	just-outdoor-stuffs	200	Just Outdoor Stuffs	2026-11-13
 mr	just-parry	200	just parry	2026-11-13
 mr	just-player-heads	200	Just Player Heads	2026-11-13
-mr	just-sit!	err		2026-11-27
+mr	just-poker	200	Just Poker	2026-11-28
+mr	just-sit!	err		2026-11-28
 mr	just-sleep	200	Just Sleep	2026-11-27
 mr	just-zoom	200	Just Zoom	2026-11-13
 mr	justenoughbook	200	Just Enough Book	2026-11-13
@@ -33091,7 +33148,7 @@ mr	kamenriderex-aid	200	Kamen Rider EX-AID	2026-11-13
 mr	kamenriderweaponcraft	200	KamenRiderWeaponCraft	2026-11-13
 mr	kappa	200	Kappa	2026-11-13
 mr	karma-in-undertale	200	Karma in Undertale	2026-11-13
-mr	kashimo-(mythical-beast-amber)-cursed-fate-addon	err		2026-11-27
+mr	kashimo-(mythical-beast-amber)-cursed-fate-addon	err		2026-11-28
 mr	kasugalib	200	KasugaLib	2026-11-13
 mr	katton	200	Katton	2026-11-13
 mr	kawaii-dishes	200	Kawaii Dishes	2026-11-13
@@ -33113,7 +33170,7 @@ mr	kekkai	200	Kekkai	2026-11-13
 mr	kelp-fertilizer	200	Kelp Fertilizer	2026-11-13
 mr	kelpie	200	Kelpie	2026-11-13
 mr	kelui	200	KelUI	2026-11-13
-mr	kelvins-better-player-animations-(port)	err		2026-11-27
+mr	kelvins-better-player-animations-(port)	err		2026-11-28
 mr	kenergyengineering	200	kenergyengineering	2026-11-13
 mr	kenshicraft	200	KenshiCraft	2026-11-27
 mr	kerria-opt	200	Kerria	2026-11-13
@@ -33127,7 +33184,7 @@ mr	keybind-unconflict	200	Keybind Unconflict	2026-11-13
 mr	keybinding-hider	404		2026-11-13
 mr	keybindjs	200	keybindjs	2026-11-13
 mr	keybinds	200	Keybinds Galore	2026-11-13
-mr	keybindsgalore+(hvb007)	err		2026-11-27
+mr	keybindsgalore+(hvb007)	err		2026-11-28
 mr	keybindsgaloreplus	200	KeybindsGalore Plus	2026-11-13
 mr	keybindspurger	200	KeybindsPurger	2026-11-13
 mr	keyboard-detector	200	Keyboard Detector	2026-11-13
@@ -33146,6 +33203,7 @@ mr	khinkali-mod	200	Khinkali	2026-11-13
 mr	kibe	200	Kibe	2026-11-13
 mr	kilagraph	200	KilaGraph	2026-11-13
 mr	kill-youkai-with-knives	404		2026-11-13
+mr	killauraplus	404		2026-11-28
 mr	killbind	200	Killbind	2026-11-13
 mr	killblock	200	killblock	2026-11-13
 mr	killer-bunny-tweaks	200	Killer Bunny Tweaks	2026-11-13
@@ -33215,7 +33273,7 @@ mr	ktfruaddon	200	ktfruaddon	2026-11-13
 mr	ktice	200	Ktice	2026-11-13
 mr	kube-utils	200	Kube Utils	2026-11-13
 mr	kubejs	200	KubeJS	2026-11-13
-mr	kubejs+cc-tweaked	err		2026-11-27
+mr	kubejs+cc-tweaked	err		2026-11-28
 mr	kubejs-actually-additions	200	KubeJS Actually Additions	2026-11-13
 mr	kubejs-additions	200	KubeJS Additions	2026-11-13
 mr	kubejs-ars-nouveau	200	KubeJS Ars Nouveau	2026-11-13
@@ -33424,7 +33482,7 @@ mr	legends-missing-blocks	200	Legend's Missing Blocks	2026-11-13
 mr	legends-of-slugterra	200	Legends Of Slugterra	2026-11-13
 mr	legendstar	200	Legend Star	2026-11-13
 mr	legionary	200	Legionary	2026-11-27
-mr	lemoned-(farmers-delight)	err		2026-11-27
+mr	lemoned-(farmers-delight)	err		2026-11-28
 mr	lemonlib	200	LemonLib	2026-11-13
 mr	lemonskin	200	LemonSkin	2026-11-13
 mr	lenient-creepers	200	Lenient Creepers	2026-11-13
@@ -33441,10 +33499,10 @@ mr	let-me-click-and-send	200	Let Me Click And Send	2026-11-13
 mr	let-me-click-and-send-for-server	200	Let Me Click And Send for Server	2026-11-13
 mr	let-me-feed-you	200	Let Me Feed You!	2026-11-27
 mr	let-me-play-iris	200	Let me play Iris!	2026-11-13
-mr	let-me-see-see-(your-code)	err		2026-11-27
+mr	let-me-see-see-(your-code)	err		2026-11-28
 mr	let-me-sleep-fuzs	200	Let Me Sleep	2026-11-13
 mr	let-sleeping-dogs-lie	200	Let Sleeping Dogs Lie	2026-11-13
-mr	let-your-friend-eating!	err		2026-11-27
+mr	let-your-friend-eating!	err		2026-11-28
 mr	letemburn	200	LET!EM!BURN!	2026-11-13
 mr	lethality-a-terramity-addon	200	Lethality - A Terramity Addon	2026-11-13
 mr	letitsnow	404		2026-11-13
@@ -33597,7 +33655,7 @@ mr	litematlist	200	LitematList	2026-11-13
 mr	liteminer	200	Liteminer	2026-11-13
 mr	litemoretica	200	Litemoretica	2026-11-13
 mr	literal-sky-block-fabric	200	Literal Sky Block Fabric	2026-11-13
-mr	litewers-ai-girlfriend-(gf)	err		2026-11-27
+mr	litewers-ai-girlfriend-(gf)	err		2026-11-28
 mr	litewolfcore	200	LiteWolfCore	2026-11-27
 mr	lithereal	200	Lithereal	2026-11-13
 mr	lithic-coins	200	Lithic Coins	2026-11-27
@@ -33687,7 +33745,7 @@ mr	lookin-sharp	200	Lookin' sharp	2026-11-13
 mr	loom-gui-remastered	200	Loom GUI Remastered	2026-11-13
 mr	looot	200	Looot	2026-11-13
 mr	loosen-litematica	200	Loosen Litematica	2026-11-13
-mr	loot+	err		2026-11-27
+mr	loot+	err		2026-11-28
 mr	loot-all	200	Loot All	2026-11-13
 mr	loot-bag	200	Loot Bag	2026-11-13
 mr	loot-beams	200	Loot Beams: Relooted!	2026-11-13
@@ -33709,7 +33767,7 @@ mr	lootbeams	200	lootbeams	2026-11-13
 mr	lootbeams-fabric	200	LootBeamsFabric	2026-11-13
 mr	lootbeamsfabricupdated	200	LootBeams Fabric Updated	2026-11-13
 mr	looters-compass	200	Looter's Compass	2026-11-13
-mr	lootify-(structures)	err		2026-11-27
+mr	lootify-(structures)	err		2026-11-28
 mr	lootjs	200	LootJS: KubeJS Addon	2026-11-13
 mr	lootr	200	Lootr	2026-11-13
 mr	lootrbiggerchest	200	Lootr Bigger Chest	2026-11-13
@@ -33770,7 +33828,7 @@ mr	luckier-clover	200	Luckier Clover	2026-11-13
 mr	luckperms	200	LuckPerms	2026-11-13
 mr	lucky-block	200	Lucky Block	2026-11-27
 mr	lucky-cases	200	Lucky Cases	2026-11-27
-mr	lucky-clover!	err		2026-11-27
+mr	lucky-clover!	err		2026-11-28
 mr	lucky-fishing-rod	200	幸运钓竿 - Lucky Fishing Rod	2026-11-13
 mr	lucky-tnt-lib	200	Lucky TNT Lib	2026-11-13
 mr	lucky-tnt-mod	200	Lucky TNT Mod	2026-11-13
@@ -34141,8 +34199,8 @@ mr	medieval-buildings	200	Medieval Buildings	2026-11-13
 mr	medieval-buildings-end-edition	200	Medieval Buildings [End Edition]	2026-11-13
 mr	medieval-buildings-nether-edition	200	Medieval Buildings [Nether Edition]	2026-11-13
 mr	medieval-core-mod	200	Medieval	2026-11-27
-mr	medieval-craft-(structures)	err		2026-11-27
-mr	medieval-craft-(weapons)	err		2026-11-27
+mr	medieval-craft-(structures)	err		2026-11-28
+mr	medieval-craft-(weapons)	err		2026-11-28
 mr	medieval-deco	200	Medieval Deco	2026-11-13
 mr	medieval-embroidery	200	Medieval Embroidery	2026-11-13
 mr	medieval-entity-forge	404		2026-11-13
@@ -34265,7 +34323,7 @@ mr	mezzconfiggui	200	MezzConfigGUI	2026-11-13
 mr	mf3f	200	Mining Fatigue 3 Fix	2026-11-13
 mr	mgrr	200	Mine Gear Rising: Revengeance	2026-11-13
 mr	mhcraftlands	200	Monster Hunter Craftlands	2026-11-13
-mr	mi-hand-crank-power!	err		2026-11-27
+mr	mi-hand-crank-power!	err		2026-11-28
 mr	mi-item-fluid-combined-hatch	200	Modern Industrialization Item-Fluid Combined Hatch	2026-11-13
 mr	mi-item-hatch-stack-upgrade	200	Modern Industrialization Item Hatch Stack Upgrade	2026-11-13
 mr	mi-parallel-hatch	200	Modern Industrialization Parallel Control Hatch	2026-11-13
@@ -34376,7 +34434,7 @@ mr	mineral-backpacks	200	mineral backpacks	2026-11-13
 mr	mineral-chance	200	Mineral Chance	2026-11-13
 mr	mineralas	200	Mineralas	2026-11-13
 mr	minerally	200	Minerally	2026-11-13
-mr	minerally-me!	err		2026-11-27
+mr	minerally-me!	err		2026-11-28
 mr	mineralogy-continuation	200	Mineralogy Continuation	2026-11-13
 mr	miners-delight	200	Miner's Delight	2026-11-13
 mr	miners-dreams	200	Miner's Dreams	2026-11-13
@@ -34452,7 +34510,7 @@ mr	mixinbooter	200	MixinBooter	2026-11-13
 mr	mixinbooter2fermiumbooter	200	MixinBooter2FermiumBooter	2026-11-13
 mr	mixinbootstrap	200	MixinBootstrap	2026-11-13
 mr	mixincompat	200	Mixin 0.7-0.8 Compatibility	2026-11-13
-mr	mixing_and_cutting!	err		2026-11-27
+mr	mixing_and_cutting!	err		2026-11-28
 mr	mixinruntime	200	MixinRuntime	2026-11-13
 mr	mixintrace	200	MixinTrace	2026-11-13
 mr	mixintrace-reborn	200	MixinTrace Reborn	2026-11-27
@@ -34553,7 +34611,7 @@ mr	mod-browser	200	Mod Browser	2026-11-27
 mr	mod-erate-loading-screen-forge	200	Mod-erate Loading Screen-Forge	2026-11-13
 mr	mod-info-cmd	200	Mod Info Command	2026-11-13
 mr	mod-loading-screen	200	Mod Loading Screen	2026-11-13
-mr	mod-menu-(neoforge-edition)	err		2026-11-27
+mr	mod-menu-(neoforge-edition)	err		2026-11-28
 mr	mod-menu-1.1x	200	Mod Menu 1.1x	2026-11-13
 mr	mod-menu-bta	200	Mod Menu (BTA Port)	2026-11-13
 mr	mod-menu-no-more	200	Mod Menu No More	2026-11-13
@@ -34589,7 +34647,7 @@ mr	modern-delight	200	Modern Delight	2026-11-13
 mr	modern-dynamics	200	Modern Dynamics	2026-11-13
 mr	modern-elevators-and-escalators	200	Modern Elevators and Escalators	2026-11-13
 mr	modern-glass-doors	200	Modern Glass Doors	2026-11-27
-mr	modern-glass-doors(forge)	err		2026-11-27
+mr	modern-glass-doors(forge)	err		2026-11-28
 mr	modern-industrialization	200	Modern Industrialization	2026-11-13
 mr	modern-industrialization-emc-machine-condition	200	Modern Industrialization EMC Machine Condition	2026-11-13
 mr	modern-industrialization-sound-addon	200	Modern Industrialization Sound Addon	2026-11-13
@@ -34703,7 +34761,7 @@ mr	monster-of-the-night-skies	200	Monster of the Night Skies	2026-11-13
 mr	monsterplus	200	MonsterPlus	2026-11-13
 mr	monsters-girls	200	Monsters & Girls	2026-11-13
 mr	monsters-in-the-closet	200	Monsters in the Closet	2026-11-13
-mr	monstie-hunter-baby-monster-collector!	err		2026-11-27
+mr	monstie-hunter-baby-monster-collector!	err		2026-11-28
 mr	monument-data-fix	200	Monument Data Fix	2026-11-13
 mr	mooblooms	200	Mooblooms	2026-11-13
 mr	moogs-glow-up	200	Moog's Glow Up	2026-11-13
@@ -34716,7 +34774,7 @@ mr	moonbetween	200	Moonbetween	2026-11-13
 mr	mooncake-delight	200	Mooncake Delight	2026-11-13
 mr	moonfabric	200	moonfabric	2026-11-21
 mr	moonlight	200	Moonlight Lib	2026-11-13
-mr	moonphaseinfo%2B	err		2026-11-27
+mr	moonphaseinfo%2B	err		2026-11-28
 mr	moonrise-opt	200	Moonrise	2026-11-13
 mr	moonstone	200	moonstone	2026-11-13
 mr	moonstone-gene-recombination	200	Moonstone: Gene Recombination	2026-11-13
@@ -34830,14 +34888,14 @@ mr	more-sponge	200	More Sponge	2026-11-13
 mr	more-statistics	200	More Statistics	2026-11-13
 mr	more-stats	200	More Stats	2026-11-13
 mr	more-structure-processors	200	More Structure Processors	2026-11-13
-mr	more-swords+	err		2026-11-27
+mr	more-swords+	err		2026-11-28
 mr	more-swords-legacy	200	More Swords Legacy	2026-11-13
 mr	more-swords-mod	200	More Swords Mod	2026-11-13
 mr	more-tetra-materials	200	More Tetra Materials	2026-11-13
 mr	more-things	200	更多物品	2026-11-13
 mr	more-tide-fish	200	More Tide Fish	2026-11-13
 mr	more-tools	200	More Tools (Polymer)	2026-11-13
-mr	more-tools-1.21.1+	err		2026-11-27
+mr	more-tools-1.21.1+	err		2026-11-28
 mr	more-totem-effects	200	More Totem Effects	2026-11-27
 mr	more-totems-of-undying	200	More Totems of Undying	2026-11-13
 mr	more-traders	200	More Traders	2026-11-13
@@ -34885,7 +34943,7 @@ mr	moremobility	200	MoreMobility	2026-11-13
 mr	moremousetweaks	200	More Mouse Tweaks	2026-11-13
 mr	moremusic	200	More Music	2026-11-13
 mr	morepaths	200	More Paths	2026-11-27
-mr	moreplayermodels+	err		2026-11-27
+mr	moreplayermodels+	err		2026-11-28
 mr	morerefinedstorage	200	MoreRefinedStorage	2026-11-13
 mr	mores	200	More Ore Stones [Fabric]	2026-11-13
 mr	moreskilltree	200	MoreSkillTree	2026-11-13
@@ -34951,12 +35009,12 @@ mr	mrcrayfishs-furniture-mod-tools-refurbished	200	MrCrayfish's Furniture Mod To
 mr	mrcrayfishs-vehicle-unofficial	200	MrCrayfish's Vehicle Unofficial	2026-11-13
 mr	mrfegs-image-frame	200	MrFeg's Image Frame	2026-11-13
 mr	mrmc	200	mrmc	2026-11-13
-mr	mrqx%60s-slashblade-core	err		2026-11-27
+mr	mrqx%60s-slashblade-core	err		2026-11-28
 mr	mru	200	MRU	2026-11-13
 mr	mss-moogs-soaring-structures	200	MSS - Moog's Soaring Structures	2026-11-13
 mr	mte-patches	200	MTE Patches	2026-11-27
 mr	mtlib	200	MTLib	2026-11-27
-mr	mtr-34-minecraft-transit-railway-3+4	err		2026-11-27
+mr	mtr-34-minecraft-transit-railway-3+4	err		2026-11-28
 mr	mtr-ante	200	Aphrodite's Nemo's Transit Expansion	2026-11-13
 mr	mtr-east-japan-railway-addon	200	MTR : East Japan Railway Addon	2026-11-27
 mr	mtr-fare-pro	200	MTR Fare Pro	2026-11-13
@@ -35303,7 +35361,7 @@ mr	neurolib	200	NeuroLib	2026-11-13
 mr	neutral-animals	200	Neutral Animals	2026-11-13
 mr	neutrality	200	Neutrality	2026-11-27
 mr	neutron	200	Neutron	2026-11-27
-mr	never-enough-currency-2-(forge)	err		2026-11-27
+mr	never-enough-currency-2-(forge)	err		2026-11-28
 mr	neverenoughanimation	200	NeverEnoughAnimation	2026-11-13
 mr	new-ambient-music	200	New Ambient Music	2026-11-13
 mr	new-armor-system	200	New Armor System	2026-11-13
@@ -35328,7 +35386,7 @@ mr	new-woods	200	New Woods	2026-11-27
 mr	new-world-mod	200	New World	2026-11-13
 mr	new-xenchant	200	New XEnchant	2026-11-13
 mr	new-year-red	200	New Year Red	2026-11-13
-mr	new-years-delight-(a-farmers-delight-add-on)	err		2026-11-27
+mr	new-years-delight-(a-farmers-delight-add-on)	err		2026-11-28
 mr	new_world	200	NewWorld	2026-11-13
 mr	newflatworld	200	NewFlatWorld	2026-11-13
 mr	next-boundary-cornerstone	200	next-boundary-cornerstone	2026-11-13
@@ -35456,7 +35514,7 @@ mr	no-see-through-text-displays	200	No See Through Text Displays	2026-11-13
 mr	no-shade	200	No Shade	2026-11-13
 mr	no-shield-delay	200	No Shield Delay	2026-11-13
 mr	no-singleplayer	200	No Singleplayer	2026-11-13
-mr	no-sleep-chat-overlay-(nsco)	err		2026-11-27
+mr	no-sleep-chat-overlay-(nsco)	err		2026-11-28
 mr	no-slime-in-flat-world	404		2026-11-13
 mr	no-slow-motion	200	No Slow motion	2026-11-13
 mr	no-smithing-template	200	No Smithing Template	2026-11-13
@@ -35506,7 +35564,7 @@ mr	nogravity	200	NoGravity	2026-11-13
 mr	nohealthbar	200	No Health Bar	2026-11-13
 mr	nohotbarlooping	200	No Hotbar Looping	2026-11-13
 mr	nohurtcam	200	NoHurtCam	2026-11-13
-mr	nohurtcam+	err		2026-11-27
+mr	nohurtcam+	err		2026-11-28
 mr	nohurtflash	200	NoHurtFlash	2026-11-13
 mr	nointernet	200	NoInternet	2026-11-27
 mr	noisethreader	200	NoiseThreader	2026-11-13
@@ -35522,7 +35580,7 @@ mr	noloadingterrain	200	NoLoadingTerrain	2026-11-13
 mr	nomads-delight	200	Nomad's Delight	2026-11-13
 mr	nomen-dubium	200	Nomen Dubium	2026-11-27
 mr	nomenublur	200	NoMenuBlur	2026-11-13
-mr	nomoref3+f4	err		2026-11-27
+mr	nomoref3+f4	err		2026-11-28
 mr	nomoreglowingpots	200	No More Glowing Potions	2026-11-13
 mr	nomove	200	Nomove	2026-11-13
 mr	nomowanderer	200	NoMoWanderer	2026-11-13
@@ -35547,7 +35605,7 @@ mr	nostalgic-tweaks	200	Nostalgic Tweaks	2026-11-13
 mr	not-enough-animations	200	Not Enough Animations	2026-11-13
 mr	not-enough-animations-emf-compat	200	EMF Compat: Not Enough Animations	2026-11-13
 mr	not-enough-bandwidth	200	Not Enough Bandwidth	2026-11-13
-mr	not-enough-bandwidth-legacy(nebl)	err		2026-11-27
+mr	not-enough-bandwidth-legacy(nebl)	err		2026-11-28
 mr	not-enough-enchantments	200	Not Enough Enchantments	2026-11-27
 mr	not-enough-furniture	404		2026-11-13
 mr	not-enough-game-designs	200	Not Enough Game Designs	2026-11-27
@@ -35563,7 +35621,7 @@ mr	not-interested	200	Not interested!	2026-11-13
 mr	not-just-biomes	200	Not Just Biomes	2026-11-13
 mr	not-mutually-exclusive	404		2026-11-13
 mr	not-responding	200	Not Responding	2026-11-13
-mr	not-so-shrimple-(reshrimpled)	err		2026-11-27
+mr	not-so-shrimple-(reshrimpled)	err		2026-11-28
 mr	not-so-shrimple-remolted	200	Not So Shrimple - Remolted	2026-11-27
 mr	nota	200	Nota	2026-11-13
 mr	notafreaks-plushies	200	NotAFreak's Plushies	2026-11-13
@@ -35750,7 +35808,7 @@ mr	omnibed	200	Omnibed	2026-11-13
 mr	omniconfig	200	Omniconfig	2026-11-13
 mr	omnicore	200	OmniCore	2026-11-13
 mr	omnicrossbow	200	OmniCrossbow	2026-11-13
-mr	omnidirectional-sound-(ods)	err		2026-11-27
+mr	omnidirectional-sound-(ods)	err		2026-11-28
 mr	omnihopper	200	Omni-Hopper	2026-11-13
 mr	omnilib	200	Omnilib	2026-11-13
 mr	omnilook	200	Omnilook	2026-11-13
@@ -35863,7 +35921,7 @@ mr	orca-mine-piece	200	Mine Piece	2026-11-13
 mr	order-to-cook	200	Order to cook下单了！	2026-11-13
 mr	ordinary-coins	200	Ordinary Coins	2026-11-27
 mr	ordinarytweaks	200	SomeOrdinaryTweaks	2026-11-13
-mr	ore-and-more-(oam)	err		2026-11-27
+mr	ore-and-more-(oam)	err		2026-11-28
 mr	ore-control	200	Ore Control	2026-11-27
 mr	ore-core	200	Ore Core	2026-11-13
 mr	ore-creeper	200	Ore Creeper	2026-11-13
@@ -35918,7 +35976,7 @@ mr	oritech-things	200	Oritech Things	2026-11-13
 mr	ornamental	200	Ornamental	2026-11-27
 mr	orpheus	200	Orpheus | Forge & Fabric	2026-11-13
 mr	orthocamera	200	OrthoCamera	2026-11-13
-mr	orthocamera-(unofficial-neoforge-port)	err		2026-11-27
+mr	orthocamera-(unofficial-neoforge-port)	err		2026-11-28
 mr	os-flyingcarpet	200	O's FlyingCarpet	2026-11-13
 mr	osl	200	Ornithe Standard Libraries	2026-11-13
 mr	osmium	200	Osmium	2026-11-13
@@ -35993,7 +36051,7 @@ mr	padoru	200	Padoru	2026-11-13
 mr	paginatedadvancements	200	Paginated Advancements & Custom Frames	2026-11-13
 mr	paimonfoodreborn	200	Paimon Food:Reborn	2026-11-13
 mr	paintable	200	Paintable	2026-11-13
-mr	paintings++	err		2026-11-27
+mr	paintings++	err		2026-11-28
 mr	paisleys-summoning	200	Terramity: Paisley's Summoning	2026-11-13
 mr	pakko	200	Pakko	2026-11-13
 mr	pal	200	PlayerAbilityLib	2026-11-13
@@ -36046,7 +36104,7 @@ mr	parcoolskill	200	ParCoolSkill	2026-11-13
 mr	parentalcontrols	200	Parental Controls	2026-11-13
 mr	parrots-o-plenty	200	Parrots O' Plenty - Parrot expansion	2026-11-21
 mr	parry	200	Parry!	2026-11-13
-mr	parry!	err		2026-11-27
+mr	parry!	err		2026-11-28
 mr	parry-enchant	200	Sword Parry	2026-11-13
 mr	partialhearts	200	PartialHearts	2026-11-13
 mr	particle-core	200	Particle Core	2026-11-13
@@ -36056,7 +36114,7 @@ mr	particle-effects-reforged	200	Particle Effects Reforged	2026-11-13
 mr	particle-interactions	200	Particle Interactions	2026-11-13
 mr	particle-interactions-forgified	200	Particle Interactions Forgified	2026-11-13
 mr	particle-rain	200	Particle Rain	2026-11-13
-mr	particle-rain-(backport)	err		2026-11-27
+mr	particle-rain-(backport)	err		2026-11-28
 mr	particle-tweaks	200	Particle Tweaks	2026-11-13
 mr	particle-unlimit	200	Particle Unlimit	2026-11-13
 mr	particleculling-1.8.9-port	200	ParticleCulling 1.8.9 port	2026-11-13
@@ -36179,10 +36237,11 @@ mr	personal-space	200	Personal Space	2026-11-27
 mr	personal-worlds	200	Personal Worlds	2026-11-13
 mr	personaldimension	200	personaldimension	2026-11-27
 mr	personality	200	Personality	2026-11-13
-mr	personality!	err		2026-11-27
+mr	personality!	err		2026-11-28
 mr	perspective-api	200	Perspective API	2026-11-13
 mr	perspective-lock	200	Perspective Lock	2026-11-13
 mr	perspective-mod-redux	200	Perspective Mod Redux	2026-11-13
+mr	perspectivenametag	200	Perspective Nametag	2026-11-28
 mr	perspektive	200	Perspektive	2026-11-13
 mr	peruvians-delight	200	Peruvian's Delight	2026-11-13
 mr	pescatore	200	Pescatore	2026-11-13
@@ -36193,7 +36252,7 @@ mr	pet-collecting	200	Pet Collecting	2026-11-13
 mr	pet-essence	200	Pet Essence	2026-11-13
 mr	pet-names	200	Pet Names	2026-11-13
 mr	pet-necropolis	200	Pet Necropolis	2026-11-13
-mr	pet-pass-trade-your-pets!	err		2026-11-27
+mr	pet-pass-trade-your-pets!	err		2026-11-28
 mr	pet-shop	200	Pet Shop	2026-11-13
 mr	pet-tracker	200	Pet tracker	2026-11-27
 mr	pet_home	200	Pet Home	2026-11-13
@@ -36276,7 +36335,7 @@ mr	pikafishing	200	Pikafishing	2026-11-27
 mr	pillager-caravans	200	Pillager Caravans	2026-11-13
 mr	pillager-queen	200	Pillager Queen	2026-11-13
 mr	pillagers	200	Pillagers	2026-11-27
-mr	pillagers-gun-(unofficial-port)	err		2026-11-27
+mr	pillagers-gun-(unofficial-port)	err		2026-11-28
 mr	pillagers-plus	200	Pillagers+	2026-11-27
 mr	pillar	200	Pillar	2026-11-27
 mr	pillarger	200	Pillarger	2026-11-13
@@ -36360,7 +36419,7 @@ mr	player-ladder	200	Player Ladder	2026-11-13
 mr	player-locator-plus-reforged	200	Player Locator Reforged	2026-11-13
 mr	player-mobs	200	Player Mobs	2026-11-13
 mr	player-move-detector	200	Player Move Detector	2026-11-13
-mr	player-plates-(obsidian-plates)	err		2026-11-27
+mr	player-plates-(obsidian-plates)	err		2026-11-28
 mr	player-radar	200	Player Radar	2026-11-13
 mr	player-shells	200	Player Shells	2026-11-13
 mr	player-swap	200	Player Swap	2026-11-27
@@ -36375,7 +36434,7 @@ mr	playeranimator	200	playerAnimator	2026-11-13
 mr	playeranimatorapi	200	Zigy's Player Animator API	2026-11-13
 mr	playerautoma	200	Playerautoma	2026-11-13
 mr	playerbatch	200	PlayerBatch	2026-11-13
-mr	playercommands-(old-mc)	err		2026-11-27
+mr	playercommands-(old-mc)	err		2026-11-28
 mr	playerdieautomessage	200	PlayerDieAutoMessage	2026-11-13
 mr	playereactions	200	Reactions	2026-11-13
 mr	playerengine	200	PlayerEngine	2026-11-13
@@ -36686,7 +36745,7 @@ mr	puddles-floods	200	Puddles & Floods	2026-11-13
 mr	pufferfishs-unofficial-additions	200	Pufferfish's Unofficial Additions	2026-11-13
 mr	pull-me-up	200	Pull Me Up	2026-11-13
 mr	pullup	200	Pullup	2026-11-13
-mr	pullup+	err		2026-11-27
+mr	pullup+	err		2026-11-28
 mr	pulsar-lighting-engine	200	Pulsar Lighting Engine	2026-11-13
 mr	pulse-trims	200	Pulse Trims	2026-11-13
 mr	pulsetech	200	Pulsetech	2026-11-13
@@ -36710,7 +36769,7 @@ mr	purpeille	200	Purpeille	2026-11-13
 mr	purpurclient	200	PurpurClient	2026-11-13
 mr	push-everything-away	200	Push Everything Away	2026-11-13
 mr	push-forward	200	Push Forward	2026-11-13
-mr	put-a-plug-in-it!	err		2026-11-27
+mr	put-a-plug-in-it!	err		2026-11-28
 mr	putbuildings	200	putbuildings	2026-11-13
 mr	puyu	200	puyu	2026-11-13
 mr	puzzle	200	Puzzle	2026-11-13
@@ -36877,7 +36936,7 @@ mr	rainbowify	200	rainbowify	2026-11-13
 mr	raing_row	200	raing_row	2026-11-13
 mr	rainglow	200	rainglow	2026-11-13
 mr	rainimatormod	404		2026-11-13
-mr	raise-sound-limit-simplified-(unofficial-forge-port)	err		2026-11-27
+mr	raise-sound-limit-simplified-(unofficial-forge-port)	err		2026-11-28
 mr	raised	200	Raised	2026-11-13
 mr	raised-clouds	200	Raised Clouds	2026-11-13
 mr	raisy	200	Raisy	2026-11-13
@@ -37251,7 +37310,7 @@ mr	repairables-anvil	200	Repairables Anvil	2026-11-13
 mr	repairtool	404		2026-11-13
 mr	repeatable-trial-vaults	200	Repeatable Trial Vaults	2026-11-13
 mr	repeater-sound	200	Repeater Sound	2026-11-13
-mr	replant-it!	err		2026-11-27
+mr	replant-it!	err		2026-11-28
 mr	replant-swamp-trees	200	Replant Swamp Trees	2026-11-13
 mr	replanter	200	Replanter	2026-11-13
 mr	replanter-plus	200	Replanter Plus	2026-11-13
@@ -37427,7 +37486,7 @@ mr	river-fishing	200	River Fishing	2026-11-13
 mr	river-redux	200	River Redux	2026-11-13
 mr	rlbubbles	200	RLBubbles	2026-11-13
 mr	rlcombat	200	RLCombat	2026-11-13
-mr	rlcraft-structures-%28not-official%29	err		2026-11-27
+mr	rlcraft-structures-%28not-official%29	err		2026-11-28
 mr	rlfoliage	200	RLFoliage	2026-11-13
 mr	rlmixins	200	RLMixins	2026-11-13
 mr	rmscore	200	NoMoreScore	2026-11-13
@@ -37655,15 +37714,15 @@ mr	savemykeybinds	200	SaveMyKeybinds	2026-11-13
 mr	saverestorer	200	SaveRestorer	2026-11-13
 mr	sawmill-house	200	Sawmill House	2026-11-13
 mr	sax	200	Simple Anti X-Ray	2026-11-13
-mr	say-sorry!	err		2026-11-27
+mr	say-sorry!	err		2026-11-28
 mr	sb-enchantment-effects	200	Enchantment Effects	2026-11-13
 mr	sbet	404		2026-11-13
 mr	sbl	200	SLB	2026-11-13
 mr	sbm-magic-mirror	200	[SBM] Magic Mirror	2026-11-27
-mr	sbw-colorized!	err		2026-11-27
+mr	sbw-colorized!	err		2026-11-28
 mr	sbw-combined-perk	200	[SBW] Combined Perk	2026-11-13
-mr	sbw-drill,-baby,-drill!	err		2026-11-27
-mr	sbw-wrecked!	err		2026-11-27
+mr	sbw-drill,-baby,-drill!	err		2026-11-28
+mr	sbw-wrecked!	err		2026-11-28
 mr	scaffolding-drops-nearby	200	Scaffolding Drops Nearby	2026-11-13
 mr	scala3std	200	Scala3Std	2026-11-13
 mr	scalable-cats-force	200	Scalable Cat's Force	2026-11-13
@@ -37722,13 +37781,13 @@ mr	scorge	200	Scorge	2026-11-27
 mr	scout	200	Scout	2026-11-13
 mr	scout-recrafted	200	Scout Recrafted	2026-11-27
 mr	scoutreforked	200	Scout Reforked	2026-11-13
-mr	scp-001,-when-day-breaks	err		2026-11-27
-mr	scp-096,-the-shy-guy	err		2026-11-27
-mr	scp-173,-the-sculpture	err		2026-11-27
-mr	scp-280,-eyes-in-the-dark	err		2026-11-27
-mr	scp-4975,-the-cuckoo-clock	err		2026-11-27
-mr	scp-610,-flesh-that-hates	err		2026-11-27
-mr	scp-662,-butlers-hand-bell	err		2026-11-27
+mr	scp-001,-when-day-breaks	err		2026-11-28
+mr	scp-096,-the-shy-guy	err		2026-11-28
+mr	scp-173,-the-sculpture	err		2026-11-28
+mr	scp-280,-eyes-in-the-dark	err		2026-11-28
+mr	scp-4975,-the-cuckoo-clock	err		2026-11-28
+mr	scp-610,-flesh-that-hates	err		2026-11-28
+mr	scp-662,-butlers-hand-bell	err		2026-11-28
 mr	scp-facility	200	SCP: Facility	2026-11-13
 mr	scp-fallen-foundation	200	SCP Fallen Foundation	2026-11-13
 mr	scp-foundation-requisites	200	SCP: Foundation Requisites	2026-11-13
@@ -37785,7 +37844,7 @@ mr	searchable-containers-retraversal	200	Searchable Containers: Retraversal	2026
 mr	searchables	200	Searchables	2026-11-13
 mr	searchcarefully	200	Search Carefully	2026-11-13
 mr	searchworldenhance	200	SearchWorldEnhance	2026-11-13
-mr	seared-ladder-(backport)	err		2026-11-27
+mr	seared-ladder-(backport)	err		2026-11-28
 mr	seasonal-cherries	200	Seasonal Cherries	2026-11-13
 mr	seasonal-decorations	200	[🎄] Seasonal Decorations	2026-11-13
 mr	seasonals	200	Seasonals	2026-11-13
@@ -37946,7 +38005,7 @@ mr	shields-plus	200	Shields+	2026-11-27
 mr	shift-scroll-fix	200	Shift-Scroll Fix for macOS	2026-11-13
 mr	shifting-wares	200	Shifting Wares	2026-11-13
 mr	shiftingwares-villagerconfig-addon	200	Shifting-Wares: VillagerConfig Addon	2026-11-13
-mr	shimmer!	err		2026-11-27
+mr	shimmer!	err		2026-11-28
 mr	shincolle-reforge	200	ShinColle-reforge	2026-11-27
 mr	shine	200	Shine	2026-11-13
 mr	shinobiorigins-utils	200	ShinobiOrigin's Utils	2026-11-27
@@ -37973,7 +38032,7 @@ mr	shortratio-mod	200	ShortRatio Mod	2026-11-13
 mr	shoulder-surfing-iron-spells-integration	200	Shoulder Surfing: Iron's Spells Integration	2026-11-13
 mr	shoulder-surfing-reloaded	200	Shoulder Surfing Reloaded	2026-11-13
 mr	shoulder-surfing-ultimine	200	Shoulder Surfing Ultimine	2026-11-13
-mr	shove!	err		2026-11-27
+mr	shove!	err		2026-11-28
 mr	shovel_somethingoffhand	404		2026-11-13
 mr	shoving-shovels	200	Shoving Shovels	2026-11-13
 mr	show-all-advancements	200	Show All Advancements	2026-11-13
@@ -37996,12 +38055,12 @@ mr	shrek	200	Shrek	2026-11-13
 mr	shreks-revenge	200	Shrek's Revenge	2026-11-13
 mr	shrines	200	Shrines Structures	2026-11-13
 mr	shrink	200	Shrink	2026-11-13
-mr	shroom-dealers!	err		2026-11-27
+mr	shroom-dealers!	err		2026-11-28
 mr	shroomcraft	200	Shroomcraft	2026-11-13
 mr	shrug-it-off	200	Shrug It Off	2026-11-13
 mr	shrug-it-off-stb-edition	200	Shrug it Off - STB edition	2026-11-13
 mr	shuffle	200	Shuffle	2026-11-13
-mr	shulker+	err		2026-11-27
+mr	shulker+	err		2026-11-28
 mr	shulker-box-labels	200	Shulker Box Labels	2026-11-13
 mr	shulker-box-slot	200	Shulker Box Slot	2026-11-13
 mr	shulker-charm	200	Shulker Charm	2026-11-13
@@ -38125,7 +38184,7 @@ mr	simple-sculk-blocks	200	Simple Sculk Blocks	2026-11-13
 mr	simple-shulker-preview	200	Simple Shulker Preview	2026-11-13
 mr	simple-sleep-vote	200	Simple Sleep Vote	2026-11-13
 mr	simple-smithing-overhaul	200	Simple Smithing Overhaul	2026-11-13
-mr	simple-snowy-fix-(forge-fabric)	err		2026-11-27
+mr	simple-snowy-fix-(forge-fabric)	err		2026-11-28
 mr	simple-splash-screen	200	Simple Splash Screen	2026-11-13
 mr	simple-storage-network	200	Simple Storage Network	2026-11-13
 mr	simple-teleporters	200	Simple teleporters	2026-11-27
@@ -38212,9 +38271,9 @@ mr	sinkhole-restorer	200	Sinkhole Restorer	2026-11-13
 mr	sinocate	200	SinoCate	2026-11-13
 mr	sinocore	200	SinoCore	2026-11-27
 mr	sirenhead-reborn	200	Siren Head: Reborn	2026-11-13
-mr	sit!	err		2026-11-27
+mr	sit!	err		2026-11-28
 mr	sitoneverything	200	SitOnEverything	2026-11-13
-mr	sitting+	err		2026-11-27
+mr	sitting+	err		2026-11-28
 mr	sixsevenstack	200	SixSeven	2026-11-13
 mr	sizeable-foliage	200	Sizeable Foliage	2026-11-13
 mr	sjap	200	SlashBladeJapaneseAddonPack	2026-11-13
@@ -38277,7 +38336,7 @@ mr	skylib	200	Skylib	2026-11-13
 mr	skyresources3	200	SkyResources3	2026-11-13
 mr	slab-machines	200	Slab Machines	2026-11-13
 mr	slabbed	200	Slabbed	2026-11-13
-mr	slabs-layers+	err		2026-11-27
+mr	slabs-layers+	err		2026-11-28
 mr	slag-n-embers	200	Slag n' Embers	2026-11-13
 mr	slash-illager	200	Slash Illager	2026-11-13
 mr	slashblade-fabric-addons	200	SlashBlade Fabric Addons	2026-11-13
@@ -38407,7 +38466,7 @@ mr	snack-sticks	200	Snack Sticks	2026-11-13
 mr	snackcraft	200	SnackCraft	2026-11-13
 mr	snad	200	Snad	2026-11-13
 mr	snad-redstone-edition	200	Snad: Redstone Edition	2026-11-13
-mr	snakewheel-attack!	err		2026-11-27
+mr	snakewheel-attack!	err		2026-11-28
 mr	sneak-fertilizing	200	Sneak Fertilizing	2026-11-13
 mr	sneak-push	200	Sneak Push	2026-11-13
 mr	sneak-through-berries	200	Sneak Through Berries	2026-11-13
@@ -38500,17 +38559,17 @@ mr	sooty-chimneys	200	Sooty Chimneys	2026-11-13
 mr	sooty-chimneys-fabric	200	Sooty Chimneys for Fabric	2026-11-13
 mr	soph-upgrade-addons	200	Soph Upgrade Addons	2026-11-13
 mr	sophisticated-backpacks	200	Sophisticated Backpacks	2026-11-13
-mr	sophisticated-backpacks-(unoffical-fabric-port)	err		2026-11-27
+mr	sophisticated-backpacks-(unoffical-fabric-port)	err		2026-11-28
 mr	sophisticated-backpacks-create-integration	200	Sophisticated Backpacks Create Integration	2026-11-13
 mr	sophisticated-backpackstorage-emerald-upgrade	200	Sophisticated Backpack/Storage Emerald Upgrade	2026-11-13
 mr	sophisticated-core	200	Sophisticated Core	2026-11-13
-mr	sophisticated-core-(unofficial-fabric-port)	err		2026-11-27
+mr	sophisticated-core-(unofficial-fabric-port)	err		2026-11-28
 mr	sophisticated-inventory-interactions	200	Sophisticated Inventory Interactions	2026-11-13
 mr	sophisticated-item-actions	200	Sophisticated Item Actions	2026-11-13
 mr	sophisticated-jei-index	200	Sophisticated JEI Index	2026-11-27
 mr	sophisticated-sorter	200	Sophisticated Sorter	2026-11-13
 mr	sophisticated-storage	200	Sophisticated Storage	2026-11-13
-mr	sophisticated-storage-(unofficial-fabric-port)	err		2026-11-27
+mr	sophisticated-storage-(unofficial-fabric-port)	err		2026-11-28
 mr	sophisticated-storage-create-integration	200	Sophisticated Storage Create Integration	2026-11-13
 mr	sophisticated-storage-in-motion	200	Sophisticated Storage in Motion	2026-11-13
 mr	sophisticated-wolves	200	Sophisticated wolves	2026-11-27
@@ -38703,7 +38762,7 @@ mr	spoorn-weapon-attributes	200	Spoorn Weapon Attributes	2026-11-13
 mr	spore-inquisition	200	Spore inquisition	2026-11-27
 mr	spore_jei	404		2026-11-13
 mr	sporeadds	200	Sporeadds	2026-11-13
-mr	sporesrp!	err		2026-11-27
+mr	sporesrp!	err		2026-11-28
 mr	sporeunderground-bunker-spawner-compat	200	Spore&Underground Bunker Spawner Compat	2026-11-13
 mr	spotlights-or-something	200	Spotlights or Something	2026-11-13
 mr	spreadspawnpoints	200	Spread Spawnpoints	2026-11-13
@@ -38811,6 +38870,7 @@ mr	starrailexpress	200	StarRailExpress - Wathe Addon	2026-11-13
 mr	starryskies	200	Starry Skies	2026-11-13
 mr	stars-aligned	200	Stars Aligned	2026-11-27
 mr	starsource	200	StarSource	2026-11-13
+mr	starstruck-the_letter_a	200	StarStruck	2026-11-28
 mr	starter-cabin	200	Starter Cabin	2026-11-13
 mr	starter-kit	200	Starter Kit	2026-11-13
 mr	starter-structure	200	Starter Structure	2026-11-13
@@ -38949,12 +39009,12 @@ mr	structure-crafter	200	Structure Crafter	2026-11-13
 mr	structure-credits	200	Structure Credits	2026-11-13
 mr	structure-expansion	200	Structure Expansion	2026-11-13
 mr	structure-gel-api	200	Structure Gel API	2026-11-13
-mr	structure-generation-improver-(sgi-foundations!)	err		2026-11-27
+mr	structure-generation-improver-(sgi-foundations!)	err		2026-11-28
 mr	structure-layout-optimizer	200	Structure Layout Optimizer	2026-11-13
 mr	structure-pool-api	200	Structure Pool API	2026-11-13
 mr	structure-spawn-area-fix	200	Structure Spawn Area Fix	2026-11-13
 mr	structure-tools	200	st'ructure tools	2026-11-13
-mr	structure-tools-continued-(building-gadget)	err		2026-11-27
+mr	structure-tools-continued-(building-gadget)	err		2026-11-28
 mr	structure-void-toggle	200	Structure Void Toggle	2026-11-13
 mr	structure-world	200	Structure World	2026-11-27
 mr	structurecraft	200	[SC]StructureCraft	2026-11-13
@@ -39271,7 +39331,7 @@ mr	tech-decorators	200	Tech Decorators	2026-11-13
 mr	tech-dimension	200	Tech Dimension	2026-11-13
 mr	techascension	200	Tech Ascension	2026-11-13
 mr	techguns	200	Techguns-CE	2026-11-13
-mr	technical-enchant%2B	err		2026-11-27
+mr	technical-enchant%2B	err		2026-11-28
 mr	technical-engineering-4	200	Technical Engineering 4	2026-11-13
 mr	technomod	200	TechnoMod	2026-11-13
 mr	technomodel	200	Technopig	2026-11-13
@@ -39527,7 +39587,7 @@ mr	the-ducks	200	The Ducks	2026-11-13
 mr	the-dulling	200	The Dulling	2026-11-27
 mr	the-ender-scrolls-skyrimcraft	200	The Ender Scrolls - Skyrimcraft	2026-11-13
 mr	the-enderwoman-mod	200	The Enderwoman	2026-11-13
-mr	the-error-(horror)	err		2026-11-27
+mr	the-error-(horror)	err		2026-11-28
 mr	the-farlanders	200	The Farlanders	2026-11-13
 mr	the-filler-update	404		2026-11-13
 mr	the-final-boss	200	The Final Boss	2026-11-13
@@ -39545,7 +39605,7 @@ mr	the-gingerbread-house	404		2026-11-13
 mr	the-goatman-dwller	200	The Goatman	2026-11-13
 mr	the-god	200	The God	2026-11-13
 mr	the-gold-rush	200	The Gold Rush	2026-11-27
-mr	the-graveyard-(unofficial-port)	err		2026-11-27
+mr	the-graveyard-(unofficial-port)	err		2026-11-28
 mr	the-graveyard-fabric	200	The Graveyard (Fabric/Neoforge)	2026-11-27
 mr	the-graveyard-forge	200	The Graveyard (Forge)	2026-11-13
 mr	the-great-alchemical-compendium	200	The Great Alchemical Compendium [More Magic Series]	2026-11-13
@@ -39578,10 +39638,10 @@ mr	the-magic-doorknob	200	The Magic Doorknob	2026-11-13
 mr	the-magic-mirror	200	The Magic Mirror	2026-11-13
 mr	the-man-from-the-fog	200	The Man From The Fog	2026-11-13
 mr	the-man-from-the-fog-fabric	200	The Man From The Fog - Fabric	2026-11-27
-mr	the-man-from-the-shadow-(horror)	err		2026-11-27
+mr	the-man-from-the-shadow-(horror)	err		2026-11-28
 mr	the-mandela-catalogue-alternates	200	The Mandela Catalogue: Alternates	2026-11-13
 mr	the-many-faces-of-enderman	200	The Many Faces of Enderman	2026-11-27
-mr	the-masquerade-(illager-boss)	err		2026-11-27
+mr	the-masquerade-(illager-boss)	err		2026-11-28
 mr	the-midnight	200	The Midnight	2026-11-13
 mr	the-midnight-lurker	200	The Midnight Lurker	2026-11-13
 mr	the-mighty-architectury	200	The Mighty Architectury	2026-11-13
@@ -39758,7 +39818,7 @@ mr	tilefinder	200	TileFinder	2026-11-13
 mr	till-it-breaks	404		2026-11-13
 mr	till-it-breaks-updated	200	Till It Breaks Updated	2026-11-13
 mr	tilt-break	200	Tilt Break (Old Damage Tilting)	2026-11-13
-mr	timber!	err		2026-11-27
+mr	timber!	err		2026-11-28
 mr	timber-enchantment	200	Timber Enchantment	2026-11-27
 mr	timber-frames	200	Timber Frames	2026-11-13
 mr	timber-mod-by-mycf	200	UPDATEd Timber Mod (Client Side)	2026-11-13
@@ -39976,7 +40036,7 @@ mr	torch-hit	200	Torch hit!	2026-11-13
 mr	torch-key-forge	200	Torch Key [Forge]	2026-11-13
 mr	torchbowmod	200	TorchBowMod	2026-11-13
 mr	torcherino	200	Torcherino	2026-11-13
-mr	torcherino(unofficial)	err		2026-11-27
+mr	torcherino(unofficial)	err		2026-11-28
 mr	torcherino-ce	200	Torcherino Community Edition	2026-11-13
 mr	torches-in-water	200	Torches in Water	2026-11-27
 mr	torchflower-relit	200	Torchflower: Relit	2026-11-13
@@ -40024,7 +40084,7 @@ mr	touhou-little-maidmaid-command-chat	404		2026-11-13
 mr	touhou-maid-affection	200	Touhou Maid: Affection	2026-11-13
 mr	touhou-origins	200	Touhou Origins	2026-11-13
 mr	touhou-origins-blessings	200	Touhou Origins: Blessings	2026-11-13
-mr	touhou-origins-forge-port-(unofficial)	err		2026-11-27
+mr	touhou-origins-forge-port-(unofficial)	err		2026-11-28
 mr	touhou-shrine-maiden	200	Touhou Shrine Maiden	2026-11-13
 mr	touhou-tweaks	200	Touhou Tweaks	2026-11-13
 mr	touhou_little_maid_vampirism	200	touhou_little_maid_vampirism	2026-11-13
@@ -40043,7 +40103,7 @@ mr	townstead	200	Townstead	2026-11-27
 mr	toxony	200	Toxony	2026-11-13
 mr	tp-chat-cmd	200	TP Chat Command	2026-11-13
 mr	tp-players	200	TP Players	2026-11-13
-mr	tpa++	err		2026-11-27
+mr	tpa++	err		2026-11-28
 mr	tpa-command	200	Tpa Command	2026-11-13
 mr	tpa-minus-minus	200	TPA Minus Minus	2026-11-13
 mr	tpa-tinmoli	200	Tpa-Tinmoli	2026-11-13
@@ -40074,7 +40134,7 @@ mr	tradernpcs	200	TraderNPCs	2026-11-27
 mr	traders-in-disguise-the-illager-assassin-project	200	Traders in Disguise - The Illager Assassin Project	2026-11-13
 mr	tradestages-legacy	200	TradeStages Legacy	2026-11-27
 mr	tradeworks	200	Create: Tradeworks	2026-11-13
-mr	trading+	err		2026-11-27
+mr	trading+	err		2026-11-28
 mr	trading-post	200	Trading Post	2026-11-13
 mr	trading-stalls	200	Trading Stalls	2026-11-13
 mr	traditional-asphalt	200	Traditional Asphalt	2026-11-13
@@ -40162,7 +40222,7 @@ mr	trim-upgrade-core	200	Trim Upgrade : Core	2026-11-13
 mr	trimica	200	Trimica	2026-11-13
 mr	trimmable-tools	200	Trimmable Tools	2026-11-27
 mr	trimmed	200	Trimmed	2026-11-13
-mr	trims-begone!	err		2026-11-27
+mr	trims-begone!	err		2026-11-28
 mr	trims-expanded	200	Trims Expanded	2026-11-13
 mr	trims-on-tools	200	Trims on Tools	2026-11-13
 mr	trimseffects	200	TrimsEffects	2026-11-13
@@ -40224,7 +40284,7 @@ mr	turf	200	Turf	2026-11-13
 mr	turtle-charging-station	200	Turtle Charging Station	2026-11-13
 mr	turtlemancy	200	Turtlemancy	2026-11-13
 mr	turtlematic	200	Turtlematic	2026-11-13
-mr	tusk-act-4-(jcraft-addon)	err		2026-11-27
+mr	tusk-act-4-(jcraft-addon)	err		2026-11-28
 mr	tutes-cn-sweetinks-items	200	Tutes-cn & Sweetink's Items	2026-11-13
 mr	tuttas-doors	404		2026-11-13
 mr	tvcraft-legend-of-tenna	200	TVCraft: Legend of Tenna	2026-11-13
@@ -40326,7 +40386,7 @@ mr	underground-biomes	200	Underground Biomes	2026-11-27
 mr	underground-bunkers	200	Underground Bunkers	2026-11-13
 mr	underground-city-engineering	200	Underground City Engineering	2026-11-13
 mr	underground-rivers	200	Underground Rivers	2026-11-13
-mr	underground-village,-stoneholm	err		2026-11-27
+mr	underground-village,-stoneholm	err		2026-11-28
 mr	underground-villages	200	Underground Villages	2026-11-13
 mr	underground-worlds	200	Underground Worlds	2026-11-13
 mr	underlay	200	Underlay	2026-11-13
@@ -40337,7 +40397,7 @@ mr	undertale-delight	200	Undertale Delight	2026-11-13
 mr	undertale-healthbars	200	Undertale HealthBars	2026-11-13
 mr	undertale-mod	200	Undertale mod	2026-11-27
 mr	undertale-world	200	UNDERTALE WORLD	2026-11-13
-mr	underwater-swim-fix-(mc-220390)	err		2026-11-27
+mr	underwater-swim-fix-(mc-220390)	err		2026-11-28
 mr	underwater-village	200	Underwater Village	2026-11-13
 mr	underworld-magic-craftsmanship	200	UMC 幽法工艺 Underworld Magic Craftsmanship	2026-11-13
 mr	undo	200	Undo	2026-11-13
@@ -40425,8 +40485,8 @@ mr	unseen-world	200	Unseen World	2026-11-13
 mr	unstable-tools	200	Unstable Tools	2026-11-13
 mr	unsuspicious-block	200	Unsuspicious Block	2026-11-13
 mr	unsuspicious-stew	200	 Unsuspicious Stew	2026-11-13
-mr	unsuspicious-stew%22	err		2026-11-27
-mr	untamed-wilds-(unofficial-port)	err		2026-11-27
+mr	unsuspicious-stew%22	err		2026-11-28
+mr	untamed-wilds-(unofficial-port)	err		2026-11-28
 mr	untitled-duck-mod	200	Untitled Duck Mod	2026-11-13
 mr	untitledlog	200	untitled.log	2026-11-13
 mr	untoggle-sprint	200	Untoggle sprint	2026-11-13
@@ -40754,7 +40814,7 @@ mr	visible-shield-cooldown	200	Visible Shield Cooldown	2026-11-13
 mr	visible-toggle-sprint	200	Visible Toggle Sprint	2026-11-13
 mr	visible-traders	200	Visible Traders	2026-11-13
 mr	visiblebarriers	200	Visible Barriers	2026-11-13
-mr	visiontoggle+	err		2026-11-27
+mr	visiontoggle+	err		2026-11-28
 mr	visiting-villagers	200	Visiting Villagers	2026-11-13
 mr	visor	200	Visor	2026-11-13
 mr	vista-aeronautics-fix	200	Vista Aeronautics Fix	2026-11-13
@@ -40973,7 +41033,7 @@ mr	wdl	200	Archive World Downloader	2026-11-13
 mr	wdmgslt	200	Why Does My Glass Sound Like That	2026-11-13
 mr	wds-selling-bin	200	wd's Selling Bin	2026-11-13
 mr	we-do-copyright	200	We Do Copyright	2026-11-13
-mr	we-got-runners!	err		2026-11-27
+mr	we-got-runners!	err		2026-11-28
 mr	weaker-spiderwebs	200	Weaker Spiderwebs	2026-11-13
 mr	wealizh	200	Wealizh	2026-11-13
 mr	wealthyandgrowth	200	WealthyAndGrowth	2026-11-13
@@ -41022,7 +41082,7 @@ mr	what-are-you-voting-for	200	What Did You Vote For? 2021 Mob Vote	2026-11-13
 mr	what-are-you-voting-for-2022	200	What Did You Vote For? 2022: Sniffer, Rascal and Tuff Golem	2026-11-13
 mr	what-are-you-voting-for-2023	200	What Are You Voting For? 2023	2026-11-13
 mr	what-did-i-just-kill	200	What Did I Just Kill?	2026-11-13
-mr	what-is-stone-(colorful-caves)	err		2026-11-27
+mr	what-is-stone-(colorful-caves)	err		2026-11-28
 mr	what-meme	200	What Mod	2026-11-13
 mr	what-the-bucket	200	What The Bucket	2026-11-13
 mr	what-the-gecko	200	WHAT THE GECK'O!?	2026-11-13
@@ -41102,7 +41162,7 @@ mr	windy	200	Windy	2026-11-13
 mr	winefoxs_spellbooks	200	Winefox's Spellbooks	2026-11-13
 mr	wing-kirin-dragon-survival-addon	404		2026-11-13
 mr	winged	200	Winged	2026-11-13
-mr	wings-of-fire!	err		2026-11-27
+mr	wings-of-fire!	err		2026-11-28
 mr	wingsoffreedom	200	Wings of Freedom	2026-11-13
 mr	winter-overhaul	200	Winter Overhaul	2026-11-13
 mr	winter_essentials	200	Winter Essentials	2026-11-13
@@ -41201,7 +41261,7 @@ mr	world-of-wonder	200	World of Wonder	2026-11-13
 mr	world-of-wonders-reforged	200	World of Wonders Reforged	2026-11-13
 mr	world-play-time	200	World Play Time	2026-11-13
 mr	world-preview	200	World Preview	2026-11-13
-mr	world-preview-neoforged-(unofficial)	err		2026-11-27
+mr	world-preview-neoforged-(unofficial)	err		2026-11-28
 mr	world-preview-prime	200	World Preview Prime	2026-11-13
 mr	world-preview-terrafirmacraft	200	World Preview TFC	2026-11-13
 mr	world-primer	200	World Primer	2026-11-27
@@ -41254,7 +41314,7 @@ mr	wwta	200	When Was That Again	2026-11-13
 mr	wyr	200	Would you Rather	2026-11-13
 mr	wyrmroost	200	Wyrmroost	2026-11-13
 mr	wyrms	200	Wyrms of Nyrus	2026-11-13
-mr	x+-autofish	err		2026-11-27
+mr	x+-autofish	err		2026-11-28
 mr	x-backup	200	X Backup	2026-11-13
 mr	x-enchantment	200	X-Enchantment	2026-11-13
 mr	x-hp	200	X-HP	2026-11-13
@@ -41377,7 +41437,7 @@ mr	yosbr	200	Your Options Shall Be Respected (YOSBR)	2026-11-13
 mr	yosbr-neo	200	Your Options Shall Be Neoforged (YOSBR)	2026-11-13
 mr	yosbs	200	Your Options Shall Be Saved (YOSBS)	2026-11-13
 mr	you-are-seeing-dungeons	200	You are seeing dungeons (YASD)	2026-11-13
-mr	you-bandit!	err		2026-11-27
+mr	you-bandit!	err		2026-11-28
 mr	you-cheated-first	200	You cheated first	2026-11-27
 mr	you-die-you-lose-a-heart	200	You Die You Lose a Heart (Discontinued)	2026-11-13
 mr	you-died	200	You Died	2026-11-13
@@ -41407,7 +41467,7 @@ mr	yttr	200	Yttr	2026-11-13
 mr	yttrjei	200	YttrJEI	2026-11-13
 mr	yukamis-sophisticated-backpack-tab	200	Yukami's Sophisticated Backpack Tab	2026-11-13
 mr	yukkuri	200	Touhou Yukkuri	2026-11-13
-mr	yum!-delicious!	err		2026-11-27
+mr	yum!-delicious!	err		2026-11-28
 mr	yumemigusa	200	Yumemigusa	2026-11-13
 mr	yummy_glass	200	Yummy Glass	2026-11-13
 mr	yumo-compactmachines-por	200	yumo compactmachines por	2026-11-13
@@ -41480,7 +41540,7 @@ mr	zombie-lag-fix	200	Zombie Lag Fix	2026-11-13
 mr	zombie-onslaught	200	Zombie Onslaught	2026-11-13
 mr	zombie-plague-2-hardcore-zombie-apocalypse	200	Zombie Plague 2 - Hardcore Zombie Apocalypse	2026-11-13
 mr	zombie-players	200	Zombie Players	2026-11-27
-mr	zombie-rush+	err		2026-11-27
+mr	zombie-rush+	err		2026-11-28
 mr	zombie-variants	200	Zombie Variants Overhaul	2026-11-13
 mr	zombie-villager-control	200	Zombie Villager Control	2026-11-27
 mr	zombie-villagers-from-spawner	200	Zombie Villagers From Spawner	2026-11-13
